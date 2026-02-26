@@ -2,6 +2,17 @@
 
 How to inject an expert plugin into your current session — or into a sub-agent or cron job.
 
+There are four loading methods. In practice you rarely need to think about this:
+
+| Method | When | Action required |
+|---|---|---|
+| **Auto-invocation** | Non-channel-bound session, topic matches an expert | None — agent loads automatically |
+| **Channel routing** | Message arrives in a bound Slack channel | None — expert always active |
+| **`/expert [name]`** | You want a specific expert, or to override auto-invocation | Type the command |
+| **Cron / sub-agent** | Scheduled or background task | Configured in task payload |
+
+See [auto-invocation.md](auto-invocation.md) for the confidence-tier logic and multi-domain handling.
+
 ---
 
 ## The key concept

@@ -274,6 +274,7 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 | [Expert index](docs/experts/index.md) | All available experts with domains and commands |
 | [Loading experts](docs/howto/loading.md) | Manual and automatic plugin loading |
 | [Channel routing](docs/howto/channel-routing.md) | Auto-loading experts based on Slack channel |
+| [Auto-invocation](docs/howto/auto-invocation.md) | Topic-based automatic expert loading with confidence tiers |
 | [Authoring a PLAYBOOK.md](docs/howto/authoring-playbook.md) | Writing the org-level config layer for an expert |
 | [Improving experts](docs/howto/improving-experts.md) | Manual improvement: fixing gaps, adding skills and commands |
 | [Staying current](docs/howto/staying-current.md) | Automated learning loop: live sources, weekly updates, CHANGELOG |
