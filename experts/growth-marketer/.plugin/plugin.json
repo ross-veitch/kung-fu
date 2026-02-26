@@ -1,0 +1,23 @@
+{
+  "name": "growth-marketer",
+  "version": "0.1.0",
+  "description": "Performance-first growth marketer. Quantitative, channel-agnostic, obsessed with attribution and payback periods. Deep knowledge of paid acquisition, SEO, CRO, lifecycle marketing, and growth experimentation.",
+  "author": { "name": "Kung Fu" },
+  "plugins": [],
+  "keywords": [
+    "growth-marketing",
+    "performance-marketing",
+    "paid-acquisition",
+    "cac",
+    "ltv",
+    "attribution",
+    "seo",
+    "cro",
+    "conversion-optimization",
+    "lifecycle-marketing",
+    "experimentation",
+    "a-b-testing",
+    "meta-ads",
+    "google-ads"
+  ]
+}
