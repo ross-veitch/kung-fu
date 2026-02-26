@@ -3,7 +3,8 @@
 **Channel:** #clawd-prj-kung-fu (C0AGC1WLX7Y)
 **Started:** 2026-02-22
 **Last Updated:** 2026-02-26
-**Repo:** https://github.com/ross-veitch/clawd/tree/main/clawd-prj/kung-fu
+**Repo:** https://github.com/rossveitch/kung-fu
+**Config overlay:** `~/clawd/kung-fu-config/` (private, stays in clawd repo)
 
 ## Goal
 Build a modular expert plugin system that layers domain expertise on top of SOUL.md (base identity), enabling Ross to invoke specialist personas for different contexts — strategy sessions, health, training, legal, data analysis, etc.
