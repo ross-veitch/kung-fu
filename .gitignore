@@ -1,0 +1,21 @@
+.DS_Store
+*.bak
+node_modules/
+
+# Personal and org config — never commit these
+# These belong in your kung-fu-config overlay (see docs/howto/improving-experts.md)
+**/PLAYBOOK.md
+**/USER.md
+
+# Local data (state files, onboarding status)
+data/
+
+# Config with personal Slack channel IDs
+config/channel-routing.json
+
+# Binary/media assets
+**/resources/*.pdf
+**/resources/*.epub
+**/resources/*.docx
+**/resources/*.mp3
+**/resources/*.mp4

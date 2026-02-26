@@ -1,0 +1,7 @@
+{
+  "name": "travel-concierge",
+  "version": "0.1.0",
+  "description": "High-touch travel concierge: curates seamless journeys through points/miles strategy, routing optimisation, hotel selection, and anticipatory logistics.",
+  "author": { "name": "Kung Fu" },
+  "keywords": ["travel", "concierge", "points", "miles", "hotels", "routing", "luxury-travel"]
+}

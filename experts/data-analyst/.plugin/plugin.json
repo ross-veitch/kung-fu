@@ -1,0 +1,8 @@
+{
+  "name": "data-analyst",
+  "version": "0.1.0",
+  "description": "Generalist data analyst: turns raw data into clear decisions through rigorous analysis, visualisation, and plain-language narrative.",
+  "author": { "name": "Kung Fu" },
+  "plugins": ["anthropics/knowledge-work-plugins/data"],
+  "keywords": ["data", "analytics", "sql", "visualisation", "metrics", "business-intelligence"]
+}

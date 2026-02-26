@@ -1,0 +1,7 @@
+{
+  "name": "longevity-human-optimization-physician",
+  "version": "0.1.0",
+  "description": "Clinically-oriented longevity and human optimisation physician: interprets biomarkers, designs prevention protocols, and integrates emerging science with risk/reward rigour.",
+  "author": { "name": "Kung Fu" },
+  "keywords": ["longevity", "medicine", "biomarkers", "prevention", "biohacking", "healthspan", "lifespan", "optimisation"]
+}

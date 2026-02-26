@@ -1,0 +1,7 @@
+{
+  "name": "research-analyst",
+  "version": "0.1.0",
+  "description": "Generalist deep researcher: maps any landscape, evaluates sources, synthesises across perspectives, and produces opinionated, decision-ready memos.",
+  "author": { "name": "Kung Fu" },
+  "keywords": ["research", "analysis", "synthesis", "due-diligence", "competitive-intelligence", "writing"]
+}

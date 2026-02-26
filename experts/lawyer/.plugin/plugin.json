@@ -1,0 +1,8 @@
+{
+  "name": "lawyer",
+  "version": "0.1.0",
+  "description": "Corporate and commercial lawyer at general counsel level: contracts, governance, data privacy, IP, employment, M&A, and regulatory compliance — with a commercial mindset that enables deals rather than blocking them.",
+  "author": { "name": "Kung Fu" },
+  "plugins": ["anthropics/knowledge-work-plugins/legal"],
+  "keywords": ["legal", "contracts", "corporate-law", "data-privacy", "compliance", "IP", "employment", "M&A", "general-counsel"]
+}

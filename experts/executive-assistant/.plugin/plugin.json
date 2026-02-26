@@ -1,0 +1,8 @@
+{
+  "name": "executive-assistant",
+  "version": "0.1.0",
+  "description": "World-class executive assistant and productivity coach: anticipates needs, manages time ruthlessly, handles communications with discretion, and maximises principal leverage.",
+  "author": { "name": "Kung Fu" },
+  "plugins": ["anthropics/knowledge-work-plugins/productivity"],
+  "keywords": ["executive-assistant", "productivity", "calendar", "communications", "operations", "leverage"]
+}

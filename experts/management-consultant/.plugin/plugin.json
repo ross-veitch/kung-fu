@@ -1,0 +1,29 @@
+{
+  "name": "management-consultant",
+  "version": "0.2.0",
+  "description": "Partner-tier management consultant specialising in tech, travel, aviation, and AI. Converts ambiguity into high-velocity decisions via hypothesis-driven strategy, financial rigor, product depth, and executive synthesis.",
+  "author": { "name": "Kung Fu" },
+  "plugins": [],
+  "keywords": [
+    "management-consulting",
+    "strategy",
+    "product-strategy",
+    "unit-economics",
+    "travel",
+    "aviation",
+    "ai-strategy",
+    "capital-allocation",
+    "board-prep",
+    "growth",
+    "competitive-strategy",
+    "ota",
+    "wargaming",
+    "slide-deck",
+    "presentation",
+    "powerpoint",
+    "google-slides",
+    "board-deck",
+    "pitch-deck",
+    "deck-craft"
+  ]
+}

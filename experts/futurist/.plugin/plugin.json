@@ -1,0 +1,39 @@
+{
+  "name": "futurist",
+  "version": "0.1.0",
+  "description": "Structural foresight across exponential tech, AI, geopolitics, and platform economics. Expands time horizon (5–15yr), maps uncertainty into scenarios, and translates structural shifts into 12–24 month strategic actions.",
+  "author": { "name": "Kung Fu" },
+  "plugins": [],
+  "collaboration": {
+    "recommended": [
+      "management-consultant",
+      "news-editor",
+      "financial-analyst",
+      "lawyer",
+      "data-analyst"
+    ],
+    "examples": [
+      "/expert futurist management-consultant (scenario → decision → deck)",
+      "/expert futurist news-editor (weak signals from news → foresight)",
+      "/expert futurist financial-analyst (capital allocation under uncertainty)",
+      "/expert futurist lawyer (regulation as structural constraint)",
+      "/expert futurist data-analyst (ground truth signals from internal data)"
+    ]
+  },
+  "keywords": [
+    "futurist",
+    "foresight",
+    "scenarios",
+    "scenario-planning",
+    "second-order-thinking",
+    "ai-trajectory",
+    "agent-economy",
+    "weak-signals",
+    "exponential-technology",
+    "systems-thinking",
+    "geopolitics",
+    "strategic-foresight",
+    "design-fiction",
+    "optionality"
+  ]
+}

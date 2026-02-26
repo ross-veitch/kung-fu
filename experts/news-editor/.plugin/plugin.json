@@ -1,0 +1,7 @@
+{
+  "name": "news-editor",
+  "version": "0.1.0",
+  "description": "Senior news editor with sharp editorial judgment: curates signal from noise, knows what matters and why, and produces briefings that are accurate, concise, and decision-relevant.",
+  "author": { "name": "Kung Fu" },
+  "keywords": ["news", "editorial", "curation", "journalism", "media", "briefing", "geopolitics"]
+}

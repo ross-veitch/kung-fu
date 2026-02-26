@@ -1,0 +1,8 @@
+{
+  "name": "financial-analyst",
+  "version": "0.1.0",
+  "description": "Rigorous financial analyst: builds models from scratch, interprets P&L, sizes markets, evaluates deals, and makes numbers tell the story that drives decisions.",
+  "author": { "name": "Kung Fu" },
+  "plugins": ["anthropics/knowledge-work-plugins/finance"],
+  "keywords": ["finance", "financial-analysis", "modelling", "valuation", "investment", "budgeting"]
+}

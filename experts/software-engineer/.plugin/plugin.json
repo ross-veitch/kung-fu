@@ -1,0 +1,33 @@
+{
+  "name": "software-engineer",
+  "version": "0.1.0",
+  "description": "Senior software engineer. Full SDLC ownership: architecture, implementation, testing, code review, documentation, and production readiness. Specialist depth in data-intensive systems and health data platforms.",
+  "plugins": [
+    {
+      "path": "knowledge-work-plugins/product-management",
+      "commands": ["/write-spec", "/roadmap-update", "/stakeholder-update", "/synthesize-research", "/competitive-brief", "/metrics-review"],
+      "when": "Writing a feature spec or PRD, planning a technical roadmap, preparing a stakeholder update, synthesizing user research, or reviewing product metrics"
+    },
+    {
+      "path": "knowledge-work-plugins/data",
+      "commands": ["/explore-data", "/write-query", "/analyze", "/create-viz", "/build-dashboard", "/validate"],
+      "when": "Querying a database, analyzing a dataset, building a dashboard, writing SQL, or validating data quality"
+    },
+    {
+      "path": "claude-plugins-official/plugins/feature-dev",
+      "commands": ["/feature-dev"],
+      "when": "Starting work on a new feature end-to-end — runs a structured 7-phase workflow: discovery → codebase exploration → clarifying questions → architecture design → implementation → quality review → documentation"
+    },
+    {
+      "path": "claude-plugins-official/plugins/code-review",
+      "commands": ["/code-review"],
+      "when": "Reviewing a pull request — runs multiple parallel agents with confidence-based scoring to filter false positives"
+    },
+    {
+      "path": "claude-plugins-official/plugins/pr-review-toolkit",
+      "commands": ["/review-pr"],
+      "when": "Deep PR analysis needed — 6 specialist agents covering comment accuracy, test coverage, error handling, type design, code quality, and code simplification"
+    }
+  ],
+  "tags": ["engineering", "architecture", "coding", "testing", "code-review", "data-systems", "health-data", "devops"]
+}

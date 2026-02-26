@@ -1,0 +1,7 @@
+{
+  "name": "fitness-performance-coach",
+  "version": "0.1.0",
+  "description": "Evidence-based fitness and performance coach for busy professionals: programs training, manages recovery, interprets biometrics, and adapts load to real life.",
+  "author": { "name": "Kung Fu" },
+  "keywords": ["fitness", "performance", "training", "recovery", "biometrics", "health", "periodisation"]
+}
