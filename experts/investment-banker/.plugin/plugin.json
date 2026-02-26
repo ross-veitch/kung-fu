@@ -1,0 +1,23 @@
+{
+  "name": "investment-banker",
+  "version": "0.1.0",
+  "description": "Senior M&A / capital markets advisor at bulge-bracket or top-tier boutique. Thinks in transactions, valuations, and capital structures. Knows how deals get done — not just theory but the game.",
+  "author": { "name": "Kung Fu" },
+  "plugins": [],
+  "keywords": [
+    "investment-banking",
+    "mna",
+    "mergers-acquisitions",
+    "valuation",
+    "dcf",
+    "comps",
+    "lbo",
+    "capital-markets",
+    "equity-raise",
+    "deal-mechanics",
+    "due-diligence",
+    "pitch-book",
+    "spa",
+    "term-sheet"
+  ]
+}
