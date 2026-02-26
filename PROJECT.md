@@ -75,12 +75,12 @@ SOUL.md                     ← permanent base identity, never touched
 4. **EXPERT.md SOURCES blocks added** to: news-editor, futurist, fitness-performance-coach, management-consultant, longevity-human-optimization-physician
 
 ## Remaining Work
-- [ ] Rewrite commands for remaining 9 experts to full fitness-coach standard (multi-phase, GREEN/YELLOW/RED)
-- [ ] Update `commands/create-expert.md` to include PLAYBOOK.md creation step
-- [ ] Assign futurist expert to appropriate channel (if any)
+- [x] ~~Rewrite commands for remaining 9 experts to full fitness-coach standard~~ → done Feb 26 (72 commands across 14 experts)
+- [x] ~~Update `commands/create-expert.md` to include PLAYBOOK.md creation step~~ → done + renamed from create-role.md
+- [ ] Assign futurist expert to appropriate channel (if any) — waiting on Ross
 - [ ] PLAYBOOK.md review workflow for first-time invocation (track in `data/playbook-reviewed.json`)
-- [ ] Add `executive-presence/SKILL.md` stub to executive-coach (dir exists, file missing)
-- [ ] Test meeting-debrief.mjs non-dry-run end-to-end (Slack post never confirmed working)
+- [x] ~~Add `executive-presence/SKILL.md` stub to executive-coach~~ → done
+- [x] ~~Test meeting-debrief.mjs non-dry-run end-to-end~~ → confirmed working, posted QBR debrief to DM
 
 ## Waiting On
 - Ross to identify which channel (if any) should auto-bind futurist expert
