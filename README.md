@@ -134,6 +134,8 @@ Or just ask your agent:
 > *"Switch to Research Analyst mode"*
 > *"Run the Travel Concierge onboarding"*
 
+**Full walkthrough:** [Getting Started →](docs/howto/getting-started.md)
+
 ---
 
 ## Built-in Expert Plugins
@@ -267,6 +269,7 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 
 | Doc | Description |
 |---|---|
+| [Getting started](docs/howto/getting-started.md) | Clone → install → onboard → load your first expert |
 | [Architecture](docs/architecture.md) | How Expert Plugin injection works alongside SOUL.md |
 | [Expert index](docs/roles/index.md) | All available experts with domains and commands |
 | [Loading experts](docs/howto/loading.md) | Manual and automatic plugin loading |

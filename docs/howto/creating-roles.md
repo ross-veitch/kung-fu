@@ -2,16 +2,13 @@
 
 How to go from a practitioner title and an empty directory to a world-class Expert Plugin.
 
-**The automated approach:** use the `role-creator` skill.
-See `~/clawd/skills/role-creator/SKILL.md` for the full workflow.
+**The shortcut:** Just ask your agent — *"Create a new expert: [name]"*. It will run the full 5-phase process below autonomously, asking you for input only when needed. The `commands/create-role.md` playbook drives it.
 
 ---
 
 ## The goal
 
-A complete Expert Plugin enables the agent to operate at the level of a world-class human
-practitioner — or a team of experts — in the same domain. Not a generic summary of
-the field. Not a list of keywords. Actual practitioner-grade performance.
+A complete Expert Plugin enables the agent to operate at the level of a world-class human practitioner in the domain. Not a generic summary of the field. Not a list of keywords. Actual practitioner-grade performance.
 
 ---
 
@@ -20,89 +17,111 @@ the field. Not a list of keywords. Actual practitioner-grade performance.
 World-class performance requires both:
 
 **Universal expertise** — what any great practitioner in this domain would know:
-frameworks, proven methods, common failure modes, the non-obvious knowledge a novice
-wouldn't know to ask for.
+frameworks, proven methods, common failure modes, the non-obvious knowledge a novice wouldn't know to ask for.
 
-**Personalised context** — what a great practitioner working with *Ross specifically*
-needs: his current level, goals, learning history, constraints, known weak spots.
+**Personalised context** — what a great practitioner working with *this specific user* needs: their goals, constraints, current state, tools, and history. This lives in `USER.md` and `PLAYBOOK.md`.
 
-Most prompt libraries only get the first. The personalised context is what separates
-a role that *feels* right from one that *performs* right.
+Most prompt libraries only get the first. The personalised context is what separates an expert that *feels* right from one that *performs* right.
 
 ---
 
-## The 4-phase process
+## The 5-phase process
 
-### Phase 1 — Domain Research (~3 min, autonomous)
+### Phase 1 — Research (~3 min, autonomous)
 
 The agent runs deep research on the practitioner domain:
-- Established frameworks and progression models
-- Proven methods with evidence behind them
-- Common failure modes — what goes wrong, and how experts handle it
-- What separates adequate from world-class in this specific role
-- Top authorities, canonical resources, tools, and communities
+- Role models — who are the world's best in this field?
+- Core frameworks and methodology
+- What separates adequate from world-class
+- Common failure modes and how great practitioners handle them
+- Key tools, communities, publications the expert should know about
 
-Tools: perplexity (sonar-pro or sonar-deep-research for technical domains)
+Tools: Perplexity sonar-pro (or sonar-deep-research for technical domains).
 
-### Phase 2 — Intake (~10 min of your time, interactive)
+### Phase 2 — Component plan (~5 min, interactive)
 
-Two sets of questions, generated from Phase 1 findings:
+Decide which `skills/` domains and `commands/` playbooks are needed. Walk through:
+- What knowledge areas does this expert need? → `skills/` directory structure
+- What are the 5–7 most common scenarios this expert handles? → `commands/` list
+- What `~~` placeholders need to be resolved during onboarding?
+- What live learning sources should go in the `<!-- SOURCES -->` block?
 
-**Universal (asked every time):**
-1. Current level / starting point
-2. Specific goal — what does success look like in 3–6 months?
-3. Time available per week
-4. What's been tried before, what worked / didn't
-5. Hard constraints (schedule, tools, limits)
+### Phase 3 — Design (~5 min, collaborative)
 
-**Domain-specific (3–5 questions, derived from Phase 1):**
-These surface the personalisation that actually changes the SOPs.
-A Mandarin Teacher asks about tones. A Health Coach asks about HRV and training history.
-A CFO role asks about reporting structure and board dynamics.
+Nail down scope, cognitive approach, and knowledge areas. The key question: *what does this expert know and do that a general-purpose agent doesn't?* Sharpen until the answer is specific.
 
-Ask conversationally. Probe on anything that would change how the SOPs are written.
+### Phase 4 — Build (~5 min, autonomous)
 
-### Phase 3 — Generation (~5 min, autonomous)
+Write the full Expert Plugin:
+- `EXPERT.md` — domain expertise, cognitive approach, tools, staying current
+- `skills/[domain]/SKILL.md` — synthesised expertise per knowledge area
+- `commands/[command].md` — step-by-step SOPs for key scenarios
+- `.plugin/plugin.json` — manifest
 
-Synthesise Phase 1 + Phase 2 into the complete bundle:
-- `EXPERT.md` — domain expertise + personalised context + SOPs + skill pointers
-- `skills/` — populated with specific sources from Phase 1 research
-- `resources/INDEX.md` — annotated reference library, gaps flagged
+Generic only. No personal data anywhere. No org-specific content. Everything user-specific uses `~~` placeholders.
 
-### Phase 4 — Calibration (~10 min, interactive)
+### Phase 5 — Onboard (~10 min, interactive)
 
-Load the role. Run 3 test scenarios representing the most common use cases.
-Check: does the output match what a world-class practitioner would actually do?
-One iteration of refinements, then lock.
+Load the new expert. Run the onboarding conversation to generate:
+- `~/clawd/kung-fu-config/experts/[name]/PLAYBOOK.md` — org-level config
+- `~/clawd/kung-fu-config/experts/[name]/USER.md` — personal config
+
+Then run 3 test scenarios. Does the output match what a world-class practitioner would actually do? One round of refinements, then done.
 
 ---
 
 ## Quality bar
 
-The test: swap in a different person's intake answers. Does anything change?
-If not, the personalised context isn't doing its job.
+**The swap test:** Replace the user's personal answers (in `USER.md`) with someone else's. Does anything in the output change? If not, the personalised context isn't doing its job.
 
-SOPs must be specific. "When Ross is stuck on a tone, a great teacher does X not Y"
-is useful. "Help Ross with tones" is noise.
+**SOPs must be specific.** Generic SOPs are worthless. A `/decision-unpacker` command that walks through reversibility, pre-mortem, and 10/10/10 is useful. "Help the user make a decision" is noise.
 
-Domain expertise must include the non-obvious. If it reads like a Wikipedia summary,
-it hasn't captured how experts actually think.
+**Domain expertise must include the non-obvious.** If `EXPERT.md` reads like a Wikipedia summary of the field, it hasn't captured how experts actually think. The goal is the tacit knowledge — the things a 20-year practitioner knows that aren't in any textbook.
 
 ---
 
-## Reference implementation
+## File checklist
 
-See `~/clawd/experts/mandarin-teacher/` — the first reference implementation, built
-alongside the role-creator skill. Use it as a template for what a complete Expert Plugin
-looks like in practice.
+After creation, verify:
+
+```
+clawd-prj/kung-fu/experts/[your-expert]/
+├── .plugin/plugin.json        ✓ manifest with name, version, description
+├── EXPERT.md                  ✓ generic, no personal data, ~~ placeholders where needed
+├── skills/[domain]/SKILL.md   ✓ at least 2–3 skill domains populated
+├── commands/[command].md      ✓ at least 3 commands (the most common scenarios)
+└── <!-- SOURCES -->           ✓ in EXPERT.md if the expert needs current knowledge
+
+~/clawd/kung-fu-config/experts/[your-expert]/
+├── PLAYBOOK.md                ✓ org defaults (see authoring-playbook.md)
+└── USER.md                    ✓ personal config (generated by onboarding)
+```
 
 ---
 
-## Manual creation
+## Adding a learning loop
 
-If you want to build a Expert Plugin without the role-creator skill:
-1. Use the templates in `~/clawd/skills/role-creator/templates/`
-2. Run the same 4 phases manually
-3. Don't skip Phase 2 — the intake is the difference between generic and useful
+Any expert that benefits from current knowledge (news, research, markets, tech) should have a `<!-- SOURCES -->` block. Add it to the bottom of `EXPERT.md` before the onboarding placeholders table:
 
-See `custom-roles.md` for manual authoring guidance.
+```markdown
+<!-- SOURCES
+- name: Source Name    | url/handle/subreddit: VALUE    | type: TYPE    | category: CATEGORY
+-->
+```
+
+Valid types: `twitter`, `reddit`, `youtube`, `podcast`, `arxiv`, `newsletter`, `web`
+
+Then create a weekly cron: `staying-current.mjs [expert-name]`.
+
+See [Staying Current](staying-current.md) for the full guide.
+
+---
+
+## Adding to the index
+
+After creating a new expert, update:
+- `docs/roles/index.md` — add the expert with domains and commands
+- `README.md` — add to the expert table
+- `PROJECT.md` — update the expert inventory and Last Updated date
+
+(This is a standing requirement — see PROJECT.md Standing Instructions.)
