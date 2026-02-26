@@ -2,7 +2,7 @@
 
 How to go from a practitioner title and an empty directory to a world-class Expert Plugin.
 
-**The shortcut:** Just ask your agent — *"Create a new expert: [name]"*. It will run the full 5-phase process below autonomously, asking you for input only when needed. The `commands/create-role.md` playbook drives it.
+**The shortcut:** Just ask your agent — *"Create a new expert: [name]"*. It will run the full 5-phase process below autonomously, asking you for input only when needed. The `commands/create-expert.md` playbook drives it.
 
 ---
 

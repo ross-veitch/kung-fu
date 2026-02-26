@@ -283,7 +283,7 @@ Key differences from Anthropic's structure:
 
 ## Role creation process
 
-New roles are created through a 5-phase process (see `commands/create-role.md`):
+New expert plugins are created through a 5-phase process (see `commands/create-expert.md`):
 
 | Phase | What happens |
 |-------|-------------|
@@ -365,7 +365,7 @@ clawd-prj/kung-fu/
 │       └── commands/              ← explicit SOPs and playbooks
 │           └── [command].md
 ├── commands/
-│   └── create-role.md             ← guided expert creation workflow
+│   └── create-expert.md           ← guided expert creation workflow
 ├── scripts/
 │   ├── load-expert.sh             ← loads expert stack into session
 │   └── spawn-with-expert.sh       ← spawns sub-agent with full stack

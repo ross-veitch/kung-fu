@@ -108,7 +108,7 @@ High-touch travel planning. Points/miles strategy, routing optimisation, hotel l
 
 ## Creating new experts
 
-Run `/create-role` — see `commands/create-role.md` for the full 5-phase process (research → component plan → design → implementation → onboarding).
+Run `/create-expert` — see `commands/create-expert.md` for the full 5-phase process (research → component plan → design → implementation → onboarding).
 
 ---
 

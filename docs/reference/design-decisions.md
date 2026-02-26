@@ -63,7 +63,7 @@ clawd-prj/kung-fu/experts/[expert-name]/
 
 **Rationale:** The creation process is itself a good test of the system's capability. A sufficiently capable agent with good domain research tools should be able to build a high-quality expert in a single session.
 
-See: `commands/create-role.md` for the full playbook.
+See: `commands/create-expert.md` for the full playbook.
 
 ---
 

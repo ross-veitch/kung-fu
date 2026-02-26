@@ -182,7 +182,7 @@ New Expert Plugins are created through a guided 5-phase process:
                    with resolved ~~ values and personal context.
 ```
 
-**Run it:** ask your agent *"Create a new Expert Plugin for [role]"*, or see [`commands/create-role.md`](commands/create-role.md) for the full playbook.
+**Run it:** ask your agent *"Create a new Expert Plugin for [role]"*, or see [`commands/create-expert.md`](commands/create-expert.md) for the full playbook.
 
 ---
 

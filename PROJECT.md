@@ -76,7 +76,7 @@ SOUL.md                     ← permanent base identity, never touched
 
 ## Remaining Work
 - [ ] Rewrite commands for remaining 9 experts to full fitness-coach standard (multi-phase, GREEN/YELLOW/RED)
-- [ ] Update `commands/create-role.md` to include PLAYBOOK.md creation step
+- [ ] Update `commands/create-expert.md` to include PLAYBOOK.md creation step
 - [ ] Assign futurist expert to appropriate channel (if any)
 - [ ] PLAYBOOK.md review workflow for first-time invocation (track in `data/playbook-reviewed.json`)
 - [ ] Add `executive-presence/SKILL.md` stub to executive-coach (dir exists, file missing)

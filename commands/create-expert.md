@@ -1,11 +1,11 @@
 ---
-name: create-role
+name: create-expert
 description: >
   Guide through creating a new Kung Fu expert plugin from scratch.
-  Use when: create a new role, add a new role, build a expert plugin, I want a [X] role.
+  Use when: create a new expert, add a new expert plugin, build an expert plugin, I want a [X] expert.
 ---
 
-# Create Role
+# Create Expert Plugin
 
 Build a new generic expert plugin through a 5-phase guided process. Delivers a publishable expert plugin with `~~` placeholders, ready for onboarding.
 
