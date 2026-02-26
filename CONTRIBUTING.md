@@ -19,18 +19,18 @@ Contributions welcome — especially new expert plugins, real-world usage exampl
 
 A good expert plugin PR includes:
 - [ ] The role directory at `experts/[role-name]/` with `EXPERT.md` (and optionally `scripts/`)
-- [ ] An entry in `docs/roles/index.md`
-- [ ] A worked example: same task, output without role vs with role, and the delta
+- [ ] An entry in `docs/experts/index.md`
+- [ ] A worked example: same task, output without expert vs with expert plugin loaded, and the delta
 - [ ] No personality content in `EXPERT.md` — that belongs in `SOUL.md`
 - [ ] Tested across at least 5 representative tasks
 
-Role authoring guide: [docs/howto/custom-roles.md](docs/howto/custom-roles.md)
+Expert authoring guide: [docs/howto/authoring-experts.md](docs/howto/authoring-experts.md)
 
 **What we won't merge:**
-- Role packs that override personality or communication style (that's `SOUL.md`)
-- Role packs without meaningful SOPs — domain context alone isn't enough
-- Role packs over ~1,500 tokens without strong justification
-- Roles that only work for one person's very specific setup and can't generalise
+- Expert Plugins that override personality or communication style (that's `SOUL.md`)
+- Expert Plugins without meaningful SOPs — domain context alone isn't enough
+- Expert Plugins over ~1,500 tokens without strong justification
+- Expert Plugins that only work for one person's very specific setup and can't generalise
 
 ### For script changes
 
@@ -54,7 +54,7 @@ git clone https://github.com/your-fork/kung-fu
 cd kung-fu
 
 # Install expert plugins to your workspace
-cp -r experts/* ~/clawd/experts/
+cp -r experts/* ~/clawd/clawd-prj/kung-fu/experts/
 
 # Install scripts
 cp scripts/load-expert.sh ~/clawd/scripts/
@@ -71,7 +71,7 @@ chmod +x ~/clawd/scripts/load-expert.sh
 
 ## The core constraint
 
-**Role packs extend capability. They do not change identity.**
+**Expert Plugins extend capability. They do not change identity.**
 
 Every line of `EXPERT.md` should answer: "what should the agent know or do differently in this domain?" Not: "how should the agent sound or relate to the user?"
 

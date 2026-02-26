@@ -316,7 +316,7 @@ If it's specific to *this individual* → `USER.md`.
 
 ## Session isolation
 
-Sub-agents and cron jobs run in isolated sessions. Role injection in those sessions doesn't affect the main session.
+Sub-agents and cron jobs run in isolated sessions. Expert plugin injection in those sessions doesn't affect the main session.
 
 ```
 Main session              Sub-agent A                   Sub-agent B
@@ -332,7 +332,7 @@ Main session              Sub-agent A                   Sub-agent B
 
 ## Comparing to soul-switching
 
-| | Soul-switching | Role injection (Kung Fu) |
+| | Soul-switching | Expert Plugin injection (Kung Fu) |
 |--|----------------|--------------------------|
 | SOUL.md | Replaced | Unchanged |
 | Personality in sub-agents | Lost | Preserved |

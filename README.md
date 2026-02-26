@@ -271,7 +271,7 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 |---|---|
 | [Getting started](docs/howto/getting-started.md) | Clone → install → onboard → load your first expert |
 | [Architecture](docs/architecture.md) | How Expert Plugin injection works alongside SOUL.md |
-| [Expert index](docs/roles/index.md) | All available experts with domains and commands |
+| [Expert index](docs/experts/index.md) | All available experts with domains and commands |
 | [Loading experts](docs/howto/loading.md) | Manual and automatic plugin loading |
 | [Channel routing](docs/howto/channel-routing.md) | Auto-loading experts based on Slack channel |
 | [Authoring a PLAYBOOK.md](docs/howto/authoring-playbook.md) | Writing the org-level config layer for an expert |
@@ -279,7 +279,7 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 | [Staying current](docs/howto/staying-current.md) | Automated learning loop: live sources, weekly updates, CHANGELOG |
 | [Sub-agent integration](docs/howto/sub-agents.md) | Expert Plugins in spawned agents |
 | [Cron job integration](docs/howto/cron-jobs.md) | Expert Plugin injection in scheduled tasks |
-| [Creating experts](docs/howto/creating-roles.md) | Step-by-step guide to building a new expert |
+| [Creating experts](docs/howto/creating-experts.md) | Step-by-step guide to building a new expert |
 | [Design decisions](docs/reference/design-decisions.md) | Architecture decisions and rationale |
 
 ---

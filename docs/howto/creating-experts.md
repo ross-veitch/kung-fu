@@ -120,7 +120,7 @@ See [Staying Current](staying-current.md) for the full guide.
 ## Adding to the index
 
 After creating a new expert, update:
-- `docs/roles/index.md` — add the expert with domains and commands
+- `docs/experts/index.md` — add the expert with domains and commands
 - `README.md` — add to the expert table
 - `PROJECT.md` — update the expert inventory and Last Updated date
 

@@ -126,7 +126,7 @@ Loading a new expert via `/expert [name]` unloads any previously active expert b
 ## Troubleshooting
 
 **The agent doesn't seem to be behaving differently after loading.**
-Role injection works from the point of loading forward. Earlier conversation history is already in the window. Start a new thread for the cleanest effect, or ask the agent: *"Confirm what expert you have loaded and what domain knowledge is now active."*
+Expert plugin injection works from the point of loading forward. Earlier conversation history is already in the window. Start a new thread for the cleanest effect, or ask the agent: *"Confirm what expert you have loaded and what domain knowledge is now active."*
 
 **`Expert not found: [name]`**
 Run `bash ~/clawd/scripts/load-expert.sh list` to see available experts. The expert directory must exist at `~/clawd/clawd-prj/kung-fu/experts/[name]/EXPERT.md`.

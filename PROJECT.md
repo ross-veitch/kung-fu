@@ -54,7 +54,7 @@ SOUL.md                     ← permanent base identity, never touched
 - **Command standard:** Multi-phase workflows, GREEN/YELLOW/RED classification, escalation triggers, output templates
 
 ## Standing Instructions
-- **Always update docs after significant changes.** Any time an expert is added/modified, a command is added, infrastructure changes, or channel bindings change: update `docs/roles/index.md`, `README.md` expert table, and any relevant howto docs. No exceptions.
+- **Always update docs after significant changes.** Any time an expert is added/modified, a command is added, infrastructure changes, or channel bindings change: update `docs/experts/index.md`, `README.md` expert table, and any relevant howto docs. No exceptions.
 
 ## Feb 26 Changes
 1. **executive-coach** expert created — leadership coaching, decision-making, high-stakes conversations, post-meeting debrief

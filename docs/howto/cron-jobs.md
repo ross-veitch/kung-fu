@@ -23,7 +23,7 @@ const message = `${soul}\n\n---\n\n${role}\n\n---\n\n${taskInstructions}`;
 
 ## Example: Training readiness check-in
 
-Without role injection:
+Without expert plugin injection:
 
 ```
 Check Oura readiness score for today. If ≥80, recommend hard session.
@@ -47,7 +47,7 @@ Follow the readiness check-in SOP from the loaded role.
 Post to #clawd-prj-training (C0AGAUJL9L2).
 ```
 
-The expert plugin contains the readiness interpretation framework, the exact output format, and the contextual knowledge (training week position, zone targets, Ross's baseline metrics). The task prompt can be short — the role handles the "how".
+The expert plugin contains the readiness interpretation framework, the exact output format, and the contextual knowledge (training week position, zone targets, Ross's baseline metrics). The task prompt can be short — the expert plugin handles the "how".
 
 ---
 
@@ -82,7 +82,7 @@ The research analyst role brings source evaluation discipline, the correct diges
 ## Helper function
 
 ```javascript
-// ~/clawd/scripts/role-inject.js
+// ~/clawd/scripts/expert-inject.js
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { homedir } from 'os';
@@ -111,7 +111,7 @@ export function withRole(roleName, taskMessage) {
 }
 
 // Usage:
-// import { withRole } from './role-inject.js';
+// import { withRole } from './expert-inject.js';
 // const message = withRole('fitness-performance-coach', taskInstructions);
 ```
 
@@ -136,7 +136,7 @@ cron({
 });
 ```
 
-**Important:** Always read the role file at runtime (when the cron job runs), not at job creation time. If you hardcode the role content into the job payload, updates to the expert plugin won't take effect until you manually update the job.
+**Important:** Always read the expert plugin file at runtime (when the cron job runs), not at job creation time. If you hardcode the role content into the job payload, updates to the expert plugin will not take effect until you manually update the job.
 
 The recommended pattern: store just the task instructions in the cron job, and have the job read `SOUL.md` + `EXPERT.md` from disk at the start of each run.
 
@@ -144,7 +144,7 @@ The recommended pattern: store just the task instructions in the cron job, and h
 
 ## Model selection
 
-Role injection doesn't change model routing — that's still task-driven:
+Expert plugin injection does not change model routing — that's still task-driven:
 
 | Task | Role | Model |
 |------|------|-------|

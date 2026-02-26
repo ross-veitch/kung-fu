@@ -37,7 +37,7 @@ and constraints.
 ### skills/
 How a practitioner in this domain stays current. Journals, blogs, newsletters,
 podcasts, Twitter/X accounts, subreddits, YouTube channels, tools to watch.
-Feeds automated digests and active research tasks when the role is active.
+Feeds automated digests and active research tasks when the expert plugin is active.
 
 ### resources/INDEX.md
 The role's bookshelf. Canonical reference materials: e-books, papers, quick-reference
@@ -209,7 +209,7 @@ cp -r my-role/ ~/clawd/clawd-prj/kung-fu/experts/
 ~/clawd/scripts/load-expert.sh off
 ```
 
-A role that doesn't produce measurably better domain-specific output on representative tasks isn't earning its token cost. And a role that changes the agent's personality has been written wrong.
+An expert plugin that doesn't produce measurably better domain-specific output on representative tasks isn't earning its token cost. And an expert plugin that changes the agent's personality has been written wrong.
 
 ---
 
@@ -233,5 +233,5 @@ For custom variants: `fitness-performance-coach-race-prep/`, `research-analyst-m
 See [CONTRIBUTING.md](../../CONTRIBUTING.md). A good contributed expert plugin includes:
 1. The `EXPERT.md` file
 2. A description of the domain it covers
-3. An example: what the agent produces with vs without the role loaded (same task)
+3. An example: what the agent produces with vs without the expert plugin loaded (same task)
 4. The delta — what specifically improved and why

@@ -152,7 +152,7 @@ See [Staying Current](staying-current.md) for a full guide.
 **To create a new expert:**
 > *"Create a new expert: [name]"*
 
-See [Creating Experts](creating-roles.md) for what to expect.
+See [Creating Experts](creating-experts.md) for what to expect.
 
 ---
 

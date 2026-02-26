@@ -149,7 +149,7 @@ Write `~/clawd/kung-fu-config/experts/[expert-name]/USER.md`:
 
 ## Quality checklist
 
-Before marking the role as complete:
+Before marking the expert plugin as complete:
 
 **Shared repo (publishable):**
 - [ ] `EXPERT.md` contains zero personal data, real email addresses, company names, or specific account details
