@@ -231,4 +231,4 @@ Valid types: `twitter`, `reddit`, `youtube`, `podcast`, `arxiv`, `newsletter`, `
 
 ## Technical details
 
-Full source capability design and implementation notes: [`docs/staying-current-sources.md`](../staying-current-sources.md)
+Full source capability design and implementation notes: [`docs/reference/staying-current-sources.md`](../reference/staying-current-sources.md)

@@ -245,7 +245,7 @@ Next session load picks up the updated knowledge
 ```
 
 Script: `~/clawd/scripts/staying-current.mjs <expert-name> [--depth light|standard|deep]`
-Full source capability docs: [`docs/staying-current-sources.md`](docs/staying-current-sources.md)
+Full source capability docs: [`docs/reference/staying-current-sources.md`](docs/reference/staying-current-sources.md)
 
 ### Which experts have a learning loop
 
@@ -282,6 +282,7 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 | [Cron job integration](docs/howto/cron-jobs.md) | Expert Plugin injection in scheduled tasks |
 | [Creating experts](docs/howto/creating-experts.md) | Step-by-step guide to building a new expert |
 | [Design decisions](docs/reference/design-decisions.md) | Architecture decisions and rationale |
+| [load-expert.sh reference](docs/reference/load-expert.md) | CLI reference for the expert loader script |
 
 ---
 
