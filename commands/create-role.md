@@ -67,7 +67,7 @@ Order of operations:
 4. Write `skills/[domain]/SKILL.md` files (lean, < 3000 words each)
 5. Write `skills/[domain]/references/` for detailed content
 6. Write `commands/[command].md` SOPs
-7. Do NOT write `USER.md` — that's created during onboarding (Phase 5)
+7. Do NOT write `USER.md` or `PLAYBOOK.md` inside the expert directory — both are created during onboarding (Phase 5) and live in the **config overlay** at `~/clawd/kung-fu-config/experts/[expert-name]/`
 
 **EXPERT.md rules:**
 - Open with a professional bio: "You are a [title]. [2-3 sentence identity statement]."
@@ -82,7 +82,43 @@ Order of operations:
 
 ## Phase 5: Onboarding
 
-**Goal**: Populate `USER.md` with resolved values for all `~~` placeholders.
+**Goal**: Create the private config overlay files — `PLAYBOOK.md` and `USER.md` — for this expert.
+
+Both files live in the **config overlay** (`~/clawd/kung-fu-config/experts/[expert-name]/`), **not** in the shared repo. They are never committed to the public kung-fu repository.
+
+### 5a — Create PLAYBOOK.md (org-level config)
+
+PLAYBOOK.md is the org-level layer: company context, tools, standards, and defaults specific to the organisation. It is publishable within the org but not to the public repo.
+
+Ask the user:
+- What tools/platforms does this expert use at this org? (specific product names, not generics)
+- Are there org-specific standards or defaults? (e.g. "all financial models use SGD as base currency")
+- Are there org-specific constraints? (e.g. "all contracts must use Singapore law unless client insists otherwise")
+- What data sources are available at this org? (specific files, APIs, Slack channels, databases)
+
+Write `~/clawd/kung-fu-config/experts/[expert-name]/PLAYBOOK.md`:
+```markdown
+# PLAYBOOK.md — [Role Name] @ [Org Name]
+
+## Org context
+[Company name, industry, size, key product lines — enough for the expert to understand the business]
+
+## Tools and platforms
+[Specific products used at this org — not generic categories]
+
+## Standards and defaults
+[Org-specific rules: currency, jurisdiction, formatting, approval flows]
+
+## Data sources
+[Specific file paths, API endpoints, Slack channels, databases available at this org]
+
+## Org constraints
+[Things that are always true at this org that shape how the expert should behave]
+```
+
+### 5b — Create USER.md (personal config)
+
+USER.md resolves the `~~` placeholders from EXPERT.md into actual values for this specific user.
 
 Run a structured conversation to fill in each placeholder:
 
@@ -98,7 +134,7 @@ Also gather open-ended context:
 - Any past history or context that's relevant?
 - Constraints, preferences, or non-negotiables?
 
-Write `USER.md`:
+Write `~/clawd/kung-fu-config/experts/[expert-name]/USER.md`:
 ```markdown
 # USER.md — [Role Name]
 ## Resolved configuration
@@ -111,14 +147,19 @@ Write `USER.md`:
 [specific platforms, credentials locations, data sources]
 ```
 
-`USER.md` is NOT committed to the public repo — it stays local.
-
 ## Quality checklist
 
 Before marking the role as complete:
+
+**Shared repo (publishable):**
 - [ ] `EXPERT.md` contains zero personal data, real email addresses, company names, or specific account details
 - [ ] All user-specific items are marked with `~~` or moved to `USER.md`
 - [ ] `plugin.json` is complete with name, version, description, keywords
-- [ ] At least one `skills/` domain is populated
-- [ ] At least one `commands/` playbook is written
+- [ ] At least one `skills/` domain is populated with `SKILL.md`
+- [ ] At least three `commands/` playbooks are written to the full standard (frontmatter, input gathering, classification, output template, escalation)
 - [ ] Role could be published to ClawHub and used by anyone without modification
+
+**Config overlay (private — never committed to public repo):**
+- [ ] `~/clawd/kung-fu-config/experts/[name]/PLAYBOOK.md` created with org context, tools, standards, data sources
+- [ ] `~/clawd/kung-fu-config/experts/[name]/USER.md` created with all `~~` placeholders resolved
+- [ ] Neither file is in the shared repo or tracked by its git history
