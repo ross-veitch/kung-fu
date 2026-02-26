@@ -87,6 +87,46 @@ clawd-prj/kung-fu/experts/[expert-name]/
 
 ---
 
+## Skills vs commands
+
+The most common point of confusion. They serve completely different purposes.
+
+### Skills — passive background knowledge
+
+`skills/[domain]/SKILL.md` files are **automatically loaded** when the expert plugin is active. The agent draws on them throughout the whole conversation without you asking. Think of them as the expert's reference library, always open.
+
+A `SKILL.md` file contains: frameworks, heuristics, domain vocabulary, interpretation guides, best practices. It informs every response — passively.
+
+**Example:** `fitness-performance-coach/skills/biometrics/SKILL.md` contains the HRV interpretation framework, heart rate zone thresholds, and escalation triggers. Any time the fitness coach is active, it *knows* this — you don't invoke it.
+
+### Commands — explicit structured workflows
+
+`commands/[command].md` files are **invoked by name** (`/command-name`). They define a step-by-step SOP for a specific recurring task: what inputs to gather, how to process them, what decision framework to apply, what the output looks like.
+
+A command file contains: input gathering steps, a classification or decision framework, a specific output template, escalation triggers. It only runs when you call it.
+
+**Example:** `/interpret-biometrics` is a full workflow: gather today's HRV + sleep + RHR → process each metric against optimal ranges → classify GREEN/YELLOW/RED → output a formatted readiness report. It uses the knowledge in `skills/biometrics/` but orchestrates it into a specific deliverable.
+
+### Side by side
+
+| | Skill | Command |
+|---|---|---|
+| When active | Whole session — passive | Only when invoked |
+| How invoked | Auto-loaded with expert plugin | `/command-name` |
+| Purpose | Background knowledge that improves all responses | Structured workflow producing a specific output |
+| Format | Synthesised expertise (prose + tables) | Step-by-step procedure + output template |
+| Example | HRV interpretation framework | Run a full biometric readiness report |
+
+**The analogy:** A doctor knows pharmacology throughout every consultation (skill). When they see a patient, they follow a clinical assessment protocol (command). The command draws on the skill — but they're not the same thing.
+
+### When to write a skill vs a command
+
+**Write a skill when:** The agent needs to *know something* across all interactions in this domain — frameworks, heuristics, vocabulary, data sources.
+
+**Write a command when:** There's a recurring task with a predictable structure — specific inputs, a decision process, a specific output format. If you find yourself writing the same instructions in multiple prompts, it belongs in a command.
+
+---
+
 ## The three-layer configuration cascade
 
 Expert Plugins support three configuration layers. More specific layers override less specific ones.
