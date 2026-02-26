@@ -6,7 +6,7 @@ Why expert plugins follow the OpenClaw/Anthropic skills file structure — and w
 
 ## The question
 
-> Would our `~/clawd/experts/` file structure differ from Anthropic's plugins/skills structure, or could we/should we adopt their structure?
+> Would our `~/clawd/clawd-prj/kung-fu/experts/` file structure differ from Anthropic's plugins/skills structure, or could we/should we adopt their structure?
 
 The short answer: **adopt it**. Here's why.
 
@@ -35,7 +35,7 @@ The agent reads `SKILL.md` as a usage guide. The scripts are the implementation.
 
 ## Why expert plugins use the same structure
 
-Role packs are conceptually the same thing as skills — they're injected capability. The only difference is that skills are mostly tool-invocation guides (how to use a specific API or tool), while expert plugins are domain-knowledge guides (what to know and how to approach problems in a domain).
+Expert Plugins are conceptually the same thing as skills — they're injected capability. The only difference is that skills are mostly tool-invocation guides (how to use a specific API or tool), while expert plugins are domain-knowledge guides (what to know and how to approach problems in a domain).
 
 By aligning the file structure:
 
@@ -48,7 +48,7 @@ By aligning the file structure:
 
 ## The file convention
 
-Role packs use `EXPERT.md` instead of `SKILL.md` to make the distinction clear (this is domain knowledge, not a tool guide). The directory structure is identical:
+Expert Plugins use `EXPERT.md` instead of `SKILL.md` to make the distinction clear (this is domain knowledge, not a tool guide). The directory structure is identical:
 
 ```
 # Skill (tool guide)
@@ -56,8 +56,8 @@ Role packs use `EXPERT.md` instead of `SKILL.md` to make the distinction clear (
 ├── SKILL.md
 └── scripts/search.mjs
 
-# Role pack (domain knowledge)
-~/clawd/experts/research-analyst/
+# Expert Plugin (domain knowledge)
+~/clawd/clawd-prj/kung-fu/experts/research-analyst/
 ├── EXPERT.md
 └── scripts/           ← optional
 ```
@@ -107,7 +107,7 @@ clawhub install role-health-coach
 clawhub update role-*
 
 # Publish your own expert plugin
-clawhub publish ~/clawd/experts/my-custom-role
+clawhub publish ~/clawd/clawd-prj/kung-fu/experts/my-custom-role
 ```
 
 This means expert plugins are shareable across the OpenClaw community, just like skills.

@@ -11,7 +11,7 @@ Cron jobs run as isolated `agentTurn` sessions. They don't read workspace files 
 ```javascript
 const soul = fs.readFileSync(path.join(homedir(), 'clawd/SOUL.md'), 'utf8');
 const role = fs.readFileSync(
-  path.join(homedir(), 'clawd/experts/research-analyst/EXPERT.md'), 'utf8'
+  path.join(homedir(), 'clawd/clawd-prj/kung-fu/experts/research-analyst/EXPERT.md'), 'utf8'
 );
 
 const message = `${soul}\n\n---\n\n${role}\n\n---\n\n${taskInstructions}`;
@@ -56,7 +56,7 @@ The expert plugin contains the readiness interpretation framework, the exact out
 ```javascript
 const soul = readFileSync(join(homedir(), 'clawd/SOUL.md'), 'utf8');
 const role = readFileSync(
-  join(homedir(), 'clawd/experts/research-analyst/EXPERT.md'), 'utf8'
+  join(homedir(), 'clawd/clawd-prj/kung-fu/experts/research-analyst/EXPERT.md'), 'utf8'
 );
 
 const message = `${soul}

@@ -6,15 +6,15 @@ How to create a expert plugin that injects real domain capability — without to
 
 ## The cardinal rule
 
-**A expert plugin adds knowledge. It does not change personality.**
+**An expert plugin adds knowledge. It does not change personality.**
 
-Tone, directness, wit, relationship context — that's in `SOUL.md` and stays there. A expert plugin answers: "what should the agent *know and do differently* in this domain?" Not: "how should the agent sound?"
+Tone, directness, wit, relationship context — that's in `SOUL.md` and stays there. An expert plugin answers: "what should the agent *know and do differently* in this domain?" Not: "how should the agent sound?"
 
 If you're writing a line like "be more formal and precise" — stop. That's a personality change. Put it in `SOUL.md` if it's permanently true, or just ask the agent to adjust tone for a specific task.
 
 ---
 
-## Role pack structure
+## Expert Plugin file structure
 
 ```
 ~/clawd/clawd-prj/kung-fu/experts/[expert-name]/
@@ -187,7 +187,7 @@ The most common omission. SOPs are what turn a knowledge pack into a genuinely u
 If you're writing about how to talk to Ross, what tone to use, or how to structure responses generically — stop. That's already in `SOUL.md`.
 
 **Too long:**  
-Role packs over ~1,500 tokens add meaningful cost with diminishing returns. If you're writing more than 5–6 sections, ask whether some of it belongs in the task prompt or a dedicated SOP file instead.
+Expert Plugins over ~1,500 tokens add meaningful cost with diminishing returns. If you're writing more than 5–6 sections, ask whether some of it belongs in the task prompt or a dedicated SOP file instead.
 
 ---
 
@@ -206,7 +206,7 @@ cp -r my-role/ ~/clawd/clawd-prj/kung-fu/experts/
 # Does it still sound like itself (not a different personality)?
 
 # Unload when done
-~/clawd/scripts/load-expert.sh --unload
+~/clawd/scripts/load-expert.sh off
 ```
 
 A role that doesn't produce measurably better domain-specific output on representative tasks isn't earning its token cost. And a role that changes the agent's personality has been written wrong.

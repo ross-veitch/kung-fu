@@ -10,9 +10,13 @@ Sub-agents are isolated sessions. They don't automatically have access to `SOUL.
 
 ```
 sessions_spawn task:
-  [Contents of ~/clawd/SOUL.md]                 ← identity, personality — same agent
+  [Contents of ~/clawd/SOUL.md]                                            ← identity, personality — same agent
   ---
-  [Contents of ~/clawd/clawd-prj/kung-fu/experts/fitness-performance-coach/EXPERT.md]  ← domain knowledge
+  [Contents of ~/clawd/clawd-prj/kung-fu/experts/[expert-name]/EXPERT.md] ← domain knowledge
+  ---
+  [Contents of ~/clawd/kung-fu-config/experts/[expert-name]/PLAYBOOK.md]  ← org config (if present)
+  ---
+  [Contents of ~/clawd/kung-fu-config/experts/[expert-name]/USER.md]      ← personal config (if present)
   ---
   [Task instructions]
 ```
@@ -59,10 +63,17 @@ The agent will:
 ```javascript
 const soul = fs.readFileSync(path.join(homedir(), 'clawd/SOUL.md'), 'utf8');
 const role = fs.readFileSync(
-  path.join(homedir(), 'clawd/experts/fitness-performance-coach/EXPERT.md'), 'utf8'
+  path.join(homedir(), 'clawd/clawd-prj/kung-fu/experts/fitness-performance-coach/EXPERT.md'), 'utf8'
 );
 
-const task = `${soul}\n\n---\n\n${role}\n\n---\n\n${taskInstructions}`;
+// Load optional config overlay layers
+const overlayDir = process.env.KUNG_FU_CONFIG_DIR || path.join(homedir(), 'clawd/kung-fu-config');
+let playbook = '', user = '';
+try { playbook = fs.readFileSync(path.join(overlayDir, 'experts/fitness-performance-coach/PLAYBOOK.md'), 'utf8'); } catch {}
+try { user = fs.readFileSync(path.join(overlayDir, 'experts/fitness-performance-coach/USER.md'), 'utf8'); } catch {}
+
+const layers = [soul, role, playbook, user].filter(Boolean).join('\n\n---\n\n');
+const task = `${layers}\n\n---\n\n${taskInstructions}`;
 
 sessions_spawn({ task, model: 'sonnet', runTimeoutSeconds: 300 });
 ```
