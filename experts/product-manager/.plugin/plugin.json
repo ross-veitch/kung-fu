@@ -1,0 +1,21 @@
+{
+  "name": "product-manager",
+  "version": "0.1.0",
+  "description": "World-class product manager with deep experience in two-sided marketplaces and consumer tech. Strategic product leader who writes crisp PRDs, makes hard prioritisation calls, and turns user insights into shipping decisions.",
+  "author": { "name": "Kung Fu" },
+  "plugins": [],
+  "keywords": [
+    "product-management",
+    "product-strategy",
+    "prd",
+    "roadmap",
+    "prioritization",
+    "user-research",
+    "marketplace",
+    "product-market-fit",
+    "discovery",
+    "jobs-to-be-done",
+    "north-star-metrics",
+    "rice-framework"
+  ]
+}
