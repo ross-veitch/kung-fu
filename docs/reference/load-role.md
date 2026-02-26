@@ -1,112 +1,77 @@
 # Reference: load-expert.sh
 
-Full CLI reference for the session role loader.
+CLI reference for the expert session loader.
 
 ---
 
 ## Synopsis
 
 ```bash
-load-expert.sh [OPTIONS] [ROLE_NAME]
+bash ~/clawd/scripts/load-expert.sh <expert-name> [expert-name2 ...]
+bash ~/clawd/scripts/load-expert.sh list
+bash ~/clawd/scripts/load-expert.sh off
 ```
 
 ---
 
 ## Commands
 
-### Load a role
+### Load an expert
 
 ```bash
-load-expert.sh <role-name>
+bash ~/clawd/scripts/load-expert.sh management-consultant
 ```
 
-Reads `~/clawd/experts/<role-name>/EXPERT.md` and injects it into the active main session as a system event. `SOUL.md` is not modified.
+Reads and injects (in order):
+1. `clawd-prj/kung-fu/experts/management-consultant/EXPERT.md`
+2. All `skills/` domain files
+3. `~/clawd/kung-fu-config/experts/management-consultant/PLAYBOOK.md` (if present)
+4. `~/clawd/kung-fu-config/experts/management-consultant/USER.md` (if present)
 
-**Example:**
-```bash
-load-expert.sh health-coach
-# → Role loaded: health-coach
-# → SOUL.md unchanged
-```
+`SOUL.md` is never modified.
 
 ---
 
-### Unload (back to bare soul)
+### Load multiple experts (collaborative mode)
 
 ```bash
-load-expert.sh --unload
+bash ~/clawd/scripts/load-expert.sh longevity-human-optimization-physician software-engineer
 ```
 
-Sends a system event to drop the role context from the active session. `SOUL.md` is unchanged (it was never changed).
+Both experts are loaded and concatenated with a separator header. Each brings its domain; `SOUL.md` stays the base. Useful for channels where two domains naturally collaborate.
 
 ---
 
-### List available roles
+### List available experts
 
 ```bash
-load-expert.sh --list
+bash ~/clawd/scripts/load-expert.sh list
 ```
 
-Lists all role directories in `~/clawd/experts/`.
-
-**Example output:**
-```
-Available roles:
-    creative-writer
-    data-engineer
-    executive-assistant
-    finance-analyst
-    health-coach
-    research-analyst
-    travel-planner
-```
+Lists all expert directories in `clawd-prj/kung-fu/experts/`.
 
 ---
 
-### Preview a role
+### Unload (signal to drop expert context)
 
 ```bash
-load-expert.sh --preview <role-name>
+bash ~/clawd/scripts/load-expert.sh off
 ```
 
-Prints the `EXPERT.md` to stdout without loading. Useful for reviewing before injecting.
+Signals that expert context should be dropped. The clean way to unload is to start a new session thread — context in an active window can't truly be removed.
 
 ---
 
-### Show active role
+## Agent commands
 
-```bash
-load-expert.sh --current
+You don't need to run the script manually. Use the `/expert` command:
+
 ```
-
-Prints the name of the currently loaded role (if any). Tracked via a lightweight state file — not by inspecting session context.
-
----
-
-## Options
-
-| Option | Description |
-|--------|-------------|
-| `--list` | List all available roles |
-| `--preview <name>` | Print EXPERT.md without loading |
-| `--unload` | Unload current role |
-| `--current` | Show active role name |
-| `--no-notify` | Inject file only; don't send session notification |
-| `--roles-dir <path>` | Override roles directory (default: `~/clawd/experts/`) |
-| `--soul-file <path>` | Soul file to verify is intact (default: `~/clawd/SOUL.md`) |
-| `--help` | Print usage |
-
----
-
-## Exit codes
-
-| Code | Meaning |
-|------|---------|
-| 0 | Success |
-| 1 | Role not found |
-| 2 | Roles directory not found |
-| 3 | EXPERT.md not readable |
-| 4 | Session notification failed (injection still queued) |
+/expert management-consultant        # load for this session
+/expert management-consultant futurist   # load two collaborating experts
+/expert list                         # see all available experts
+/expert off                          # unload; back to base SOUL.md
+```
 
 ---
 
@@ -114,14 +79,37 @@ Prints the name of the currently loaded role (if any). Tracked via a lightweight
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `CLAWD_DIR` | `~/clawd` | Workspace root |
-| `CLAWD_ROLES_DIR` | `$CLAWD_DIR/roles` | Roles library location |
-| `CLAWD_SOUL_FILE` | `$CLAWD_DIR/SOUL.md` | Soul file (verified intact, never modified) |
+| `KUNG_FU_DIR` | directory containing `load-expert.sh`'s parent | Path to kung-fu repo root |
+| `KUNG_FU_CONFIG_DIR` | `~/clawd/kung-fu-config` | Path to private config overlay (PLAYBOOK.md, USER.md) |
+
+Override `KUNG_FU_CONFIG_DIR` to point at a different config directory:
+
+```bash
+KUNG_FU_CONFIG_DIR=/path/to/my-config bash ~/clawd/scripts/load-expert.sh executive-assistant
+```
+
+---
+
+## What the script outputs
+
+The script outputs the full injected context to stdout and prints status messages to stderr:
+
+```
+Expert Plugin(s) loaded: management-consultant
+─────────────────────────────────────────
+```
+
+The stdout content is what gets injected into the session. Redirect to a file to preview:
+
+```bash
+bash ~/clawd/scripts/load-expert.sh management-consultant > /tmp/expert-preview.md
+```
 
 ---
 
 ## Notes
 
-- `SOUL.md` is never modified by this script — role injection is additive, not replacement
-- Session injection is a system event — if the main session is in an isolated context, the notification may not be received immediately; start a new thread for the cleanest effect
-- State file for `--current` is stored at `~/.clawd-role-state` — delete to reset
+- **`SOUL.md` is never modified.** Injection is additive.
+- **Session-scoped.** Loaded expert context affects only the current thread. New thread = clean context (unless channel routing auto-loads).
+- **Config overlay fallback.** If `PLAYBOOK.md` / `USER.md` are not found in `KUNG_FU_CONFIG_DIR`, the script falls back to the expert directory (backwards compatible with setups that store config alongside EXPERT.md).
+- **Lazy plugin loading.** The script injects a lightweight manifest of available plugins. Full plugin content is loaded on demand via `load-plugin.sh`.

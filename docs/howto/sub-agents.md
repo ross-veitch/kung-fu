@@ -12,7 +12,7 @@ Sub-agents are isolated sessions. They don't automatically have access to `SOUL.
 sessions_spawn task:
   [Contents of ~/clawd/SOUL.md]                 ← identity, personality — same agent
   ---
-  [Contents of ~/clawd/experts/health-coach/EXPERT.md]  ← domain knowledge — specialist capability
+  [Contents of ~/clawd/clawd-prj/kung-fu/experts/fitness-performance-coach/EXPERT.md]  ← domain knowledge
   ---
   [Task instructions]
 ```
@@ -32,7 +32,7 @@ Ask the agent:
 > *"Get the travel planner to find the best SIN→DXB routing next Tuesday"*
 
 The agent will:
-1. Load `SOUL.md` and the appropriate `EXPERT.md` from `~/clawd/experts/`
+1. Load `SOUL.md` and the appropriate `EXPERT.md` from `~/clawd/clawd-prj/kung-fu/experts/`
 2. Spawn an isolated session via `sessions_spawn` with both prepended to the task
 3. Return the result to the current conversation
 
@@ -42,7 +42,7 @@ The agent will:
 
 ```bash
 # Spawn a sub-agent with soul + role injected
-~/clawd/scripts/spawn-with-expert.sh health-coach \
+~/clawd/scripts/spawn-with-expert.sh fitness-performance-coach \
   "Analyse the HRV and readiness data in ~/clawd/data/oura-week.json \
    and recommend today's training intensity"
 
@@ -59,7 +59,7 @@ The agent will:
 ```javascript
 const soul = fs.readFileSync(path.join(homedir(), 'clawd/SOUL.md'), 'utf8');
 const role = fs.readFileSync(
-  path.join(homedir(), 'clawd/experts/health-coach/EXPERT.md'), 'utf8'
+  path.join(homedir(), 'clawd/experts/fitness-performance-coach/EXPERT.md'), 'utf8'
 );
 
 const task = `${soul}\n\n---\n\n${role}\n\n---\n\n${taskInstructions}`;
@@ -93,7 +93,7 @@ Multiple specialists can run simultaneously — fully isolated:
 
 ```
 Main session (bare SOUL.md)
-├── Sub-agent A: SOUL + health-coach → training readiness
+├── Sub-agent A: SOUL + fitness-performance-coach → training readiness
 ├── Sub-agent B: SOUL + research-analyst → MENA news digest
 └── Sub-agent C: SOUL + executive-assistant → meeting prep brief
 ```

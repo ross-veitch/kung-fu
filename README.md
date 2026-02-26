@@ -24,13 +24,17 @@ An **Expert Plugin** works the same way. It injects domain expertise, proven SOP
 
 ```
 What stays constant:
-  ~/clawd/SOUL.md                                 ← identity, personality, relationship. never touched.
+  ~/clawd/SOUL.md                                             ← identity, personality, relationship. never touched.
 
 What gets injected when an Expert Plugin is loaded:
-  experts/fitness-performance-coach/EXPERT.md    ← world-class domain expertise + cognitive approach
-  experts/fitness-performance-coach/skills/      ← deep knowledge library
-  experts/fitness-performance-coach/commands/    ← step-by-step playbooks and SOPs
-  experts/fitness-performance-coach/USER.md      ← your personal config (local only)
+  clawd-prj/kung-fu/experts/fitness-performance-coach/
+    EXPERT.md              ← world-class domain expertise + cognitive approach + learning sources
+    skills/                ← deep knowledge library (auto-updated by weekly learning loop)
+    commands/              ← step-by-step playbooks and SOPs
+
+  ~/clawd/kung-fu-config/experts/fitness-performance-coach/  ← private config overlay (not in shared repo)
+    PLAYBOOK.md            ← your organisation's defaults, tools, and standards
+    USER.md                ← your personal config, generated during onboarding
 ```
 
 ---
@@ -267,6 +271,7 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 | [Expert index](docs/roles/index.md) | All available experts with domains and commands |
 | [Loading experts](docs/howto/loading.md) | Manual and automatic plugin loading |
 | [Channel routing](docs/howto/channel-routing.md) | Auto-loading experts based on Slack channel |
+| [Authoring a PLAYBOOK.md](docs/howto/authoring-playbook.md) | Writing the org-level config layer for an expert |
 | [Improving experts](docs/howto/improving-experts.md) | Manual improvement: fixing gaps, adding skills and commands |
 | [Staying current](docs/howto/staying-current.md) | Automated learning loop: live sources, weekly updates, CHANGELOG |
 | [Sub-agent integration](docs/howto/sub-agents.md) | Expert Plugins in spawned agents |

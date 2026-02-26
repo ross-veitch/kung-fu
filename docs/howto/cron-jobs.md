@@ -31,14 +31,14 @@ If 60–79, recommend moderate. If <60, recommend rest.
 Post to #clawd-prj-training.
 ```
 
-With both SOUL.md + health-coach role injected:
+With both SOUL.md + fitness-performance-coach role injected:
 
 ```
 [SOUL.md — agent identity]
 
 ---
 
-[EXPERT.md: health-coach — HRV interpretation, zone targets, SOP for readiness check-in]
+[EXPERT.md: fitness-performance-coach — HRV interpretation, zone targets, SOP for readiness check-in]
 
 ---
 
@@ -89,7 +89,7 @@ import { homedir } from 'os';
 
 export function withRole(roleName, taskMessage) {
   const soulPath = join(homedir(), 'clawd', 'SOUL.md');
-  const rolePath = join(homedir(), 'clawd', 'roles', roleName, 'EXPERT.md');
+  const rolePath = join(homedir(), 'clawd', 'clawd-prj', 'kung-fu', 'experts', roleName, 'EXPERT.md');
 
   let soul, role;
   
@@ -112,7 +112,7 @@ export function withRole(roleName, taskMessage) {
 
 // Usage:
 // import { withRole } from './role-inject.js';
-// const message = withRole('health-coach', taskInstructions);
+// const message = withRole('fitness-performance-coach', taskInstructions);
 ```
 
 ---
@@ -121,7 +121,7 @@ export function withRole(roleName, taskMessage) {
 
 ```javascript
 // Read role files at update time (not hardcoded — always read at runtime)
-const message = withRole('health-coach', existingTaskInstructions);
+const message = withRole('fitness-performance-coach', existingTaskInstructions);
 
 cron({
   action: 'update',
@@ -149,7 +149,7 @@ Role injection doesn't change model routing — that's still task-driven:
 | Task | Role | Model |
 |------|------|-------|
 | News digest (structured output) | research-analyst | sonnet |
-| Training readiness (biometric + decision) | health-coach | sonnet |
+| Training readiness (biometric + decision) | fitness-performance-coach | sonnet |
 | Deep competitive analysis | research-analyst | sonnet (opus for synthesis) |
 | Script generation | data-engineer | sonnet |
 | Calendar/email management | executive-assistant | sonnet |

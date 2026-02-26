@@ -1,12 +1,12 @@
 # Architecture
 
-How role injection works alongside your `SOUL.md`.
+How Expert Plugin injection works alongside your `SOUL.md`.
 
 ---
 
 ## The invariant: SOUL.md never changes
 
-`SOUL.md` is never touched during role loading. This is non-negotiable.
+`SOUL.md` is never touched during expert loading. This is non-negotiable.
 
 ```
 ~/clawd/SOUL.md    ← identity, personality, tone, relationship. permanent.
@@ -18,42 +18,56 @@ When OpenClaw starts a session, it reads `SOUL.md` as part of startup (via `AGEN
 
 ---
 
-## What role injection looks like
+## What injection looks like
 
-When a role is active, the expert plugin is injected into the session context *in addition to* `SOUL.md`:
+When an expert is active, the full stack is present in the session context simultaneously:
 
 ```
 Session context:
-  [SOUL.md — identity, personality, trust]       ← always present, never replaced
+  [SOUL.md — identity, personality, trust]               ← always present, never replaced
   +
-  [EXPERT.md — domain expertise, cognitive bias]   ← generic; injected when role active
+  [EXPERT.md — domain expertise, cognitive approach]     ← generic; injected when expert active
   +
-  [USER.md — personalised context for this user] ← injected if present (post-onboarding)
+  [skills/ — deep knowledge library]                     ← auto-loaded with EXPERT.md
+  +
+  [PLAYBOOK.md — org-level config]                       ← injected if present in config overlay
+  +
+  [USER.md — personalised context for this user]         ← injected if present in config overlay
 ```
 
-Same personality. New domain capability. Role is additive, never substitutive.
+Same personality. New domain capability. Injection is additive, never substitutive.
+
+**PLAYBOOK.md and USER.md** live outside the shared repo in a private config overlay (`~/clawd/kung-fu-config/`). See [The config overlay](#the-config-overlay) below.
 
 ---
 
-## Role pack file structure
+## Expert Plugin file structure
 
-Role packs follow the `anthropics/knowledge-work-plugins` convention, extended with our additions.
+Expert Plugins follow the `anthropics/knowledge-work-plugins` convention, extended with our additions.
 
 ```
-experts/[role-name]/
+clawd-prj/kung-fu/experts/[expert-name]/
 ├── .plugin/
 │   └── plugin.json        ← manifest: name, version, description, plugin dependencies
-├── EXPERT.md              ← generic: cognitive bias + role identity. NO personal/user data.
-│                           Uses ~~ placeholders for anything user-specific.
-│                           Publishable to ClawHub as-is.
-├── skills/              ← (Anthropic convention) domain knowledge files, auto-loaded
+├── EXPERT.md              ← generic: domain expertise + cognitive approach + learning sources.
+│                             NO personal or org data. Uses ~~ placeholders for user-specific values.
+│                             Publishable to ClawHub as-is.
+├── skills/                ← deep domain knowledge, auto-loaded with the expert
 │   └── [domain]/
-│       ├── SKILL.md     ← lean (< 3000 words), synthesised expertise
-│       └── references/  ← detailed content, frameworks, reference tables
-├── commands/            ← (Anthropic convention) explicit SOPs and playbooks
-│   └── [command].md     ← step-by-step procedures triggered by user request
-└── USER.md              ← user-specific: resolves ~~ placeholders, personal context.
-                            Created during onboarding. NOT generic. NOT publishable.
+│       ├── SKILL.md       ← lean (< 3000 words), synthesised expertise
+│       └── references/    ← detailed frameworks, tables, citations
+└── commands/              ← explicit SOPs and playbooks
+    └── [command].md       ← step-by-step procedure for a specific scenario
+```
+
+**PLAYBOOK.md and USER.md are NOT stored here.** They live in the private config overlay:
+
+```
+~/clawd/kung-fu-config/experts/[expert-name]/
+├── PLAYBOOK.md            ← org-level config: company standards, tools, communication defaults.
+│                             Written once per org, shared across all agents.
+└── USER.md                ← personal config: generated during onboarding.
+                              Resolves ~~ placeholders. Individual to each user.
 ```
 
 ### What lives where
@@ -168,51 +182,81 @@ The `plugins` field lists any `anthropics/knowledge-work-plugins` packs this rol
 
 ---
 
+## The config overlay
+
+Personal and org config live **outside** the shared repo in a private directory:
+
+```
+~/clawd/kung-fu-config/           ← private; stays in your own repo, never published
+├── experts/
+│   └── [expert-name]/
+│       ├── PLAYBOOK.md           ← org-level config for this expert
+│       └── USER.md               ← personal config (generated during onboarding)
+├── config/
+│   └── channel-routing.json      ← Slack channel → expert bindings
+└── data/
+    └── playbook-reviewed.json    ← tracks first-use PLAYBOOK review status
+```
+
+`load-expert.sh` checks `~/clawd/kung-fu-config/experts/[name]/` first for `PLAYBOOK.md` and `USER.md`, falling back to the expert directory for backwards compatibility. The lookup path is controlled by the `KUNG_FU_CONFIG_DIR` environment variable (default: `~/clawd/kung-fu-config`).
+
+This keeps the shared repo clean — no personal emails, company names, Slack IDs, or account credentials ever touch it.
+
+See [Authoring a PLAYBOOK.md](howto/authoring-playbook.md) for a template and guide.
+
+---
+
 ## How loading works
 
 ### Main session loading
 
-`load-expert.sh` reads `EXPERT.md` (and `USER.md` if present) and injects into the current session:
+`load-expert.sh` reads the full stack and injects into the current session:
 
 ```
-User: "Load financial analyst role"
-  └── Agent runs load-expert.sh financial-analyst
-        ├── Reads experts/financial-analyst/EXPERT.md
-        ├── Reads experts/financial-analyst/USER.md (if exists)
-        └── Injects both as system event
+bash ~/clawd/scripts/load-expert.sh management-consultant
 
-Result: SOUL.md (always present) + EXPERT.md + USER.md
+Reads (in order):
+  1. clawd-prj/kung-fu/experts/management-consultant/EXPERT.md    ← generic
+  2. clawd-prj/kung-fu/experts/management-consultant/skills/       ← domain knowledge
+  3. ~/clawd/kung-fu-config/experts/management-consultant/PLAYBOOK.md  ← org config (if present)
+  4. ~/clawd/kung-fu-config/experts/management-consultant/USER.md      ← personal config (if present)
+
+Result: SOUL.md + EXPERT.md + skills/ + PLAYBOOK.md + USER.md
         Personality unchanged. Domain capability active.
 ```
 
-To unload: start a fresh session, or signal the role context should be dropped.
+To unload: start a fresh thread. Role context is session-scoped.
 
-### Sub-agent role injection
+### Sub-agent injection
 
-When spawning a sub-agent, SOUL.md + expert plugin are both prepended to the task:
+When spawning a sub-agent, the full stack is prepended to the task:
 
 ```
 sessions_spawn task:
-  [Contents of SOUL.md]            ← sub-agent has full identity
+  [Contents of SOUL.md]        ← sub-agent has full identity
   ---
-  [Contents of EXPERT.md]            ← generic domain capability
+  [Contents of EXPERT.md]      ← generic domain capability
   ---
-  [Contents of USER.md]            ← user context if available
+  [Contents of PLAYBOOK.md]    ← org config if present
+  ---
+  [Contents of USER.md]        ← personal config if present
   ---
   [Task instructions]
 ```
 
-Sub-agents behave like the same agent with specialist knowledge — not a different persona with no history.
+Sub-agents behave like the same agent with specialist knowledge — not a different persona.
 
 ### Cron job injection
 
-Cron jobs use the same triple-injection pattern:
+Cron jobs use the same pattern:
 
 ```
 agentTurn message:
   [SOUL.md content]
   ---
   [EXPERT.md content]
+  ---
+  [PLAYBOOK.md content, if present]
   ---
   [USER.md content, if present]
   ---
@@ -253,19 +297,20 @@ Generic roles should be written as if describing the best human in that field fo
 
 ---
 
-## What a role does *not* do
+## What an Expert Plugin does *not* do
 
-| Belongs in `SOUL.md` | Belongs in `EXPERT.md` / `skills/` | Belongs in `USER.md` |
-|---------------------|----------------------------------|----------------------|
-| How the agent talks | Domain frameworks and methodology | User's name and accounts |
-| Personality traits | Role-specific SOPs | Company-specific context |
-| Communication style | Cognitive approach for this domain | Tools and credentials |
-| Trust rules | Domain vocabulary | Personal goals and history |
-| Directness, wit, brevity | Best practices, red flags | Specific data sources |
+| Belongs in `SOUL.md` | Belongs in `EXPERT.md` / `skills/` | Belongs in `PLAYBOOK.md` | Belongs in `USER.md` |
+|---------------------|----------------------------------|--------------------------|----------------------|
+| How the agent talks | Domain frameworks and methodology | Company name and tools | User's name and accounts |
+| Personality traits | Expert-specific SOPs | Org approval authorities | Personal goals and history |
+| Communication style | Cognitive approach for this domain | Risk tolerance and compliance | Personal accounts and credentials |
+| Trust rules | Domain vocabulary | Standard org positions | Individual preferences |
+| Directness, wit, brevity | Best practices, red flags | Slack channels, JIRA URLs | Timezone and working patterns |
 
 If it changes how the agent *sounds* → `SOUL.md`.
-If it changes what the agent *knows or does* in this domain → expert plugin.
-If it's specific to *this user's* setup → `USER.md`.
+If it changes what the agent *knows or does* in this domain → `EXPERT.md` / `skills/`.
+If it's specific to *this organisation* → `PLAYBOOK.md`.
+If it's specific to *this individual* → `USER.md`.
 
 ---
 
@@ -301,27 +346,51 @@ Main session              Sub-agent A                   Sub-agent B
 
 ## Full file structure
 
+**Shared repo** (`clawd-prj/kung-fu/` → `https://github.com/rossveitch/kung-fu`):
 ```
 clawd-prj/kung-fu/
-├── docs/                        ← this documentation
-│   ├── architecture.md          ← you are here
-│   ├── howto/
+├── docs/                          ← documentation
+│   ├── architecture.md            ← you are here
+│   ├── howto/                     ← how-to guides
 │   └── reference/
-├── experts/                       ← expert plugin library
-│   └── [role-name]/
+├── experts/                       ← expert plugin library (14 experts)
+│   └── [expert-name]/
 │       ├── .plugin/
-│       │   └── plugin.json        ← manifest
-│       ├── EXPERT.md              ← generic, publishable
-│       ├── skills/              ← domain knowledge
+│       │   └── plugin.json        ← manifest: name, version, dependencies
+│       ├── EXPERT.md              ← generic, publishable — domain expertise + learning sources
+│       ├── skills/                ← deep domain knowledge, auto-loaded
 │       │   └── [domain]/
-│       │       ├── SKILL.md
-│       │       └── references/
-│       ├── commands/            ← explicit SOPs
-│       │   └── [command].md
-│       └── USER.md              ← user-specific (post-onboarding, not committed)
+│       │       ├── SKILL.md       ← synthesised expertise (< 3000 words)
+│       │       └── references/    ← detailed frameworks, tables, citations
+│       └── commands/              ← explicit SOPs and playbooks
+│           └── [command].md
 ├── commands/
-│   └── create-role.md           ← guided role creation workflow
-└── scripts/
-    ├── load-expert.sh
-    └── spawn-with-expert.sh
+│   └── create-role.md             ← guided expert creation workflow
+├── scripts/
+│   ├── load-expert.sh             ← loads expert stack into session
+│   └── spawn-with-expert.sh       ← spawns sub-agent with full stack
+└── vendor/
+    ├── knowledge-work-plugins/    ← Anthropic plugins (submodule)
+    └── claude-plugins-official/   ← Claude Code plugins (submodule)
+```
+
+**Private config overlay** (`~/clawd/kung-fu-config/` — stays in your private repo):
+```
+kung-fu-config/
+├── experts/
+│   └── [expert-name]/
+│       ├── PLAYBOOK.md            ← org-level config (Wego-specific defaults, tools, standards)
+│       └── USER.md                ← personal config (generated during onboarding)
+├── config/
+│   └── channel-routing.json       ← Slack channel ID → expert name mappings
+└── data/
+    └── playbook-reviewed.json     ← tracks first-use PLAYBOOK review per expert
+```
+
+**Scripts** (installed to `~/clawd/scripts/`):
+```
+~/clawd/scripts/
+├── load-expert.sh                 ← copied from kung-fu repo; reads KUNG_FU_CONFIG_DIR for overlay
+├── spawn-with-expert.sh           ← spawns sub-agents with full stack injected
+└── staying-current.mjs            ← weekly learning loop runner
 ```

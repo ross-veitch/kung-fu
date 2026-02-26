@@ -17,7 +17,7 @@ If you're writing a line like "be more formal and precise" — stop. That's a pe
 ## Role pack structure
 
 ```
-~/clawd/experts/[practitioner-name]/
+~/clawd/clawd-prj/kung-fu/experts/[expert-name]/
 ├── EXPERT.md          ← domain expertise + personalised context + SOPs
 ├── skills/      ← how this practitioner stays current
 ├── scripts/         ← optional role-specific scripts
@@ -87,7 +87,7 @@ Domain-specific safety rails.
 
 ## Worked example: Health Coach
 
-Here's the health coach expert plugin, written correctly:
+Here's the fitness-performance-coach expert plugin, written correctly:
 
 ```markdown
 # Health Coach Role
@@ -173,7 +173,7 @@ HRV (Heart Rate Variability), VO2Max, LT (Lactate Threshold), Z1–Z5 (heart rat
 ## Common mistakes
 
 **Writing personality, not knowledge:**  
-❌ `"You are a meticulous health coach who cares deeply about evidence-based training"`  
+❌ `"You are a world-class fitness performance coach who cares deeply about evidence-based training"`  
 ✅ `"Always use 7-day HRV trend, not single-day value. Explain the pattern before the recommendation."`
 
 **Vague skills references:**  
@@ -195,7 +195,7 @@ Role packs over ~1,500 tokens add meaningful cost with diminishing returns. If y
 
 ```bash
 # Install the expert plugin
-cp -r my-role/ ~/clawd/experts/
+cp -r my-role/ ~/clawd/clawd-prj/kung-fu/experts/
 
 # Load it in the current session
 ~/clawd/scripts/load-expert.sh my-role
@@ -216,15 +216,15 @@ A role that doesn't produce measurably better domain-specific output on represen
 ## File naming
 
 ```
-~/clawd/experts/
-├── health-coach/          EXPERT.md
+~/clawd/clawd-prj/kung-fu/experts/
+├── fitness-performance-coach/   EXPERT.md
 ├── research-analyst/      EXPERT.md
 ├── executive-assistant/   EXPERT.md
 ├── travel-planner/        EXPERT.md
 └── [domain]/              EXPERT.md
 ```
 
-For custom variants: `health-coach-race-prep/`, `research-analyst-mena/`, etc.
+For custom variants: `fitness-performance-coach-race-prep/`, `research-analyst-mena/`, etc.
 
 ---
 
