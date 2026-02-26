@@ -182,19 +182,70 @@ New Expert Plugins are created through a guided 5-phase process:
 
 ## How injection works
 
-When you load an Expert Plugin, both `SOUL.md` and the expert pack are present in the session context simultaneously:
+When you load an Expert Plugin, all layers are present in the session context simultaneously:
 
 ```
-[SOUL.md]         ← always present. personality, trust, relationship, directness.
+[SOUL.md]          ← always present. personality, trust, relationship, directness.
 +
-[EXPERT.md]       ← injected. domain expertise, cognitive approach, tools.
+[EXPERT.md]        ← injected. domain expertise, cognitive approach, tools, learning sources.
 +
-[skills/]         ← injected. deep knowledge library.
+[skills/]          ← injected. deep knowledge library, auto-updated by learning loop.
 +
-[USER.md]         ← injected if present. your personal config.
+[PLAYBOOK.md]      ← injected if present. your organisation's config: tools, defaults,
+                      communication standards. Lives in your private config overlay.
++
+[USER.md]          ← injected if present. your personal config, generated during onboarding.
+                      Lives in your private config overlay.
 ```
 
-The same double-injection works for sub-agents and cron jobs — spawned agents receive both `SOUL.md` and the expert pack, so they sound like you with specialist knowledge, not like a different persona.
+The same injection works for sub-agents and cron jobs — spawned agents receive the full stack, so they sound like you with specialist knowledge, not like a different persona.
+
+See [Loading experts](docs/howto/loading.md) for how to trigger this, and [Channel routing](docs/howto/channel-routing.md) for automatic loading by Slack channel.
+
+---
+
+## How experts stay current
+
+> *"He's beginning to believe."*
+
+Expert Plugins don't become stale. Each one has a built-in **learning loop** — a set of live sources that are monitored weekly and fed back into the expert's knowledge base automatically.
+
+### The learning sources
+
+Every expert that has a learning loop defines its sources in a `<!-- SOURCES -->` block inside `EXPERT.md`. Sources are typed:
+
+| Source type | Examples |
+|-------------|---------|
+| `twitter` | Domain experts on X — curated by-expert lists |
+| `reddit` | Key subreddits per domain (r/MachineLearning, r/AdvancedRunning, r/longevity, etc.) |
+| `youtube` | Expert channels — transcripts pulled automatically via yt-dlp |
+| `podcast` | Key shows via Taddy API — transcripts pulled, key insights extracted |
+| `arxiv` | Academic papers (cs.AI, cs.LG, quantitative biology, economics, etc.) |
+| `newsletter` | Web-fetched newsletters and long-form analysis (Stratechery, Ben Evans, etc.) |
+| `web` | Domain-specific sites, conference proceedings, research portals |
+
+### How it runs
+
+```
+Weekly cron (per expert)
+    ↓
+staying-current.mjs fetches all SOURCES
+    ↓
+Claude synthesises: what's new? what changed? what should the expert now know?
+    ↓
+Findings written to experts/[name]/CHANGELOG.md
+    ↓
+Next session load picks up the updated knowledge
+```
+
+Script: `~/clawd/scripts/staying-current.mjs <expert-name> [--depth light|standard|deep]`
+Full source capability docs: [`docs/staying-current-sources.md`](docs/staying-current-sources.md)
+
+### Which experts have a learning loop
+
+Five experts currently have live learning sources configured: `news-editor`, `futurist`, `fitness-performance-coach`, `management-consultant`, `longevity-human-optimization-physician`. The remaining experts have static knowledge — add a `<!-- SOURCES -->` block to any expert to enable their learning loop.
+
+See [Staying current](docs/howto/staying-current.md) for the full guide.
 
 ---
 
@@ -216,7 +267,8 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 | [Expert index](docs/roles/index.md) | All available experts with domains and commands |
 | [Loading experts](docs/howto/loading.md) | Manual and automatic plugin loading |
 | [Channel routing](docs/howto/channel-routing.md) | Auto-loading experts based on Slack channel |
-| [Improving experts](docs/howto/improving-experts.md) | How experts learn and improve over time |
+| [Improving experts](docs/howto/improving-experts.md) | Manual improvement: fixing gaps, adding skills and commands |
+| [Staying current](docs/howto/staying-current.md) | Automated learning loop: live sources, weekly updates, CHANGELOG |
 | [Sub-agent integration](docs/howto/sub-agents.md) | Expert Plugins in spawned agents |
 | [Cron job integration](docs/howto/cron-jobs.md) | Expert Plugin injection in scheduled tasks |
 | [Creating experts](docs/howto/creating-roles.md) | Step-by-step guide to building a new expert |

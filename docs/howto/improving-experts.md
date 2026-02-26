@@ -1,20 +1,24 @@
 # Improving Experts
 
-How expert plugins learn and improve over time — and how to feed real-world experience back into them.
+How expert plugins get better over time — two tracks: manual fixes and automated learning.
 
 ---
 
-## The core idea
+## Two improvement tracks
 
-An expert plugin is not a static config file. It's a living body of knowledge. Every real use of an expert reveals gaps: a domain it didn't cover well, a command that produced a weak output, a framework it was missing, a PLAYBOOK default that didn't match how you actually work.
-
-The improvement cycle is simple:
+### Track 1 — Manual: fix what you notice
+Every real use of an expert reveals gaps. A domain it didn't cover well. A command that produced a weak output. A framework it was missing. A PLAYBOOK default that didn't match how you actually work.
 
 ```
-Use the expert → notice a gap → update the relevant file → re-load next session
+Use the expert → notice a gap → edit the relevant file → re-load next session
 ```
 
 No retraining. No fine-tuning. No infrastructure. Just editing a markdown file.
+
+### Track 2 — Automated: live learning loop
+Five experts run a weekly cron that fetches from live sources — X/Twitter, Reddit, YouTube, podcasts, arXiv, newsletters — synthesises what's new, and writes findings to `CHANGELOG.md`. The expert has current knowledge without anyone manually updating it.
+
+See **[Staying Current](staying-current.md)** for the full guide to the learning loop, source types, and cron setup.
 
 ---
 
