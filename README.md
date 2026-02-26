@@ -112,7 +112,7 @@ This is what keeps plugins generic and shareable while making the injected exper
 ```bash
 # Clone into your clawd workspace
 cd ~/clawd
-git clone https://github.com/ross-veitch/clawd clawd-prj/kung-fu
+git clone --recurse-submodules https://github.com/rossveitch/kung-fu clawd-prj/kung-fu
 
 # Install scripts
 cp clawd-prj/kung-fu/scripts/load-expert.sh ~/clawd/scripts/
@@ -122,6 +122,8 @@ chmod +x ~/clawd/scripts/load-expert.sh ~/clawd/scripts/spawn-with-expert.sh
 # Load an Expert Plugin (runs onboarding automatically if first time)
 ~/clawd/scripts/load-expert.sh fitness-performance-coach
 ```
+
+> **Personal config:** `PLAYBOOK.md` (org defaults) and `USER.md` (personal config) are **not** stored in this repo. They live in a separate config overlay directory — typically `~/clawd/kung-fu-config/`. This keeps the shared repo clean of personal and company-specific data. See [Improving Experts](docs/howto/improving-experts.md) for details.
 
 Or just ask your agent:
 > *"Load the Financial Analyst expert"*
