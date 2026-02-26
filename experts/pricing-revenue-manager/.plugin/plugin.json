@@ -1,0 +1,19 @@
+{
+  "name": "pricing-revenue-manager",
+  "version": "0.1.0",
+  "description": "Senior revenue manager with deep OTA and travel industry experience. Understands dynamic pricing, yield management, and take rate optimization from both supplier and distributor perspectives.",
+  "author": { "name": "Kung Fu" },
+  "plugins": [],
+  "keywords": [
+    "revenue-management",
+    "dynamic-pricing",
+    "yield-management",
+    "pricing-strategy",
+    "take-rate",
+    "ota",
+    "travel",
+    "revpar",
+    "elasticity",
+    "demand-forecasting"
+  ]
+}
