@@ -1,0 +1,20 @@
+{
+  "name": "travel-industry-analyst",
+  "version": "0.1.0",
+  "description": "Deep expert in travel industry structure, economics, and competitive dynamics. Covers airline distribution (GDS, NDC), hotel distribution (OTA, direct), metasearch, loyalty programmes, and macro forces reshaping the industry.",
+  "author": { "name": "Kung Fu" },
+  "plugins": [],
+  "keywords": [
+    "travel-industry",
+    "airline-distribution",
+    "gds",
+    "ndc",
+    "ota",
+    "metasearch",
+    "hotel-distribution",
+    "loyalty-programmes",
+    "travel-economics",
+    "booking-holdings",
+    "expedia-group"
+  ]
+}
