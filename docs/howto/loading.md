@@ -108,6 +108,28 @@ See [Sub-agent integration](sub-agents.md).
 
 ---
 
+## First-use onboarding
+
+The first time you load an expert without a personalised `USER.md` or `PLAYBOOK.md`, the agent automatically offers to run onboarding:
+
+> *"I notice this is your first time loading the [expert] — I don't have your personal context yet. Want to run the 5–10 minute onboarding now?"*
+
+**Trigger it manually at any time:**
+```
+/onboard
+```
+or ask: *"Run the [expert-name] onboarding"*
+
+The onboarding asks questions one at a time, then writes:
+- `~/clawd/kung-fu-config/experts/[name]/USER.md` — your personal config (tools, goals, context)
+- `~/clawd/kung-fu-config/experts/[name]/PLAYBOOK.md` — your org config (company, standards, defaults)
+
+Both are loaded automatically on every subsequent load of that expert. Run onboarding again any time your context changes significantly (new job, new tools, new goals).
+
+See [Getting started](getting-started.md) for a walkthrough of the full onboarding flow.
+
+---
+
 ## Transparency badge
 
 The first response in a session with an expert loaded includes a transparency footer:
