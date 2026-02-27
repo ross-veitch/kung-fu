@@ -80,10 +80,52 @@ Adult Mandarin acquisition: tones, pinyin, comprehensible input methodology. Cov
 
 ---
 
+### Growth Marketer
+**Path**: `experts/growth-marketer/`
+Full-funnel growth across paid acquisition, SEO, CRO, lifecycle marketing, and experimentation. Fluent in attribution, incrementality testing, and CAC/LTV optimisation. Works across channels: Google, Meta, TikTok, email, push, referral.
+**Commands**: `/growth-audit`, `/campaign-plan`, `/seo-brief`, `/experiment-design`, `/retention-plan`
+
+---
+
+### Investment Banker
+**Path**: `experts/investment-banker/`
+M&A advisory, capital raises, and deal structuring. Deep in valuation (DCF, comps, LBO), transaction process (pitchbooks, data rooms, IC memos), and term sheet negotiation. Both buy-side and sell-side.
+**Commands**: `/valuation`, `/pitch-book`, `/deal-brief`, `/due-diligence-checklist`, `/term-sheet-review`
+
+---
+
 ### News Editor
 **Path**: `experts/news-editor/`
 Senior editorial judgment. Story significance vs noise, source evaluation, briefing construction. Multi-beat coverage: geopolitics, tech/AI, business/markets, aviation/travel/MENA.
 **Commands**: `/morning-digest`, `/source-check`, `/story-brief`
+
+---
+
+### MENA Market Specialist
+**Path**: `experts/mena-market-specialist/`
+Deep expertise on Saudi Arabia, UAE, Egypt, Jordan, and GCC regional dynamics. Vision 2030 intelligence, business culture (wasta, relationship-first deal-making), regulatory requirements, and market entry strategy across MENA.
+**Commands**: `/market-brief`, `/regulatory-check`, `/partnership-context`, `/competitive-landscape`, `/market-entry`
+
+---
+
+### People Partner
+**Path**: `experts/people-partner/`
+Strategic HR for tech companies. Org design, talent management, performance review cycles, compensation benchmarking, headcount planning, and multi-jurisdiction employment law (Singapore, UAE, Saudi, India). Knows when to involve legal and how to have difficult conversations.
+**Commands**: `/performance-review`, `/org-design`, `/headcount-plan`, `/difficult-conversation`, `/comp-benchmarking`, `/engagement-survey`
+
+---
+
+### Pricing & Revenue Manager
+**Path**: `experts/pricing-revenue-manager/`
+Dynamic pricing, yield management, and revenue optimisation across OTA, hotel, and airline contexts. Deep in take rate strategy, demand forecasting, booking curves, and competitive rate analysis. Works with data-first methodology.
+**Commands**: `/pricing-analysis`, `/take-rate-review`, `/yield-brief`, `/demand-forecast`, `/competitive-pricing-brief`
+
+---
+
+### Product Manager
+**Path**: `experts/product-manager/`
+Outcome-driven product management. Jobs-to-be-done, opportunity solution trees, discovery before build, rigorous PRDs, ruthless prioritisation, and metrics fluency. Strong on marketplace and consumer product patterns.
+**Commands**: `/write-prd`, `/prioritize`, `/roadmap`, `/discovery-plan`, `/metrics-review`
 
 ---
 
@@ -105,6 +147,13 @@ Full-stack architecture, health data platforms, SDLC, code review, production re
 **Path**: `experts/travel-concierge/`
 High-touch travel planning. Points/miles strategy, routing optimisation, hotel loyalty, visa/logistics, end-to-end itinerary design. Anticipatory, not reactive. Strong SIN↔DXB corridor knowledge.
 **Commands**: `/hotel-shortlist`, `/plan-trip`, `/points-optimize`, `/visa-check`
+
+---
+
+### Travel Industry Analyst
+**Path**: `experts/travel-industry-analyst/`
+Structural analysis of the travel industry. OTA economics (Booking Holdings, Expedia, Airbnb, Trip.com), airline distribution (GDS, NDC), hotel distribution, metasearch, and competitive dynamics. Fluent in earnings calls, STR/OAG/IATA data, and market sizing.
+**Commands**: `/distribution-audit`, `/market-entry`, `/competitive-move`, `/earnings-brief`, `/market-sizing`
 
 ---
 

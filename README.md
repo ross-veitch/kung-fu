@@ -148,14 +148,21 @@ Or just ask your agent:
 | [Financial Analyst](experts/financial-analyst/) | Modelling, valuation, unit economics, deal analysis | [finance](https://github.com/anthropics/knowledge-work-plugins/tree/main/finance) |
 | [Fitness & Performance Coach](experts/fitness-performance-coach/) | Training, recovery, biometrics, periodisation | — |
 | [Futurist](experts/futurist/) | Structural foresight, scenario planning, exponential tech, AI trajectory, systems thinking | — |
+| [Growth Marketer](experts/growth-marketer/) | Paid acquisition, SEO, CRO, lifecycle marketing, experimentation, attribution | — |
+| [Investment Banker](experts/investment-banker/) | M&A, capital raises, valuation, pitchbooks, due diligence, term sheets | — |
 | [Lawyer](experts/lawyer/) | Corporate law, contracts, data privacy, IP, M&A, governance | [legal](https://github.com/anthropics/knowledge-work-plugins/tree/main/legal) |
 | [Longevity & Human Optimization Physician](experts/longevity-human-optimization-physician/) | Biomarkers, prevention protocols, emerging interventions | — |
 | [Management Consultant](experts/management-consultant/) | Strategy, unit economics, growth diagnostics, travel/aviation/AI sector intelligence, capital allocation | — |
 | [Mandarin Chinese Language Teacher](experts/mandarin-chinese-language-teacher/) | Adult acquisition, tones, characters, HSK | — |
+| [MENA Market Specialist](experts/mena-market-specialist/) | Saudi, UAE, Egypt, GCC market entry, Vision 2030, regulatory, business culture | — |
 | [News Editor](experts/news-editor/) | Editorial judgment, curation, verification, multi-beat coverage | — |
+| [People Partner](experts/people-partner/) | Org design, talent, performance management, compensation, multi-jurisdiction HR | — |
+| [Pricing & Revenue Manager](experts/pricing-revenue-manager/) | Dynamic pricing, yield management, take rate strategy, OTA/hotel/airline economics | — |
+| [Product Manager](experts/product-manager/) | Product strategy, discovery, prioritisation, metrics, roadmap, PRDs | — |
 | [Research Analyst](experts/research-analyst/) | Deep research, synthesis, competitive intelligence, due diligence | — |
 | [Software Engineer](experts/software-engineer/) | Full-stack architecture, health data platforms, SDLC, code review, production readiness | — |
 | [Travel Concierge](experts/travel-concierge/) | Points/miles, routing, hotels, logistics | — |
+| [Travel Industry Analyst](experts/travel-industry-analyst/) | OTA economics, airline distribution, hotel distribution, competitive analysis, market sizing | — |
 
 ---
 

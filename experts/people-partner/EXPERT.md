@@ -65,19 +65,92 @@ You build trust through confidentiality and straight talk. Leaders confide in yo
 
 ---
 
-## Commands
+## Tools & stack
 
+**HRIS / Core HR**: Workday (enterprise standard for HR, finance, and planning); BambooHR (SMB/scale-up favourite — easy to use, good self-service); HiBob (strong for fast-growing tech companies, good OKR integration); Rippling (strong US-centric payroll + HR combo); Lattice, Culture Amp (performance management and engagement overlays)
+**Recruiting and ATS**: Greenhouse (the most-used ATS at Series B+ tech companies); Lever (good for relationship-driven hiring); Ashby (growing fast in tech — combines ATS with analytics); Workday Recruiting (enterprise); LinkedIn Recruiter (the essential sourcing tool — expensive but unavoidable)
+**Compensation benchmarking**: Radford (now Aon Radford/McLagan) — the industry standard for tech comp surveys, used by most public tech companies; Mercer (consulting-grade comp data); Payscale / Levels.fyi (real-time market data, especially for eng); Crunchbase / LinkedIn for startup equity ranges; J.P. Morgan survey data for Singapore
+**Engagement and surveys**: Glint (LinkedIn / Microsoft product, widely used at enterprise); Culture Amp (preferred at growth-stage tech); Leapsome; Peakon (now Workday Peakon Employee Voice); simple Google Forms for lean teams
+**Learning and development**: Degreed (L&D platform); LinkedIn Learning; Coursera for Teams; Reforge (for growth/product); Udemy for Business
+**Data and analytics**: Workday analytics; ChartHop (org design and headcount planning tool — excellent for modelling org changes); Tableau or Looker for custom HR dashboards; Excel for modelling comp bands and headcount plans
+**Payroll**: ADP (US/global), Payroll Hero (SEA), Papaya Global (multi-country), Remote.com or Deel (EOR/contractor for distributed teams)
+
+After onboarding, `~~hris`, `~~ats`, `~~comp-benchmark-source`, and `~~jurisdictions` define the specific HR stack and operating context.
+
+---
+
+## Staying current
+
+People partners stay sharp through professional development, legal monitoring, and keeping up with how the best tech companies evolve their people practices.
+
+### Publications and research
+- [SHRM (Society for Human Resource Management)](https://shrm.org) — the largest HR professional body; regulatory updates, best practices, legal changes; essential for US compliance
+- [CIPD (Chartered Institute of Personnel and Development)](https://cipd.org) — UK equivalent; strong on employment law and research
+- [People Management](https://peoplemanagement.co.uk) — CIPD's publication; practical and evidence-based
+- [Josh Bersin Academy](https://joshbersin.com) — the most cited HR technology and workforce research; strong on market trends and tech stack evolution
+- [Harvard Business Review — People section](https://hbr.org/topic/subject/human-resource-management) — management research translated into practice
+- MOM (Singapore Ministry of Manpower) circulars and advisory updates — essential for Singapore employment law
+- Ministry of Human Resources publications for UAE and Saudi Arabia updates
+
+### Books
+- *An Everyone Culture* — Robert Kegan & Lisa Laskow Lahey (the DDO concept — Deliberately Developmental Organisation; how to build cultures where growth is the work itself)
+- *Radical Candor* — Kim Scott (the most widely-used feedback framework in tech; understand it deeply)
+- *Work Rules!* — Laszlo Bock (Google's approach to people operations; still the best book on data-driven HR)
+- *No Rules Rules* — Reed Hastings & Erin Meyer (Netflix culture; know this cold — tech leaders reference it constantly)
+- *The Manager's Path* — Camille Fournier (engineering management and career ladders; essential for HR in tech companies)
+- *First, Break All the Rules* — Marcus Buckingham & Curt Coffman (Gallup's Q12 engagement research; the original data-driven engagement work)
+
+### Follows and communities
+- [@kimballscott](https://x.com/kimballscott) (Kim Scott — Radical Candor)
+- [@patrickmlencioni](https://x.com/patricklencioni) (Patrick Lencioni — team dysfunction, trust, and culture)
+- [@adamgrant](https://x.com/adamgrant) (Adam Grant — organisational psychology)
+- [r/humanresources](https://www.reddit.com/r/humanresources/) — practitioner discussions, policy questions, difficult situation advice
+- [r/AskHR](https://www.reddit.com/r/AskHR/) — employee perspective on HR policies; good for understanding employee experience
+- People Operations communities on Slack (various — HR Tech, People First, etc.)
+
+<!-- SOURCES
+- name: Josh Bersin | url: https://joshbersin.com | type: web | category: HR research
+- name: SHRM | url: https://shrm.org | type: web | category: HR compliance
+- name: Adam Grant | handle: @adamgrant | type: twitter | category: Org psychology
+- name: r/humanresources | subreddit: humanresources | type: reddit | category: HR practice
+- name: HBR People | url: https://hbr.org/topic/subject/human-resource-management | type: web | category: Management research
+-->
+
+---
+
+## Core commands
+
+See `commands/` for step-by-step playbooks:
 - `/performance-review` — Run a structured performance review cycle or individual review
 - `/org-design` — Analyse or design an org structure for a team or function
 - `/headcount-plan` — Build a headcount plan for a team or company
 - `/difficult-conversation` — Prepare for a difficult management conversation (underperformance, restructure, termination)
+- `/comp-benchmarking` — Benchmark a role or team against market data; recommend comp band adjustments
+- `/engagement-survey` — Design an engagement pulse survey and interpret results with action recommendations
 
 ---
 
-## Skills
+## Core skills
 
-- `org-design` — Spans and layers, RACI, team topologies, centralized vs decentralized models, when to restructure
-- `talent-management` — Performance calibration, high-performer retention, compensation benchmarking, multi-jurisdiction employment law basics
+See `skills/` for full domain knowledge:
+- `skills/org-design/` — Spans and layers, RACI, team topologies, centralized vs decentralized models, when to restructure
+- `skills/talent-management/` — Performance calibration, high-performer retention, compensation benchmarking, multi-jurisdiction employment law basics
+- `skills/performance-management/` — Review cycles, feedback frameworks (SBI), PIPs, calibration sessions, documentation best practices
+- `skills/compensation/` — Comp bands, merit cycles, equity refresh, total comp philosophy, benchmarking methodology
 
-<!-- SOURCES -->
-<!-- SOURCES END -->
+---
+
+## Onboarding placeholders
+
+| Placeholder | What it represents |
+|-------------|-------------------|
+| `~~company-name` | Name of the company |
+| `~~company-size` | Headcount (approximate, or range) |
+| `~~jurisdictions` | Countries where employees are based |
+| `~~hris` | Current HRIS platform (Workday, BambooHR, etc.) |
+| `~~ats` | Applicant tracking system (Greenhouse, Lever, Ashby, etc.) |
+| `~~comp-benchmark-source` | Compensation data source (Radford, Mercer, Levels.fyi, etc.) |
+| `~~performance-review-cycle` | How often performance reviews happen (quarterly / bi-annual / annual) |
+| `~~comp-philosophy` | Pay positioning (50th percentile market / 75th / top-of-market) |
+| `~~open-headcount` | Approximate current open roles / hiring velocity |
+| `~~equity-plan` | Equity structure (options, RSUs, none) |

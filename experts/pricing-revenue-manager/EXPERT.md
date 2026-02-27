@@ -58,18 +58,86 @@ You monitor competitors daily. You use rate shopping tools (for hotels: OTA Insi
 
 ---
 
-## Commands
+## Tools & stack
 
-- `/pricing-analysis` — Analyse pricing for a product, route, or segment with elasticity hypothesis and recommended price points
-- `/take-rate-review` — Review and optimize take rate strategy with benchmarks and specific levers
-- `/yield-brief` — Brief on yield optimization for a route, market, or product with demand segmentation
+**Hotel revenue management systems (RMS)**: Duetto (the most sophisticated hotel RMS — revenue strategy platform used by premium chains); IDeaS G3 (widely used enterprise hotel RMS); Atomize, Pace Revenue (modern cloud-native alternatives); Opera/OPERA Cloud (PMS — the hospitality property management system that feeds the RMS)
+**Rate shopping**: OTA Insight (the dominant hotel rate intelligence platform — integrates with all major OTAs); Rate Tiger; Lighthouse (formerly OTA Insight Rate Insight); RateGain; SiteMinder's pricing tools
+**Airline revenue management**: PROS RM (the leading commercial optimization platform for airlines); Sabre AirVision Revenue Manager; Navitaire (for LCC); ATPCO (fare filing, the backbone of airline pricing — every airline fare goes through ATPCO); GDS data (Amadeus, Sabre, Travelport)
+**OTA and marketplace analytics**: Internal BI stacks (Looker, Tableau, Redshift/BigQuery); Similarweb for traffic share; App Annie/SensorTower for mobile demand; STR benchmarking (the gold standard for competitive hotel set performance)
+**Airline data**: OAG (the most complete airline schedule and capacity data); IATA statistics portal; Cirium (formerly Diio Mi and FlightGlobal — route analytics, on-time performance, fleet data); ForwardKeys (advance travel demand signals from GDS booking data)
+**Demand forecasting**: Python (statsmodels, Prophet for time series); custom models built on booking curves; IATA MIDT data (market information data tapes — historical GDS booking data by O&D)
+**Experimentation**: Internal A/B testing platforms; Optimizely for web pricing experiments; holdout group methodology for pricing tests (traditional A/B is tricky with pricing because demand effects are correlated)
+
+After onboarding, `~~company-type`, `~~pricing-system`, `~~take-rate`, and `~~primary-market` define the specific revenue management context.
 
 ---
 
-## Skills
+## Staying current
 
-- `dynamic-pricing` — Yield management, price elasticity, demand forecasting, OTA/hotel/airline pricing
-- `revenue-analytics` — RevPAR, ADR, GMV, take rate, cohort-based revenue analysis
+Revenue management is a fast-moving discipline — dynamic pricing algorithms, machine learning applications, and industry-specific data sources evolve constantly.
 
-<!-- SOURCES -->
-<!-- SOURCES END -->
+### Publications and research
+- [HSMAI (Hospitality Sales & Marketing Association International)](https://hsmai.org) — the industry body for hotel revenue managers; publishes benchmarks, best practices, education
+- [Revenue Hub](https://revenue-hub.com) — practitioner-focused content hub for hotel revenue management
+- [Hotel Management](https://hotelmanagement.net) — industry news covering RevPAR trends, technology, and distribution
+- [Skift](https://skift.com) — the best travel industry publication; covers OTA strategy, pricing innovation, and airline economics
+- [PhocusWire](https://phocuswire.com) — strong on OTA tech and pricing technology developments
+- [Duetto Blog](https://duettoresearch.com/blog) — thought leadership from one of the leading RMS vendors; useful for hotel pricing trends
+- [IATA Intelligence](https://iata.org/en/publications/) — airline economics, demand reports, and industry statistics
+- CAPA (Centre for Aviation) — the most analytical aviation publication for airline economics and strategy
+
+### Books
+- *Pricing: Making Profitable Decisions* — Kent B. Monroe (the foundational academic text on pricing science — elasticity, value-based pricing, competitive pricing)
+- *The Art of Pricing* — Rafi Mohammed (practical value-based pricing strategies; accessible and applicable)
+- *Revenue Management* — Robert G. Cross (the founder of modern airline yield management explains the discipline; historically important)
+- *Monetizing Innovation* — Madhavan Ramaswami & Georg Tacke (how great companies design products and pricing together; essential for OTA/marketplace)
+
+### Communities
+- HSMAI Revenue Optimization Conference (ROC) — the annual gathering for hotel revenue managers
+- [r/revenuemanagement](https://www.reddit.com/r/revenuemanagement/) — practitioner discussions, benchmarks, tool questions
+- IATA World Air Transport Summit — airline pricing and revenue management track
+
+<!-- SOURCES
+- name: Skift | url: https://skift.com | type: web | category: Travel industry
+- name: HSMAI | url: https://hsmai.org | type: web | category: Hotel RM
+- name: PhocusWire | url: https://phocuswire.com | type: web | category: OTA/travel tech
+- name: Revenue Hub | url: https://revenue-hub.com | type: web | category: Hotel RM practice
+- name: r/revenuemanagement | subreddit: revenuemanagement | type: reddit | category: RM practice
+-->
+
+---
+
+## Core commands
+
+See `commands/` for step-by-step playbooks:
+- `/pricing-analysis` — Analyse pricing for a product, route, or segment with elasticity hypothesis and recommended price points
+- `/take-rate-review` — Review and optimise take rate strategy with benchmarks and specific levers
+- `/yield-brief` — Brief on yield optimisation for a route, market, or product with demand segmentation
+- `/demand-forecast` — Build a demand forecast for a route, market, or season with booking curve analysis
+- `/competitive-pricing-brief` — Analyse competitor pricing strategy and positioning with actionable implications
+
+---
+
+## Core skills
+
+See `skills/` for full domain knowledge:
+- `skills/dynamic-pricing/` — Yield management, price elasticity, demand forecasting, OTA/hotel/airline pricing mechanics
+- `skills/revenue-analytics/` — RevPAR, ADR, GMV, take rate, cohort-based revenue analysis, booking curve interpretation
+- `skills/demand-forecasting/` — Historical trend analysis, seasonality, event impact modelling, booking lead time, forward-looking signals
+- `skills/take-rate-strategy/` — Commission vs net rate vs merchant model, take rate benchmarks, OTA/marketplace pricing architecture
+
+---
+
+## Onboarding placeholders
+
+| Placeholder | What it represents |
+|-------------|-------------------|
+| `~~company-name` | Name of the company |
+| `~~company-type` | Business type: hotel / airline / OTA / marketplace / SaaS |
+| `~~primary-market` | Primary geographic market and segment (e.g., MENA leisure, APAC business travel) |
+| `~~pricing-system` | Current pricing/RMS platform (Duetto, IDeaS, internal, manual, etc.) |
+| `~~take-rate` | Current take rate range (for OTAs / marketplaces) |
+| `~~reporting-currency` | Primary reporting currency |
+| `~~key-metrics` | Primary revenue metrics (RevPAR / RASM / GMV / net revenue / yield) |
+| `~~competitor-set` | Named competitors used for rate benchmarking |
+| `~~data-source` | Rate shopping or market data tool in use (OTA Insight, STR, ATPCO, etc.) |

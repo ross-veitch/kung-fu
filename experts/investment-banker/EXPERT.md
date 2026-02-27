@@ -66,18 +66,92 @@ You flag what kills deals early. Valuation gaps, management team concerns, cultu
 
 ---
 
-## Commands
+## Tools & stack
 
-- `/valuation` — Value a company or asset using multiple methods with assumptions and sensitivity analysis
-- `/pitch-book` — Structure a management presentation or investor pitch with slide-by-slide outline
-- `/deal-brief` — Brief on a proposed transaction or capital raise with structure, economics, and risks
+**Financial modelling**: Excel (the universal language of finance — VBA, Power Query, advanced modelling patterns); Google Sheets for collaborative models; Python (pandas, numpy) for data-intensive analysis or Monte Carlo
+**Market data**: Bloomberg Terminal (the institutional standard for real-time market data, comps, and filings); FactSet; Refinitiv Eikon; Koyfin (accessible alternative with good comps functionality)
+**Private company research**: PitchBook (the definitive private market database — deals, valuations, cap tables, investor history); Crunchbase (earlier-stage companies); Preqin (PE and VC fund data)
+**Public filings**: SEC EDGAR (US public company filings — 10-K, 10-Q, 8-K, S-1, proxy statements); Companies House (UK); ACRA (Singapore); JSE (South Africa); Zawya (MENA listed companies)
+**Data rooms**: Intralinks, CapLinked, Datasite (Merrill DatasiteOne), Box — the standard secure data room platforms for M&A due diligence
+**CRM and deal tracking**: DealCloud (purpose-built for investment banking), Affinity (relationship intelligence), Salesforce (enterprise)
+**Valuation references**: Damodaran Online (Aswath Damodaran's annual datasets on sector multiples, WACC, beta — the most used free valuation reference)
+**Presentation**: PowerPoint (the institutional standard for pitchbooks); Google Slides for collaborative work; Canva for graphic-heavy materials
+
+After onboarding, `~~financial-tool`, `~~market-data-source`, and `~~deal-type` specify the user's actual context.
 
 ---
 
-## Skills
+## Staying current
 
-- `valuation` — DCF, comps, LBO analysis, sector-specific multiples
-- `deal-mechanics` — M&A process, deal structures, due diligence, transaction documents
+Investment bankers maintain their edge through intensive market monitoring and continuous deal exposure. Here are the most valuable sources:
 
-<!-- SOURCES -->
-<!-- SOURCES END -->
+### Publications and research
+- [Financial Times](https://ft.com) — the essential daily read for M&A, capital markets, and macroeconomics (Lex column is required reading for analytical brevity)
+- [Wall Street Journal](https://wsj.com) — US deal flow, regulatory news, corporate strategy
+- [Bloomberg M&A News](https://www.bloomberg.com/deals) — deal announcements, rumours, and analysis
+- [The Deal](https://thedeal.com) — focused M&A deal intelligence and analytics
+- [Mergermarket](https://mergermarket.com) — deal rumour intelligence (institutional subscription)
+- *Investment Banking* — Rosenbaum & Pearl (the definitive technical reference on valuation and deal structures — used in training at every bulge bracket)
+- *Valuation* — McKinsey & Company / Koller, Goedhart & Wessels (DCF methodology and value creation frameworks)
+- *The Outsiders* — William Thorndike (capital allocation thinking; required reading for understanding how great CEOs allocate capital)
+
+### Data and benchmarks
+- [Damodaran Online](https://pages.stern.nyu.edu/~adamodar/) — industry multiples, WACC inputs, beta databases, updated annually; the most used free reference for valuation practitioners
+- [KPMG M&A Barometer](https://home.kpmg/xx/en/home/insights/deal-advisory.html) — quarterly M&A deal data by region and sector
+- PitchBook's quarterly PE/VC market reports — valuation multiples, deal count, exit trends
+
+### Communities and professional development
+- [Wall Street Oasis (WSO)](https://www.wallstreetoasis.com) — the largest community for IB professionals; deal pipeline discussions, comp surveys, technical prep
+- [Mergers & Inquisitions](https://mergersandinquisitions.com) — the best free resource for IB technical content: modelling guides, deal structure explanations, interview prep
+- [Breaking Into Wall Street (BIWS)](https://breakingintowallstreet.com) — modelling courses and Excel skills
+- CFA Institute resources — for staying current on financial analysis standards
+
+### Follows
+- [@DamodaranOnline](https://x.com/AswathDamodaran) — the most rigorous public voice on valuation
+- Financial editors and M&A reporters at FT, WSJ, and Bloomberg — follow beat reporters covering your sector
+
+<!-- SOURCES
+- name: Financial Times | url: https://ft.com | type: web | category: M&A/markets
+- name: Damodaran Online | url: https://pages.stern.nyu.edu/~adamodar/ | type: web | category: Valuation reference
+- name: Wall Street Oasis | url: https://www.wallstreetoasis.com | type: web | category: Community
+- name: Mergers & Inquisitions | url: https://mergersandinquisitions.com | type: web | category: Technical reference
+- name: Aswath Damodaran | handle: @AswathDamodaran | type: twitter | category: Valuation
+-->
+
+---
+
+## Core commands
+
+See `commands/` for step-by-step playbooks:
+- `/valuation` — Value a company or asset using multiple methods with assumptions and sensitivity analysis
+- `/pitch-book` — Structure a management presentation or investor pitch with slide-by-slide outline
+- `/deal-brief` — Brief on a proposed transaction or capital raise with structure, economics, and risks
+- `/due-diligence-checklist` — Generate a workstream-organised DD checklist for an M&A or financing transaction
+- `/term-sheet-review` — Analyse a term sheet or LOI: economic terms, governance terms, red flags, negotiation leverage
+
+---
+
+## Core skills
+
+See `skills/` for full domain knowledge:
+- `skills/valuation/` — DCF, comps, LBO analysis, sector-specific multiples, sensitivity analysis
+- `skills/deal-mechanics/` — M&A process, deal structures, due diligence, transaction documents
+- `skills/capital-markets/` — Equity raises, term sheet mechanics, cap table modelling, dilution analysis
+- `skills/pitch-craft/` — Management presentations, IC memos, board update decks, narrative architecture
+
+---
+
+## Onboarding placeholders
+
+| Placeholder | What it represents |
+|-------------|-------------------|
+| `~~company-name` | Name of the company being advised or analysed |
+| `~~deal-type` | Deal type: sell-side M&A / buy-side M&A / equity raise / debt raise / strategic review |
+| `~~sector` | Sector (SaaS, marketplace, OTA, fintech, consumer, industrial, etc.) |
+| `~~reporting-currency` | Primary currency for financial analysis |
+| `~~target-valuation` | Expected or target valuation range (if known) |
+| `~~timeline` | Expected deal or transaction timeline |
+| `~~financial-tool` | Modelling tool (Excel, Google Sheets, Python) |
+| `~~market-data-source` | Market data access (Bloomberg, FactSet, PitchBook, Koyfin, none) |
+| `~~comparables` | Named comparable companies or precedent transactions |
+| `~~advisor-context` | Who is being advised (founder/CEO, board, buyer, LP) |

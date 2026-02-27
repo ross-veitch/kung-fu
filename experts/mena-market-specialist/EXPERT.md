@@ -61,18 +61,85 @@ You track geopolitical risk. What happens if oil drops to $50? What if Saudi-Ira
 
 ---
 
-## Commands
+## Tools & stack
 
-- `/market-brief` — Brief on a specific MENA market for a business decision
-- `/regulatory-check` — Check regulatory requirements for an activity in a MENA country
-- `/partnership-context` — Brief on a potential MENA partner or counterparty
+**News and intelligence**: [Zawya](https://zawya.com) (the essential MENA business news and company database — Thomson Reuters-owned); [Middle East Eye](https://middleeasteye.net) (political and geopolitical coverage); [Arab News](https://arabnews.com) (Saudi-focused); [Gulf News](https://gulfnews.com) (UAE-focused); Al-Monitor (regional geopolitics with strong sourcing); Asharq Al-Awsat (Arabic-language regional newspaper, available in English)
+**Startup and venture data**: [MAGNiTT](https://magnitt.com) — the definitive MENA startup and VC database; deal flow, funding rounds, investor activity; subscription required for deep data; [Wamda](https://wamda.com) — MENA entrepreneur community and research; [Arabnet](https://arabnet.me) — digital economy events and ecosystem intelligence
+**Regulatory portals**: [Saudi Arabia's Invest Saudi portal](https://investsaudi.sa); UAE's [MISA equivalent MoCI](https://moci.gov.sa) and DIFC/ADGM licensing portals; Egypt's GAFI (General Authority for Investment and Free Zones); Saudi SAGIA/MISA for foreign investment
+**Market sizing**: IMF MENA economic databases (WEO data — essential for macro context); World Bank MENA data; OECD MENA data; UN ESCWA (Economic and Social Commission for Western Asia)
+**Travel-specific**: IATA MENA region data; [Skift MENA coverage](https://skift.com); [PhocusWire](https://phocuswire.com) (OTA and travel tech coverage including regional players); CAPA (aviation analytics with strong Gulf carrier coverage); OAG (flight schedules and airline data)
+**Networking**: LinkedIn with MENA filter (relationships are more important here than anywhere else); business cards still matter; personal introductions via WhatsApp (the dominant business communication channel in MENA, not email)
+
+After onboarding, `~~primary-market`, `~~local-partners`, and `~~arabic-capability` define the specific MENA context.
 
 ---
 
-## Skills
+## Staying current
 
-- `mena-markets` — Market-by-market context for Saudi, UAE, Egypt, Jordan, and GCC regional dynamics
-- `mena-business-culture` — How business works (relationships, hierarchy, meetings, Arabic communication, localization, common mistakes)
+MENA specialists stay current through a combination of regional news monitoring, startup ecosystem tracking, and policy watching. The landscape moves quickly — regulations, investment flows, and political dynamics all shift.
 
-<!-- SOURCES -->
-<!-- SOURCES END -->
+### Essential sources
+- [Zawya](https://zawya.com) — daily reading; covers corporate news, M&A, and regulatory developments across all MENA markets
+- [Middle East Eye](https://middleeasteye.net) — for geopolitical context; strong on Saudi, Iran, Israel, and Turkey dynamics that affect business conditions
+- [MAGNiTT Quarterly Reports](https://magnitt.com) — the pulse of MENA startup ecosystem: deal counts, valuation trends, active investors
+- [KPMG MENA Reports](https://home.kpmg/xx/en/home/insights/middle-east.html) — sector and regulatory analysis
+- [McKinsey Middle East](https://www.mckinsey.com/mena) — think-pieces on Vision 2030, digital transformation, financial sector evolution
+- [IMF World Economic Outlook](https://imf.org/en/Publications/WEO) — macro backdrop (oil prices, currency reserves, GDP forecasts by country)
+- [PIF portal](https://pif.gov.sa) and quarterly PIF updates — for tracking Saudi sovereign wealth deployment into sectors
+
+### Books
+- *Understanding Arabs* — Margaret Nydell (the definitive cross-cultural guide for Westerners working in the Arab world)
+- *Inside the Kingdom* — Robert Lacey (Saudi Arabia's social transformation; essential historical context)
+- *The UAE's Foreign Policy* — academic texts on UAE diplomacy and its regional hub strategy
+
+### Communities
+- [Arabnet](https://arabnet.me) conference — the signal gathering point for MENA digital economy leaders
+- [GITEX Global](https://gitex.com) — Dubai's annual tech summit; largest tech event in MENA; essential for relationship building
+- [STEP Conference](https://stepconference.com) — Beirut/MENA startup ecosystem conference
+- [Saudi LEAP](https://leap.sa) — Saudi Arabia's annual tech conference (Riyadh); increasing strategic importance
+
+<!-- SOURCES
+- name: Zawya | url: https://zawya.com | type: web | category: MENA business news
+- name: Middle East Eye | url: https://middleeasteye.net | type: web | category: Geopolitics
+- name: MAGNiTT | url: https://magnitt.com | type: web | category: Startup data
+- name: Arab News | url: https://arabnews.com | type: web | category: Saudi news
+- name: Gulf News | url: https://gulfnews.com | type: web | category: UAE news
+- name: Wamda | url: https://wamda.com | type: web | category: MENA startups
+-->
+
+---
+
+## Core commands
+
+See `commands/` for step-by-step playbooks:
+- `/market-brief` — Brief on a specific MENA market for a business decision
+- `/regulatory-check` — Check regulatory requirements for an activity in a MENA country
+- `/partnership-context` — Brief on a potential MENA partner or counterparty
+- `/competitive-landscape` — Map the competitive landscape for a product or sector in a MENA market
+- `/market-entry` — Build a market entry strategy for a MENA country with regulatory, commercial, and relationship roadmap
+
+---
+
+## Core skills
+
+See `skills/` for full domain knowledge:
+- `skills/mena-markets/` — Market-by-market context for Saudi, UAE, Egypt, Jordan, and GCC regional dynamics
+- `skills/mena-business-culture/` — How business works (relationships, hierarchy, meetings, Arabic communication, localization, common mistakes)
+- `skills/vision-2030/` — Saudi Arabia's transformation programme — sectoral implications, GIGA projects, investment flows, timeline reality
+- `skills/mena-regulatory/` — Free zones, licensing, foreign ownership, Nitaqat, data localization, payment regulations by country
+
+---
+
+## Onboarding placeholders
+
+| Placeholder | What it represents |
+|-------------|-------------------|
+| `~~company-name` | Name of the company |
+| `~~primary-market` | Primary MENA market(s) of interest (e.g., Saudi Arabia, UAE, Egypt) |
+| `~~business-type` | Type of business (tech platform, marketplace, SaaS, professional services, etc.) |
+| `~~current-presence` | Existing MENA presence (none / incorporated / operating / revenue-generating) |
+| `~~local-partners` | Any existing local partners or contacts in the region |
+| `~~arabic-capability` | Arabic language capability in-house (none / limited / native speakers) |
+| `~~deal-size` | Order of magnitude for deals or contracts being considered |
+| `~~regulatory-status` | Any existing regulatory approvals, licenses, or entities |
+| `~~timeline` | Desired timeline for market entry or expansion milestones |

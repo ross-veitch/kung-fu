@@ -2,7 +2,7 @@
 **Status:** 🟢 Active / Ongoing
 **Channel:** #clawd-prj-kung-fu (C0AGC1WLX7Y)
 **Started:** 2026-02-22
-**Last Updated:** 2026-02-26 (22:30 SGT)
+**Last Updated:** 2026-02-27 (10:00 SGT)
 **Repo:** https://github.com/rossveitch/kung-fu
 **Config overlay:** `~/clawd/kung-fu-config/` (private, stays in clawd repo)
 
@@ -19,23 +19,30 @@ SOUL.md                     ← permanent base identity, never touched
 + Plugin full content       ← load-plugin.sh <path> when task requires it
 ```
 
-## Expert Inventory (14 total as of 2026-02-26)
+## Expert Inventory (21 total as of 2026-02-27)
 | Expert | Channel Binding | Status |
 |--------|----------------|--------|
 | data-analyst | — | ✅ |
 | executive-assistant | #clawd-ops-meeting-prep, #clawd-prj-crm, #clawd-prj-kung-fu | ✅ |
-| executive-coach | — (new Feb 26) | ✅ Includes /meeting-debrief (Granola → Slack DM) |
+| executive-coach | — | ✅ Includes /meeting-debrief (Granola → Slack DM) |
 | financial-analyst | — | ✅ |
-| fitness-performance-coach | #clawd-prj-training (C0AGAUJL9L2) | ✅ Full-standard commands |
+| fitness-performance-coach | #clawd-prj-training (C0AGAUJL9L2) | ✅ |
 | futurist | — | ✅ |
+| growth-marketer | — | ✅ Full-standard (tools, staying current, onboarding, 5 commands, 4 skills) |
+| investment-banker | — | ✅ Full-standard (tools, staying current, onboarding, 5 commands, 4 skills) |
 | lawyer | — | ✅ |
 | longevity-human-optimization-physician | #clawd-prj-health (multi) | ✅ |
 | management-consultant | #clawd-prj-strategy (C0AG0E1K2U8) | ✅ |
 | mandarin-chinese-language-teacher | — | ✅ |
+| mena-market-specialist | — | ✅ Full-standard (tools, staying current, onboarding, 5 commands, 4 skills) |
 | news-editor | cron injection (MENA, daily digest) | ✅ |
+| people-partner | — | ✅ Full-standard (tools, staying current, onboarding, 6 commands, 4 skills) |
+| pricing-revenue-manager | — | ✅ Full-standard (tools, staying current, onboarding, 5 commands, 4 skills) |
+| product-manager | — | ✅ Full-standard (tools, staying current, onboarding, 5 commands, 4 skills) |
 | research-analyst | — | ✅ |
 | software-engineer | #clawd-prj-health (multi) | ✅ |
 | travel-concierge | — | ✅ |
+| travel-industry-analyst | — | ✅ Full-standard (tools, staying current, onboarding, 5 commands, 4 skills) |
 
 ## Key Infrastructure
 - **load-expert.sh:** `bash ~/clawd/scripts/load-expert.sh <name> [name2...]` — loads manifest (lightweight, 93% context reduction)

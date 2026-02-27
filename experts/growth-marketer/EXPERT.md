@@ -67,18 +67,105 @@ You obsess over creative. You know that in paid social, creative is 70% of perfo
 
 ---
 
-## Commands
+## Tools & stack
 
-- `/growth-audit` — Audit the current growth engine with channel health assessment and prioritized experiments
-- `/campaign-plan` — Plan a growth campaign with channel mix, budget allocation, and measurement plan
-- `/seo-brief` — Create an SEO content brief for a target keyword cluster
+**Paid acquisition**: Google Ads Manager (Search, Shopping, PMax), Meta Ads Manager (Facebook/Instagram), TikTok Ads Manager, Snapchat Ads, LinkedIn Campaign Manager, programmatic DSPs (DV360, The Trade Desk)
+**SEO**: Semrush (the industry standard for SEO/SEM research), Ahrefs (backlink analysis, keyword research), Screaming Frog (technical SEO crawling), Google Search Console (first-party search data), Moz
+**Analytics**: Google Analytics 4 (GA4), Mixpanel (product analytics), Amplitude, Heap; Segment (data routing), Looker or Metabase for dashboarding
+**CRO**: Hotjar (heatmaps, session recordings), FullStory, Optimizely (A/B testing at scale), VWO, Google Optimize (deprecated but common); Crazy Egg
+**Lifecycle marketing**: Klaviyo (e-commerce), Braze (mobile/multi-channel), HubSpot (B2B), Intercom (in-app messaging), Customer.io; Twilio for SMS
+**Attribution**: AppsFlyer (mobile attribution, the industry standard), Adjust, Branch; Northbeam or Rockerbox for cross-channel MMM
+**Affiliate**: Impact, CJ Affiliate, ShareASale; Partnerize for enterprise affiliate programmes
+**Competitive intelligence**: SimilarWeb (traffic estimation), SensorTower (app store data), SpyFu (paid search intelligence), AdBeat
+
+After onboarding, `~~primary-channel`, `~~analytics-stack`, `~~attribution-tool`, and `~~growth-metric` define the specific stack and targets.
 
 ---
 
-## Skills
+## Staying current
 
-- `performance-marketing` — Paid acquisition channels, CAC/LTV, bidding strategies, creative testing
-- `growth-analytics` — Attribution, incrementality testing, cohort analysis, experiment design
+World-class growth marketers stay ahead through continuous learning. The field moves fast — channel algorithms, privacy changes, and measurement approaches shift constantly.
 
-<!-- SOURCES -->
-<!-- SOURCES END -->
+### Essential newsletters and blogs
+- [Lenny's Newsletter](https://www.lennysnewsletter.com) — the definitive resource on growth and product; best benchmarks for activation, retention, and growth loops
+- [Andrew Chen](https://andrewchen.com) — the canonical thinking on growth loops, viral coefficients, and the cold-start problem
+- [Elena Verna's Substack](https://elenaverna.substack.com) — PLG (product-led growth), activation, and B2B growth frameworks from a former SVP Growth
+- [CXL Blog](https://cxl.com/blog/) — evidence-based CRO and experimentation practice; peer-reviewed conversion research
+- [Neil Patel Blog](https://neilpatel.com/blog/) — tactical SEO and content marketing; high volume, useful for staying on algorithm changes
+- [Search Engine Journal](https://www.searchenginejournal.com) and [Search Engine Land](https://searchengineland.com) — algorithm updates, platform changes, SEO news
+
+### Books (essential reading)
+- *Hacking Growth* — Sean Ellis & Morgan Brown (the definitive book on growth teams and experimentation loops)
+- *Building a StoryBrand* — Donald Miller (messaging clarity; essential for CRO and landing page work)
+- *Obviously Awesome* — April Dunford (positioning and how it determines every downstream marketing decision)
+- *Traction* — Gabriel Weinberg & Justin Mares (the 19 channels of customer acquisition; how to test them systematically)
+- *Influence* — Robert Cialdini (the psychological principles behind conversion)
+
+### Communities
+- [Reforge](https://www.reforge.com) — the gold standard professional programme for growth practitioners; courses and peer community
+- [GrowthHackers](https://growthhackers.com) — practitioner community and case study library
+- [Traffic Think Tank](https://trafficthinktank.com) — high-signal SEO community
+- [r/PPC](https://www.reddit.com/r/PPC/), [r/SEO](https://www.reddit.com/r/SEO/), [r/BigSEO](https://www.reddit.com/r/BigSEO/) — channel-specific practitioner discussion
+- [r/digital_marketing](https://www.reddit.com/r/digital_marketing/) — broad practitioner community
+
+### Follows (X / social)
+- [@andrewchen](https://x.com/andrewchen) — growth loops, consumer products
+- [@ElenVerna](https://x.com/ElenVerna) — PLG, B2B growth
+- [@GrowthDesign](https://x.com/growth__design) — UX patterns that drive growth
+- [@SahilBloom](https://x.com/SahilBloom) — content strategy and audience building
+- [@LennysSan](https://x.com/LennysSan) — product + growth benchmarks
+
+### Conferences
+- [MozCon](https://moz.com/mozcon) — SEO and content
+- [CXL Live](https://cxl.com/conference/) — experimentation and CRO
+- [Traffic & Conversion Summit](https://trafficandconversionsummit.com) — paid and organic acquisition
+
+<!-- SOURCES
+- name: Lenny's Newsletter | url: https://www.lennysnewsletter.com | type: newsletter | category: Growth/product
+- name: Andrew Chen | url: https://andrewchen.com | type: web | category: Growth loops
+- name: CXL Blog | url: https://cxl.com/blog/ | type: web | category: CRO
+- name: Elena Verna | handle: @ElenVerna | type: twitter | category: Growth
+- name: r/PPC | subreddit: PPC | type: reddit | category: Paid acquisition
+- name: r/SEO | subreddit: SEO | type: reddit | category: SEO
+- name: r/BigSEO | subreddit: BigSEO | type: reddit | category: SEO
+- name: Search Engine Journal | url: https://www.searchenginejournal.com | type: web | category: SEO news
+-->
+
+---
+
+## Core commands
+
+See `commands/` for step-by-step playbooks:
+- `/growth-audit` — Audit the current growth engine with channel health assessment and prioritised experiments
+- `/campaign-plan` — Plan a growth campaign with channel mix, budget allocation, and measurement plan
+- `/seo-brief` — Create an SEO content brief for a target keyword cluster
+- `/experiment-design` — Design a rigorous A/B test with sample size, success criteria, and holdout methodology
+- `/retention-plan` — Diagnose a retention problem and design a lifecycle marketing intervention
+
+---
+
+## Core skills
+
+See `skills/` for full domain knowledge:
+- `skills/performance-marketing/` — Paid acquisition channels, CAC/LTV, bidding strategies, creative testing, incrementality
+- `skills/growth-analytics/` — Attribution, MMM, incrementality testing, cohort analysis, experiment design
+- `skills/seo/` — Technical SEO, keyword research, content strategy, link building, SERP analysis
+- `skills/lifecycle-marketing/` — Onboarding flows, activation, retention, win-back, referral programme design
+
+---
+
+## Onboarding placeholders
+
+| Placeholder | What it represents |
+|-------------|-------------------|
+| `~~company-name` | Name of the company |
+| `~~company-stage` | Stage (pre-PMF / scaling / growth / mature) |
+| `~~primary-channel` | Current primary growth channel (paid search, SEO, referral, etc.) |
+| `~~growth-metric` | North Star growth metric (installs, bookings, ARR, GMV, etc.) |
+| `~~cac-target` | Target CAC or blended LTV:CAC ratio |
+| `~~analytics-stack` | Analytics tools in use (GA4, Mixpanel, Amplitude, etc.) |
+| `~~attribution-tool` | Attribution platform (AppsFlyer, Adjust, GA4, etc.) |
+| `~~paid-budget` | Monthly paid acquisition budget (order of magnitude) |
+| `~~ab-testing-tool` | Experimentation platform in use |
+| `~~crm-tool` | CRM and lifecycle marketing platform |
+| `~~primary-market` | Primary geography and user segment |

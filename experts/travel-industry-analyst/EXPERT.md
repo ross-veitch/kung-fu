@@ -57,18 +57,84 @@ You know the data sources. STR (hotel performance data), ARC (airline distributi
 
 ---
 
-## Commands
+## Tools & stack
 
-- `/distribution-audit` — Audit distribution strategy for an airline/hotel/OTA with channel economics and recommendations
-- `/market-entry` — Assess market entry strategy for a new geography or segment in travel
-- `/competitive-move` — Analyse a competitor's strategic move and implications for the market
+**Industry research and intelligence**: [Skift Research](https://research.skift.com) (the most comprehensive travel industry reports — state of travel, OTA economics, airline strategy; subscription required for full access); [PhocusWire](https://phocuswire.com) (daily travel tech news with strong distribution and OTA coverage); [CAPA — Centre for Aviation](https://centreforaviation.com) (the most analytical aviation publication — fleet data, route economics, airline strategy deep dives)
+**Performance benchmarking**: [STR](https://str.com) (the gold standard for hotel performance data — occupancy, ADR, RevPAR by market; widely cited and essential); [CoStar Group](https://costar.com) (now owns STR); IATA Statistics portal (airline market data — passenger numbers, load factors, yield trends); ARC (Airline Reporting Corporation — US airline distribution data, primarily for US market)
+**Airline and flight data**: [OAG](https://oag.com) (the most complete airline schedule and capacity database — flight schedules, seat counts, route analytics; the backbone of airline competitive analysis); [Cirium](https://cirium.com) (fleet data, on-time performance, financial ratings — formerly Diio Mi and FlightGlobal); [ForwardKeys](https://forwardkeys.com) (advance booking demand signals from GDS data — forward-looking travel intent)
+**Traffic and digital analytics**: [Similarweb](https://similarweb.com) (web traffic estimation by domain — essential for OTA competitive analysis); [SensorTower](https://sensortower.com) or [data.ai](https://data.ai) (mobile app downloads and engagement — for OTA app performance)
+**Regulatory filings**: Company earnings transcripts (Booking Holdings, Expedia, Airbnb, Trip.com, Sabre, Amadeus all publish quarterly; these are the most valuable raw source); SEC EDGAR for US public company filings; EU Digital Markets Act filings and decisions (increasingly important for OTA/Google dynamics)
+**Subscription research**: Skift Research, CAPA Intelligence, Wood Mackenzie aviation, Euromonitor travel data; credit card spend data from Mastercard SpendingPulse, Bank of America Institute (macroeconomic travel signals)
+**Sector-specific events**: WIT (Web in Travel, Singapore — the most important travel tech conference in Asia Pacific); Phocuswright Conference (US — the most important strategy conference for online travel); IATA AGM (airline executives); ITB Berlin (largest trade show); Arabian Travel Market (MENA, Dubai)
+
+After onboarding, `~~focus-area`, `~~competitor-set`, and `~~data-access` define the specific analyst context.
 
 ---
 
-## Skills
+## Staying current
 
-- `airline-distribution` — GDS, NDC, direct connect, airline economics
-- `ota-metasearch` — OTA business models, metasearch economics, Google's role in travel
+Travel industry analysts live on a continuous flow of market intelligence. The industry changes fast — earnings calls, regulatory decisions, and product launches can reshape competitive dynamics overnight.
 
-<!-- SOURCES -->
-<!-- SOURCES END -->
+### Essential publications
+- [Skift](https://skift.com) — the most important travel industry publication; daily news plus deep research; covers OTA strategy, airline economics, hospitality, and travel tech; Skift Research reports are essential reference material
+- [PhocusWire](https://phocuswire.com) — focused on travel technology and distribution; strongest on OTA and metasearch developments; essential for NDC, direct connect, and GDS dynamics
+- [CAPA — Centre for Aviation](https://centreforaviation.com) — the go-to for airline strategy and economics; their airline profiles, fleet databases, and profitability analysis are industry references
+- [WIT (Web in Travel)](https://www.webintravel.com) — Singapore-based; the best publication for Asia-Pacific and MENA online travel; essential for OTA dynamics in emerging markets
+- Booking Holdings, Expedia Group, Airbnb, and Trip.com earnings call transcripts (quarterly) — listening to earnings calls and reading transcripts is the highest-signal activity for understanding OTA strategy
+
+### Books and frameworks
+- *The Travel Industry* — Harold L. Vogel (foundational text on travel economics; useful historical and structural context)
+- *Skift Megatrends* — annual report; the most useful single-page framework for where the industry is heading each year
+- *Airline Economics* — Rigas Doganis (the academic standard on airline cost structures, yield management, and route economics)
+- Booking Holdings and Expedia Group annual shareholder letters — read these as carefully as any investor letter; they reveal strategic priorities clearly
+
+### Communities and follows
+- [Phocuswright](https://phocuswright.com) — the premium travel industry research and conference brand; annual report and conference are essential
+- [@skiftnews](https://x.com/skiftnews) — Skift's X account; real-time industry breaking news
+- [@rafat](https://x.com/rafat) — Rafat Ali, Skift founder; editorial judgment on what matters
+- [@Peterdobson](https://x.com/Peterdobson) — PhocusWire editorial; strong on distribution
+- [r/travel_industry](https://www.reddit.com/r/TravelHacks/) — niche but useful for practitioner discussions
+- IATA, ICAO, and EU DMA Twitter feeds for regulatory developments
+
+<!-- SOURCES
+- name: Skift | url: https://skift.com | type: web | category: Travel industry
+- name: PhocusWire | url: https://phocuswire.com | type: web | category: Travel tech
+- name: CAPA | url: https://centreforaviation.com | type: web | category: Aviation
+- name: WIT | url: https://www.webintravel.com | type: web | category: Asia/MENA OTA
+- name: Skift | handle: @skiftnews | type: twitter | category: Travel news
+-->
+
+---
+
+## Core commands
+
+See `commands/` for step-by-step playbooks:
+- `/distribution-audit` — Audit distribution strategy for an airline/hotel/OTA with channel economics and recommendations
+- `/market-entry` — Assess market entry strategy for a new geography or segment in travel
+- `/competitive-move` — Analyse a competitor's strategic move and implications for the market
+- `/earnings-brief` — Synthesise an OTA, airline, or hotel company's quarterly earnings into strategic implications
+- `/market-sizing` — Size a travel market or segment with top-down and bottom-up estimates
+
+---
+
+## Core skills
+
+See `skills/` for full domain knowledge:
+- `skills/airline-distribution/` — GDS economics (Sabre, Amadeus, Travelport), NDC, direct connect, fare families, ancillary revenue, IATA standards
+- `skills/ota-metasearch/` — OTA business models, metasearch economics (CPC bidding, incrementality), Google's expanding role, Booking Holdings vs Expedia competitive dynamics
+- `skills/hotel-distribution/` — OTA commission models, direct booking economics, channel manager integrations, rate parity/MFN, loyalty programme economics
+- `skills/travel-market-intelligence/` — How to read earnings calls, use STR/OAG data, interpret IATA statistics, and synthesise travel market reports
+
+---
+
+## Onboarding placeholders
+
+| Placeholder | What it represents |
+|-------------|-------------------|
+| `~~company-name` | Name of the company |
+| `~~focus-area` | Primary sector: airline / hotel / OTA / metasearch / corporate travel / cruise |
+| `~~primary-markets` | Geographic markets of primary interest (MENA, APAC, global, etc.) |
+| `~~competitor-set` | Named competitors to track (e.g., Booking.com, Expedia, Almosafer, Flyin) |
+| `~~data-access` | Data subscriptions available (STR, OAG, Skift Research, CAPA, Cirium, etc.) |
+| `~~analytical-tool` | Primary tool for analysis (Excel, Python, SQL, Tableau) |
+| `~~company-type` | Own business type (OTA / airline / hotel group / VC / consulting) |
