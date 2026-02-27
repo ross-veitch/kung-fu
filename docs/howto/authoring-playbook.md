@@ -2,6 +2,8 @@
 
 How to write the organisation-level config layer for an Expert Plugin.
 
+> **Tip**: You don't need to write `PLAYBOOK.md` by hand. Run `/onboard` after loading an expert and the agent will ask you the right questions and write the file automatically. This guide is for those who want to write or edit it directly.
+
 ---
 
 ## What PLAYBOOK.md is

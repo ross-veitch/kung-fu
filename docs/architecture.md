@@ -242,7 +242,7 @@ Personal and org config live **outside** the shared repo in a private directory:
 
 This keeps the shared repo clean — no personal emails, company names, Slack IDs, or account credentials ever touch it.
 
-See [Authoring a PLAYBOOK.md](howto/authoring-playbook.md) for a template and guide.
+See [Authoring a PLAYBOOK.md](../howto/authoring-playbook.md) for a template and guide.
 
 ---
 
@@ -430,7 +430,7 @@ kung-fu-config/
 **Scripts** (installed to `~/clawd/scripts/`):
 ```
 ~/clawd/scripts/
-├── load-expert.sh                 ← copied from kung-fu repo; reads KUNG_FU_CONFIG_DIR for overlay
+├── load-expert.sh                 ← symlink → kung-fu/scripts/load-expert.sh; reads KUNG_FU_CONFIG_DIR for overlay
 ├── spawn-with-expert.sh           ← spawns sub-agents with full stack injected
 └── staying-current.mjs            ← weekly learning loop runner
 ```

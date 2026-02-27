@@ -62,7 +62,7 @@ The highest-signal real-time source for most domains. Each expert should have a 
 - name: Peter Attia    | handle: @PeterAttiaMD    | type: twitter | category: Longevity
 ```
 
-Implemented via Bird CLI (uses your X account) + Grok API (xAI) for X search.
+Implemented via Bird CLI (requires your X/Twitter credentials) + Grok API (xAI) for X search. If you don't have Bird CLI configured, X/Twitter sources are skipped gracefully — other source types (web, Reddit, newsletters, podcasts) still work.
 
 **Expert → suggested follows:**
 | Expert | Key accounts |
@@ -203,12 +203,14 @@ The CHANGELOG is auto-loaded when the expert is active — the agent has access 
 
 | Expert | Sources configured | Weekly cron |
 |--------|-------------------|-------------|
-| `news-editor` | ✅ | Mon 7am SGT |
-| `futurist` | ✅ | Mon 7:30am SGT |
-| `management-consultant` | ✅ | Tue 7am SGT |
-| `fitness-performance-coach` | ✅ | Tue 7:30am SGT |
-| `longevity-human-optimization-physician` | ✅ | Tue 8am SGT |
-| Others | ❌ (static) | — |
+| `news-editor` | ✅ | Weekly (set your own schedule) |
+| `futurist` | ✅ | Weekly |
+| `management-consultant` | ✅ | Weekly |
+| `fitness-performance-coach` | ✅ | Weekly |
+| `longevity-human-optimization-physician` | ✅ | Weekly |
+| Others | ❌ (static knowledge) | — |
+
+Cron timing is entirely up to you — configure each learning loop job at a time that suits your setup. Stagger them if you're running multiple to avoid parallel API calls.
 
 To add a learning loop to any expert: add a `<!-- SOURCES -->` block to its `EXPERT.md` and create a weekly cron that runs `staying-current.mjs <expert-name>`.
 

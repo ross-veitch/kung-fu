@@ -34,21 +34,7 @@ These need to be in `~/clawd/scripts/` so the agent can call them from any sessi
 
 ---
 
-## Step 3 — Set up the config overlay
-
-The config overlay is where your personal and org-specific config lives — separate from the shared repo.
-
-```bash
-mkdir -p ~/clawd/kung-fu-config/config
-mkdir -p ~/clawd/kung-fu-config/data
-mkdir -p ~/clawd/kung-fu-config/experts
-```
-
-`load-expert.sh` looks here automatically (via `KUNG_FU_CONFIG_DIR`, which defaults to `~/clawd/kung-fu-config`).
-
----
-
-## Step 4 — Load your first expert
+## Step 3 — Load your first expert
 
 Pick an expert from the [index](../experts/index.md) that's immediately useful to you. For most people, `executive-assistant` or `research-analyst` is a good first choice.
 
@@ -64,7 +50,7 @@ The expert is now active in your current session. The first response will show t
 
 ---
 
-## Step 5 — Run onboarding (happens automatically on first load)
+## Step 4 — Onboarding (automatic on first load)
 
 The first time you load an expert, the script detects that no `USER.md` or `PLAYBOOK.md` exists and injects a **first-use notice** into its output. Your agent will see this and proactively offer to run onboarding before doing anything else:
 
@@ -81,7 +67,7 @@ After onboarding, both files are loaded automatically on every subsequent sessio
 
 ---
 
-## Step 6 — What onboarding produces
+## Step 5 — What onboarding produces
 
 The agent asks ~10–15 questions across two parts:
 
@@ -93,7 +79,7 @@ Both files are stored in `~/clawd/kung-fu-config/` — your private overlay dire
 
 ---
 
-## Step 7 — Set up Slack channel routing (optional)
+## Step 6 — Set up Slack channel routing (optional)
 
 To have an expert load automatically whenever a message comes from a specific Slack channel:
 
@@ -117,7 +103,7 @@ See [Channel Routing](channel-routing.md) for full details and current mappings.
 
 ---
 
-## Step 8 — Enable the learning loop (optional)
+## Step 7 — Enable the learning loop (optional)
 
 For experts with a `<!-- SOURCES -->` block (check with `grep -l "SOURCES" clawd-prj/kung-fu/experts/*/EXPERT.md`), set up weekly learning:
 
