@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # load-expert.sh — inject an Expert Plugin into the current session
 #
-# Loading order (three-layer cascade — most specific wins):
+# Loading order (five-layer cascade — most specific wins):
 #   1. EXPERT.md          — generic domain expertise (publishable, from kung-fu repo)
-#   2. Anthropic plugin   — vendor plugin content (from submodule)
+#   2. Anthropic plugin   — vendor plugin content (from submodule, lazy manifest only)
 #   3. skills/            — expert's own domain knowledge (publishable, from kung-fu repo)
 #   4. PLAYBOOK.md        — org-level config: company standards, tools, playbooks
 #                           Looked up in: $KUNG_FU_CONFIG_DIR/experts/<name>/PLAYBOOK.md
@@ -11,6 +11,12 @@
 #   5. USER.md            — personal config: individual preferences, accounts, goals
 #                           Looked up in: $KUNG_FU_CONFIG_DIR/experts/<name>/USER.md
 #                           Falls back to: <expert-dir>/USER.md (legacy/local-only)
+#
+# First-use detection:
+#   If USER.md or PLAYBOOK.md are missing, a ⚠️ FIRST-USE NOTICE is injected into
+#   the output. This notice instructs the agent to proactively offer onboarding
+#   before responding to any other request. The onboarding playbook is at
+#   experts/<name>/commands/onboard.md — run it with /onboard or by asking the agent.
 #
 # Config overlay:
 #   Set KUNG_FU_CONFIG_DIR to a directory containing org/personal config files.
@@ -160,9 +166,6 @@ if [ -n "$PLAYBOOK_MD" ]; then
 ## Organisation Playbook
 
 $(cat "$PLAYBOOK_MD")"
-else
-  echo "ℹ️  No PLAYBOOK.md found for $EXPERT_NAME (org-level config)." >&2
-  echo "   Create at: $KUNG_FU_CONFIG_DIR/experts/$EXPERT_NAME/PLAYBOOK.md" >&2
 fi
 
 # ── 5. USER.md (personal config — stored in config overlay, not in repo) ──────
@@ -181,9 +184,33 @@ if [ -n "$USER_MD" ]; then
 ## Personal Configuration
 
 $(cat "$USER_MD")"
-else
-  echo "ℹ️  No USER.md found for $EXPERT_NAME (personal config)." >&2
-  echo "   Run personal onboarding: ask your agent 'Run the $EXPERT_NAME onboarding'" >&2
+fi
+
+# ── 6. First-use prompt — inject onboarding call-to-action if config is missing ──
+# This surfaces prominently in the agent's context so it proactively offers onboarding.
+MISSING_FILES=()
+[ -z "$USER_MD" ] && MISSING_FILES+=("USER.md (personal config)")
+[ -z "$PLAYBOOK_MD" ] && MISSING_FILES+=("PLAYBOOK.md (organisation config)")
+
+if [ ${#MISSING_FILES[@]} -gt 0 ]; then
+  MISSING_LIST=$(printf '%s, ' "${MISSING_FILES[@]}")
+  MISSING_LIST="${MISSING_LIST%, }"  # strip trailing comma+space
+  CONTENT="$CONTENT
+
+---
+## ⚠️ FIRST-USE NOTICE — ACTION REQUIRED
+
+**This is the first time loading the $EXPERT_NAME expert in this environment.**
+
+Missing personalisation files: $MISSING_LIST
+
+Without these files the expert operates in generic mode — it doesn't know your specific context, tools, company, or goals. Personalisation is what makes the expert perform at the level of a world-class practitioner *working with you specifically*.
+
+**Agent instruction:** Before responding to any other request, surface this notice to the user and offer to run onboarding now. Say something like:
+
+> *\"I notice this is your first time loading the $(echo "$EXPERT_NAME" | tr '-' ' ') expert — I don't have your personal context yet. Want to run the 5–10 minute onboarding now? I'll ask you a series of questions and write your personalised config. You only do this once. (/onboard to start, or skip and continue in generic mode)\"*
+
+The onboarding playbook is at: $EXPERT_DIR/commands/onboard.md"
 fi
 
 # ── Accumulate into combined output ──────────────────────────────────────────

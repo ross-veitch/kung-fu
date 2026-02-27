@@ -52,7 +52,7 @@ mkdir -p ~/clawd/kung-fu-config/experts
 
 ## Step 4 — Load your first expert
 
-Pick an expert from the [index](../roles/index.md) that's immediately useful to you. For most people, `executive-assistant` or `research-analyst` is a good first choice.
+Pick an expert from the [index](../experts/index.md) that's immediately useful to you. For most people, `executive-assistant` or `research-analyst` is a good first choice.
 
 **Option A — Ask your agent:**
 > *"Load the executive assistant expert"*
@@ -66,28 +66,32 @@ The expert is now active in your current session. The first response will show t
 
 ---
 
-## Step 5 — Run onboarding (first time only)
+## Step 5 — Run onboarding (happens automatically on first load)
 
-The first time you use an expert, run the onboarding to create your personal `USER.md`:
+The first time you load an expert, the script detects that no `USER.md` or `PLAYBOOK.md` exists and injects a **first-use notice** into its output. Your agent will see this and proactively offer to run onboarding before doing anything else:
 
-> *"Run the executive assistant onboarding"*
+> *"I notice this is your first time loading the Executive Assistant expert — I don't have your personal context yet. Want to run the 5–10 minute onboarding now? I'll ask you a series of questions and write your personalised config. You only do this once."*
 
-The agent will ask you ~10 questions about your setup: calendar tool, timezone, communication preferences, key people, current priorities. It takes about 10 minutes and writes `~/clawd/kung-fu-config/experts/executive-assistant/USER.md`.
+Say yes, and the agent will walk through the onboarding questions one at a time, then write two files to your private config overlay:
+- `~/clawd/kung-fu-config/experts/[name]/USER.md` — your personal configuration
+- `~/clawd/kung-fu-config/experts/[name]/PLAYBOOK.md` — your organisation's configuration
 
-After that, your `USER.md` is loaded automatically on every session — no re-onboarding.
+**You can also trigger onboarding manually at any time:**
+> *"/onboard"* or *"Run the executive assistant onboarding"*
+
+After onboarding, both files are loaded automatically on every subsequent session — no re-onboarding needed unless your context changes significantly.
 
 ---
 
-## Step 6 — Write a PLAYBOOK.md (optional but recommended)
+## Step 6 — What onboarding produces
 
-The `PLAYBOOK.md` adds your organisation's context to the expert: company name, tools, standards, and defaults.
+The agent asks ~10–15 questions across two parts:
 
-```bash
-cp clawd-prj/kung-fu/experts/executive-assistant/EXPERT.md /tmp/  # read to understand placeholders
-nano ~/clawd/kung-fu-config/experts/executive-assistant/PLAYBOOK.md
-```
+**Part 1 — Personal config (USER.md):** Your specific tools, accounts, timezone, goals, and context. Resolves all `~~placeholder` values in the expert so advice is tailored to *you*.
 
-See [Authoring a PLAYBOOK.md](authoring-playbook.md) for a full template and guide.
+**Part 2 — Organisation config (PLAYBOOK.md):** Company name, stage, tools, standards, and constraints. Ensures the expert applies your org's defaults automatically.
+
+Both files are stored in `~/clawd/kung-fu-config/` — your private overlay directory. They are never committed to the shared kung-fu repo.
 
 ---
 
