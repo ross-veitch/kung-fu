@@ -4,7 +4,9 @@
 
 EXPERT_NAME="$1"
 TASK="$2"
-KUNG_FU_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+# Resolve real path through symlinks
+_SS="$0"; while [ -L "$_SS" ]; do _SD="$(cd -P "$(dirname "$_SS")" && pwd)"; _SS="$(readlink "$_SS")"; [[ "$_SS" != /* ]] && _SS="$_SD/$_SS"; done
+KUNG_FU_DIR="${KUNG_FU_DIR:-$(cd -P "$(dirname "$_SS")/.." && pwd)}"
 SOUL_MD="$HOME/clawd/SOUL.md"
 EXPERT_DIR="$KUNG_FU_DIR/experts/$EXPERT_NAME"
 

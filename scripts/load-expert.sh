@@ -27,7 +27,19 @@
 #        ./load-expert.sh list                               (show available experts)
 #        ./load-expert.sh off                                (signal unload)
 
-KUNG_FU_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+# Resolve the real script location — follow symlinks so this works whether the script
+# is run directly from the repo or via a symlink in ~/clawd/scripts/.
+_SCRIPT_SOURCE="$0"
+while [ -L "$_SCRIPT_SOURCE" ]; do
+  _SCRIPT_DIR="$(cd -P "$(dirname "$_SCRIPT_SOURCE")" && pwd)"
+  _SCRIPT_SOURCE="$(readlink "$_SCRIPT_SOURCE")"
+  # Handle relative symlink targets
+  [[ "$_SCRIPT_SOURCE" != /* ]] && _SCRIPT_SOURCE="$_SCRIPT_DIR/$_SCRIPT_SOURCE"
+done
+_REAL_SCRIPT_DIR="$(cd -P "$(dirname "$_SCRIPT_SOURCE")" && pwd)"
+
+# KUNG_FU_DIR can be overridden via environment variable if needed.
+KUNG_FU_DIR="${KUNG_FU_DIR:-$(cd "$_REAL_SCRIPT_DIR/.." && pwd)}"
 VENDOR_DIR="$KUNG_FU_DIR/vendor/knowledge-work-plugins"
 
 # Config overlay directory — where PLAYBOOK.md and USER.md live (outside the shared repo)
