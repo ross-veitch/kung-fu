@@ -151,7 +151,7 @@ Expert plugin injection does not change model routing — that's still task-driv
 | News digest (structured output) | research-analyst | sonnet |
 | Training readiness (biometric + decision) | fitness-performance-coach | sonnet |
 | Deep competitive analysis | research-analyst | sonnet (opus for synthesis) |
-| Script generation | data-engineer | sonnet |
+| Script generation | data-analyst | sonnet |
 | Calendar/email management | executive-assistant | sonnet |
 
 Shell scripts and tool-free tasks can use DeepSeek. Anything requiring tool calls needs Sonnet.

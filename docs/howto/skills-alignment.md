@@ -40,7 +40,7 @@ Expert Plugins are conceptually the same thing as skills — they're injected ca
 By aligning the file structure:
 
 1. **Familiarity** — if you know how to write a skill, you know how to write a expert plugin. Same pattern, different content.
-2. **Installability** — expert plugins can be published to `clawhub` and installed with `clawhub install role-health-coach`, exactly like any other skill. No special tooling.
+2. **Installability** — expert plugins can be published to `clawhub` and installed with `clawhub install role-fitness-performance-coach`, exactly like any other skill. No special tooling.
 3. **Discoverability** — `clawhub search role-` returns community-contributed expert plugins.
 4. **Composability** — a expert plugin can reference installed skills directly, by name, as part of its SOPs. The agent already knows how to load and use those skills.
 
@@ -101,7 +101,7 @@ Because roles follow the skills structure, they can be published and installed l
 
 ```bash
 # Install a community expert plugin
-clawhub install role-health-coach
+clawhub install role-fitness-performance-coach
 
 # Update all installed roles
 clawhub update role-*

@@ -1,0 +1,8 @@
+{
+  "name": "executive-coach",
+  "version": "0.1.0",
+  "description": "Executive coach for founders and senior leaders. Post-meeting debrief, decision coaching, leadership pattern analysis, and high-stakes conversation prep. Grounded in Mochary Method, Immunity to Change, and Conscious Leadership.",
+  "author": { "name": "Kung Fu" },
+  "plugins": [],
+  "keywords": ["executive-coach", "leadership", "decisions", "coaching", "feedback", "mochary", "conscious-leadership", "founders", "senior-executives"]
+}

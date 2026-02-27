@@ -118,13 +118,11 @@ This is what keeps plugins generic and shareable while making the injected exper
 cd ~/clawd
 git clone --recurse-submodules https://github.com/rossveitch/kung-fu clawd-prj/kung-fu
 
-# Install scripts
-cp clawd-prj/kung-fu/scripts/load-expert.sh ~/clawd/scripts/
-cp clawd-prj/kung-fu/scripts/spawn-with-expert.sh ~/clawd/scripts/
-chmod +x ~/clawd/scripts/load-expert.sh ~/clawd/scripts/spawn-with-expert.sh
+# Run the installer (creates symlinks, config overlay, sets up channel routing)
+bash clawd-prj/kung-fu/install.sh
 
 # Load an Expert Plugin (runs onboarding automatically if first time)
-~/clawd/scripts/load-expert.sh fitness-performance-coach
+bash ~/clawd/scripts/load-expert.sh fitness-performance-coach
 ```
 
 > **Personal config:** `PLAYBOOK.md` (org defaults) and `USER.md` (personal config) are **not** stored in this repo. They live in a separate config overlay directory — typically `~/clawd/kung-fu-config/`. This keeps the shared repo clean of personal and company-specific data. See [Improving Experts](docs/howto/improving-experts.md) for details.
@@ -287,6 +285,7 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 | [Staying current](docs/howto/staying-current.md) | Automated learning loop: live sources, weekly updates, CHANGELOG |
 | [Sub-agent integration](docs/howto/sub-agents.md) | Expert Plugins in spawned agents |
 | [Cron job integration](docs/howto/cron-jobs.md) | Expert Plugin injection in scheduled tasks |
+| [Updating](docs/howto/updating.md) | How to pull new experts and bug fixes; what auto-propagates |
 | [Creating experts](docs/howto/creating-experts.md) | Step-by-step guide to building a new expert |
 | [Design decisions](docs/reference/design-decisions.md) | Architecture decisions and rationale |
 | [load-expert.sh reference](docs/reference/load-expert.md) | CLI reference for the expert loader script |

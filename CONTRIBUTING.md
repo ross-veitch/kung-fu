@@ -29,7 +29,7 @@ Expert authoring guide: [docs/howto/authoring-experts.md](docs/howto/authoring-e
 **What we won't merge:**
 - Expert Plugins that override personality or communication style (that's `SOUL.md`)
 - Expert Plugins without meaningful SOPs — domain context alone isn't enough
-- Expert Plugins over ~1,500 tokens without strong justification
+- `EXPERT.md` files over ~2,000 tokens without moving content to `skills/` (deep knowledge belongs in skill files, not the core EXPERT.md)
 - Expert Plugins that only work for one person's very specific setup and can't generalise
 
 ### For script changes

@@ -1,0 +1,11 @@
+{
+  "_comment": "Map Slack channel IDs to expert names. Find a channel ID in Slack: right-click the channel name → View channel details → Copy channel ID (starts with C).",
+
+  "_examples_remove_before_use": {
+    "single_expert": "C0ABC123456 maps to one expert",
+    "multi_expert": "C0DEF789012 maps to two collaborating experts"
+  },
+
+  "C0ABC123456": "management-consultant",
+  "C0DEF789012": ["longevity-human-optimization-physician", "software-engineer"]
+}

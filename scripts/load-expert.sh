@@ -48,7 +48,22 @@ KUNG_FU_CONFIG_DIR="${KUNG_FU_CONFIG_DIR:-$HOME/clawd/kung-fu-config}"
 # Handle meta-commands
 if [ -z "$1" ] || [ "$1" = "list" ]; then
   echo "Available experts:"
-  ls "$KUNG_FU_DIR/experts/"
+  echo ""
+  for EDIR in "$KUNG_FU_DIR/experts"/*/; do
+    ENAME="$(basename "$EDIR")"
+    PJSON="$EDIR/.plugin/plugin.json"
+    if [ -f "$PJSON" ]; then
+      # Extract description from plugin.json using python3
+      DESC=$(python3 -c "import json,sys; d=json.load(open('$PJSON')); print(d.get('description',''))" 2>/dev/null)
+    else
+      DESC=""
+    fi
+    if [ -n "$DESC" ]; then
+      printf "  %-42s %s\n" "$ENAME" "$DESC"
+    else
+      printf "  %s\n" "$ENAME"
+    fi
+  done
   exit 0
 fi
 

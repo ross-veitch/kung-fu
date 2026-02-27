@@ -27,9 +27,7 @@ The `--recurse-submodules` flag pulls the Anthropic vendor plugins alongside the
 ## Step 2 — Install the scripts
 
 ```bash
-cp clawd-prj/kung-fu/scripts/load-expert.sh ~/clawd/scripts/
-cp clawd-prj/kung-fu/scripts/spawn-with-expert.sh ~/clawd/scripts/
-chmod +x ~/clawd/scripts/load-expert.sh ~/clawd/scripts/spawn-with-expert.sh
+bash clawd-prj/kung-fu/install.sh
 ```
 
 These need to be in `~/clawd/scripts/` so the agent can call them from any session.
@@ -101,9 +99,7 @@ To have an expert load automatically whenever a message comes from a specific Sl
 
 ```bash
 # Copy the example config
-cp clawd-prj/kung-fu/config/channel-routing.example.json ~/clawd/kung-fu-config/config/channel-routing.json
-
-# Edit with your channel IDs
+# install.sh already copied the example — just edit with your channel IDs
 nano ~/clawd/kung-fu-config/config/channel-routing.json
 ```
 
