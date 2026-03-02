@@ -462,11 +462,11 @@ Commands are loaded on-demand via the command files and don't contribute to the 
 | Travel Industry Analyst | 5,200 | 🟡 M |
 | Growth Marketer | 5,500 | 🟡 M |
 | MENA Market Specialist | 6,200 | 🟡 M |
-| Investment Banker | 8,800 | 🟡 M |
+| Product Manager | 6,500 | 🟡 M |
+| Investment Banker | 6,800 | 🟡 M |
+| People Partner | 7,400 | 🟡 M |
 | Fitness & Performance Coach | 9,000 | 🟡 M |
-| Product Manager | 9,100 | 🟡 M |
-| People Partner | 9,200 | 🟡 M |
-| Management Consultant | 13,400 | 🟠 L |
+| Management Consultant | 9,200 | 🟡 M |
 | Futurist | 22,100 | 🔴 XL |
 
 **Size tiers:**
