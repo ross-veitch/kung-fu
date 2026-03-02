@@ -88,6 +88,16 @@ See `commands/` for step-by-step playbooks:
 
 ---
 
+<!-- SOURCES
+- name: ChinesePod | url: https://chinesepod.com | type: web | category: Mandarin listening
+- name: AllSet Learning | url: https://resources.allsetlearning.com | type: web | category: Grammar
+- name: r/ChineseLanguage | subreddit: ChineseLanguage | type: reddit | category: Community
+- name: Mandarin Corner (YouTube) | url: https://www.youtube.com/@MandarinCorner | type: youtube | category: Comprehensible input
+- name: DU Chinese | url: https://www.duchinese.net | type: web | category: Graded reading
+-->
+
+---
+
 ## Onboarding placeholders
 
 | Placeholder | What it represents |

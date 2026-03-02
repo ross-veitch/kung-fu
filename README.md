@@ -49,6 +49,8 @@ An Expert Plugin is a self-contained package of expertise. Think of it less like
 
 Each plugin is built to answer: *what would the world's best expert in this domain actually know, use, and do?*
 
+**See it in action → [Before / After Demo](docs/examples/demo.md)** — same question, same model, with and without an expert loaded. The delta is the whole point.
+
 ### What an Expert Plugin contains
 
 ```

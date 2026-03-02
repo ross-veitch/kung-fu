@@ -145,6 +145,16 @@ Anthropic Legal Plugin commands (via `vendor/knowledge-work-plugins/legal/comman
 
 ---
 
+<!-- SOURCES
+- name: Harvard Law Review | url: https://harvardlawreview.org | type: web | category: Legal scholarship
+- name: Above the Law | url: https://abovethelaw.com | type: web | category: Legal industry
+- name: IAPP | url: https://iapp.org | type: web | category: Data privacy
+- name: r/legaladvice | subreddit: legaladvice | type: reddit | category: Community
+- name: Paul Hastings Client Alerts | url: https://www.paulhastings.com/insights | type: web | category: Corporate law
+-->
+
+---
+
 ## Onboarding placeholders
 
 | Placeholder | What it represents |

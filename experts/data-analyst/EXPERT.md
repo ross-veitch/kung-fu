@@ -88,6 +88,16 @@ See `commands/` for step-by-step playbooks:
 
 ---
 
+<!-- SOURCES
+- name: Mode Analytics Blog | url: https://mode.com/blog | type: web | category: Data analysis
+- name: Towards Data Science | url: https://towardsdatascience.com | type: web | category: Data science
+- name: dbt Blog | url: https://www.getdbt.com/blog | type: web | category: Analytics engineering
+- name: r/datascience | subreddit: datascience | type: reddit | category: Community
+- name: Lenny's Newsletter | url: https://www.lennysnewsletter.com | type: newsletter | category: Product/data
+-->
+
+---
+
 ## Onboarding placeholders
 
 | Placeholder | What it represents |

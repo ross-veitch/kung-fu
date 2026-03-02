@@ -86,6 +86,16 @@ See `commands/` for step-by-step playbooks:
 
 ---
 
+<!-- SOURCES
+- name: Stratechery | url: https://stratechery.com | type: newsletter | category: Technology analysis
+- name: Benedict Evans | url: https://www.ben-evans.com | type: web | category: Technology
+- name: Axios | url: https://www.axios.com | type: web | category: News/research
+- name: r/geopolitics | subreddit: geopolitics | type: reddit | category: Geopolitical research
+- name: SSRNs | url: https://www.ssrn.com | type: web | category: Academic papers
+-->
+
+---
+
 ## Onboarding placeholders
 
 | Placeholder | What it represents |

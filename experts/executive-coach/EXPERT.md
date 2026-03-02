@@ -102,6 +102,16 @@ See `commands/` for step-by-step playbooks:
 
 ---
 
+<!-- SOURCES
+- name: Mochary Method | url: https://mochary.medium.com | type: web | category: Executive coaching
+- name: First Round Review | url: https://review.firstround.com | type: web | category: Leadership
+- name: Harvard Business Review | url: https://hbr.org | type: web | category: Management
+- name: r/Entrepreneur | subreddit: Entrepreneur | type: reddit | category: Founder psychology
+- name: Lenny's Newsletter | url: https://www.lennysnewsletter.com | type: newsletter | category: Leadership patterns
+-->
+
+---
+
 ## Onboarding placeholders
 
 | Placeholder | What it represents |

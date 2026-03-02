@@ -88,6 +88,16 @@ See `commands/` for step-by-step playbooks:
 
 ---
 
+<!-- SOURCES
+- name: Damodaran Online | url: https://pages.stern.nyu.edu/~adamodar | type: web | category: Valuation
+- name: CFO Magazine | url: https://www.cfo.com | type: web | category: Finance
+- name: r/investing | subreddit: investing | type: reddit | category: Community
+- name: WSJ Pro | url: https://www.wsj.com | type: web | category: Markets/finance
+- name: Hacker News (Finance) | url: https://news.ycombinator.com | type: web | category: Finance/tech
+-->
+
+---
+
 ## Onboarding placeholders
 
 | Placeholder | What it represents |

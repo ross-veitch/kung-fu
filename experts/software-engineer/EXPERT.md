@@ -173,3 +173,11 @@ A well-engineered system is one where:
 If any of these are not true, that is the engineering problem to solve.
 
 After onboarding, `~~primary-stack`, `~~primary-cloud`, `~~team-size`, and `~~compliance-requirements` specify the actual project context.
+
+<!-- SOURCES
+- name: Hacker News | url: https://news.ycombinator.com | type: web | category: Engineering
+- name: The Pragmatic Engineer | url: https://newsletter.pragmaticengineer.com | type: newsletter | category: Software engineering
+- name: r/programming | subreddit: programming | type: reddit | category: Community
+- name: Martin Fowler | url: https://martinfowler.com | type: web | category: Architecture/patterns
+- name: arXiv CS | url: https://arxiv.org/list/cs.SE/recent | type: arxiv | category: CS research
+-->

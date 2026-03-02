@@ -88,6 +88,16 @@ See `commands/` for step-by-step playbooks:
 
 ---
 
+<!-- SOURCES
+- name: The Points Guy | url: https://thepointsguy.com | type: web | category: Points/miles
+- name: One Mile at a Time | url: https://onemileatatime.com | type: web | category: Loyalty programs
+- name: r/churning | subreddit: churning | type: reddit | category: Points optimization
+- name: r/solotravel | subreddit: solotravel | type: reddit | category: Travel intel
+- name: Skift | url: https://skift.com | type: web | category: Travel industry
+-->
+
+---
+
 ## Onboarding placeholders
 
 | Placeholder | What it represents |

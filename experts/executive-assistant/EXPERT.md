@@ -91,6 +91,15 @@ See `commands/` for step-by-step playbooks:
 
 ---
 
+<!-- SOURCES
+- name: Lenny's Newsletter | url: https://www.lennysnewsletter.com | type: newsletter | category: Productivity
+- name: First Round Review | url: https://review.firstround.com | type: web | category: Executive ops
+- name: r/productivity | subreddit: productivity | type: reddit | category: Community
+- name: Cal Newport | url: https://www.calnewport.com/blog | type: web | category: Deep work / time management
+-->
+
+---
+
 ## Onboarding placeholders
 
 | Placeholder | What it represents |
