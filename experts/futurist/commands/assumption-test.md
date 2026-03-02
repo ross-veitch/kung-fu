@@ -1,67 +1,58 @@
-# /assumption-test — Hidden Assumption Stress Test
+# /assumption-test — Hidden Assumption Stress Test & Strategic Provocations
 
-**Purpose**: Surface and stress-test the hidden assumptions embedded in a strategy, worldview, or forecast. The most dangerous assumptions are the ones so deeply held they've become invisible.
+Two modes:
 
-**When to use**: Before major strategy commitments; when a strategy feels obviously right (that's when to be most suspicious); when a forecast looks too clean; at the start of a planning cycle.
+- **`/assumption-test`** — surface and audit the hidden assumptions in a strategy or worldview
+- **`/assumption-test provoke`** — generate structured provocations that challenge conventional thinking
 
----
-
-## Why this matters
-
-Every strategy rests on a set of assumptions about the world. Most are never stated explicitly. The ones that are unstated are the most dangerous — nobody is checking them, nobody is designing contingencies for them, and when they fail, the failure appears to come from nowhere.
-
-The best strategic thinkers hold their beliefs lightly. Not because they don't have convictions — but because they know which parts of their worldview are load-bearing and which are assumptions dressed as facts.
+Both challenge the same enemy: assumptions so deeply held they've become invisible.
 
 ---
 
-## Phase 1: Assumption archaeology
+## MODE 1: `/assumption-test` — Assumption Archaeology
 
-Surface assumptions buried in the strategy or worldview. Dig in three layers:
+**Purpose**: Surface and stress-test hidden assumptions embedded in a strategy, worldview, or forecast. The most dangerous assumptions are the ones so deeply held they've become invisible.
+
+**When to use**: Before major strategy commitments; when a strategy feels obviously right; when a forecast looks too clean; at the start of a planning cycle.
+
+### Phase 1: Assumption archaeology
+
+Surface assumptions in three layers:
 
 **Layer 1 — Stated assumptions** (visible, usually in planning docs)
-These are the ones that made it into the deck. They're the starting point, not the destination.
+The starting point, not the destination.
 
-**Layer 2 — Implied assumptions** (can be inferred from the choices made)
-What must be true about the world for the strategy to make sense? If the company is investing heavily in SEO, it's assuming Google search remains the dominant discovery channel. That's an implied assumption — probably nowhere in the deck.
+**Layer 2 — Implied assumptions** (inferred from choices made)
+What must be true about the world for the strategy to make sense? If the company is investing heavily in SEO, it's assuming Google search remains the dominant discovery channel. That assumption is probably nowhere in the deck.
 
 **Layer 3 — Background assumptions** (so embedded they feel like facts)
-What does everyone in the organisation believe that they've never questioned? These are the most dangerous. Examples:
-- "Customers always want the cheapest price" (maybe not in premium segments)
-- "Our moat is defensible" (maybe it's eroding faster than we think)
-- "The technology will continue improving" (maybe the S-curve is flattening)
-- "Our key supplier relationships are stable" (maybe one competitor is quietly locking them up)
+What does everyone believe that nobody has questioned? Examples:
+- "Customers always want the cheapest price"
+- "Our moat is defensible"
+- "The technology will continue improving"
+- "Our key supplier relationships are stable"
 
----
+### Phase 2: The inversion test
 
-## Phase 2: The inversion test
+For each significant assumption: *what would have to be true for the opposite to be correct?*
 
-For each significant assumption, apply the inversion: *what would have to be true for the opposite of this assumption to be correct?*
+Not about predicting the opposite is true — about understanding when your assumption fails. If those conditions are plausible, the assumption deserves explicit monitoring.
 
-This is not about predicting that the opposite is true — it's about understanding the conditions under which your assumption fails. If those conditions are plausible, the assumption deserves explicit monitoring.
-
-**Example**:
+Example:
 - Assumption: "AI will continue to improve at the current rate"
-- Inversion: what would cause AI progress to slow significantly?
-  - Energy/compute constraints
-  - Regulatory prohibition of frontier training
-  - Architectural ceiling of current paradigm
-  - Economic viability of further scaling
-- Assessment: some of these are plausible → this assumption deserves a scenario where AI progress slows
+- Inversion: energy/compute constraints; regulatory prohibition of frontier training; architectural ceiling; economic viability of further scaling
+- Assessment: some are plausible → this assumption deserves a slow-AI scenario
 
----
+### Phase 3: Assumption ranking
 
-## Phase 3: Assumption ranking
-
-Rate each assumption on:
-- **Centrality**: how load-bearing is this assumption? If false, does the strategy still work?
-- **Challengeability**: how confident are we it's correct? Is there genuine evidence, or is it a belief?
+Rate each:
+- **Centrality**: if false, does the strategy still work?
+- **Challengeability**: is there genuine evidence, or is it a belief dressed as fact?
 - **Monitorability**: can we track whether this assumption is holding?
 
 **Priority**: high centrality × high challengeability = needs explicit monitoring and contingency.
 
----
-
-## Phase 4: The six-inversion provocations
+### Phase 4: Six-inversion provocations
 
 Six questions to challenge conventional assumptions in any domain:
 
@@ -72,33 +63,86 @@ Six questions to challenge conventional assumptions in any domain:
 5. **The technology flip**: what if the enabling technology becomes free/ubiquitous?
 6. **The regulation inversion**: what if the regulatory environment becomes hostile to this model?
 
----
-
-## Output format
+### Output format
 
 ```
 STRATEGY / WORLDVIEW: [what is being tested]
 
 ASSUMPTION INVENTORY:
-  Stated: [list from the strategy/plan]
-  Implied: [list inferred from choices made]
-  Background: [list of things everyone believes but nobody has checked]
+  Stated: [from the strategy/plan]
+  Implied: [inferred from choices made]
+  Background: [things everyone believes but nobody has checked]
 
 INVERSION ANALYSIS (top 5 most load-bearing assumptions):
   [Assumption]
   Inversion: [what would have to be true for the opposite to hold]
   Conditions under which this fails: [list]
-  Plausibility of those conditions: H/M/L
+  Plausibility: H/M/L
   Centrality: [what breaks if this assumption is false]
 
 ASSUMPTION RISK RANKING:
-  🔴 Critical (high centrality + high challengeability): [list]
-  🟠 Monitor (medium centrality or medium challengeability): [list]
-  🟢 Low risk (low centrality or high confidence): [list]
+  🔴 Critical: [high centrality + high challengeability]
+  🟠 Monitor: [medium centrality or challengeability]
+  🟢 Low risk: [low centrality or high confidence]
 
 MONITORING PLAN:
-  [Assumption] → [metric/signal to watch] → [threshold that would trigger reconsideration]
+  [Assumption] → [metric/signal] → [threshold that triggers reconsideration]
 
 STRATEGIC DESIGN CHANGES:
-  [Changes to the strategy based on assumption vulnerabilities found]
+  [Strategy changes based on vulnerabilities found]
+```
+
+---
+
+## MODE 2: `/assumption-test provoke` — Strategic Provocations
+
+**Purpose**: Generate structured provocations to challenge conventional thinking. These are not predictions — thought experiments designed to expose the brittleness of current assumptions and open up the strategic imagination.
+
+**When to use**: Strategy workshops, annual planning, when thinking has become too consensus-driven.
+
+A good provocation challenges a hidden assumption, is specific enough to be uncomfortable, is plausible enough to be taken seriously, and generates strategy-relevant implications. When asked "do you really think this will happen?" — the answer is: "I don't know. Does your strategy still work if it does?"
+
+### The six provocation types
+
+**1. The Reversal** — take the dominant assumption and reverse it
+*"What if [the thing everyone believes is increasing] actually reverses/plateaus/collapses?"*
+- "What if AI capability improvement plateaus in 3 years — what does your product strategy look like then?"
+- "What if remote work reverses and 90% of workers return to offices?"
+
+**2. The Extreme** — take a trend to its logical limit
+*"What if [current trend] continues to its maximum logical conclusion?"*
+- "What if every trip was booked by an AI agent with no human browsing a single OTA page?"
+- "What if solar energy becomes functionally free in 15 years?"
+
+**3. The Inversion** — who wins if the current model breaks?
+*"The current model benefits [X]. If the model broke, who would gain, and what would they do to break it?"*
+- "Airlines benefit from OTA distribution costs. If airlines got distribution costs to zero, what does that do to OTA take rates?"
+
+**4. The Convergence** — two trends whose intersection most people haven't considered
+*"What happens when [trend A] meets [trend B]?"*
+- "What happens when aging populations (more retirees with time) meet AI travel planning (frictionless discovery)?"
+
+**5. The Newcomer** — a plausible disruptor that doesn't yet exist
+*"Describe a company founded in [horizon year] that disrupts [current leader] by doing [structural difference]."*
+
+**6. The Regulation Shock** — a plausible regulatory change that reshapes the sector
+*"What if the EU / US / China decided to [specific regulation]?"*
+
+### Output format
+
+```
+DOMAIN: [sector / question]
+
+PROVOCATIONS:
+
+  [Type: Reversal / Extreme / Inversion / Convergence / Newcomer / Regulation Shock]
+  PROVOCATION: "[the specific, uncomfortable statement]"
+  Hidden assumption challenged: [what belief does this challenge]
+  If true: [what would change — specifically for this company]
+  Strategy question it raises: [the question this forces]
+
+  [repeat × 5–8]
+
+MOST UNCOMFORTABLE (the one that gets defensive reactions):
+  [name it] — [why it's the most structurally threatening]
 ```

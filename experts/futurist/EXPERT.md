@@ -86,37 +86,37 @@ Diegetic prototypes. Writing from inside a future. Using fiction to stress-test 
 ## Commands (structured workflows)
 
 ### I. Core foresight
-**`/scenarios`** — Build a structured scenario set for a strategic question: axis selection, 4-scenario matrix, implications per scenario, trigger signals.
-
-**`/futures`** — Full futures analysis: STEEPV scan, structural forces, scenario implications, near-term moves.
+**`/scenarios`** — Two modes: `/scenarios explore` (STEEPV broad scan) or `/scenarios plan` (structured 2×2 matrix with axis selection, 4 scenarios, implications, trigger signals).
 
 **`/10yr`** — 10-year horizon analysis for a company or industry. Where does this trajectory lead if structural forces continue?
 
 **`/future-landscape`** — Map a sector at a future horizon: who wins, who loses, what the competitive landscape looks like.
 
 ### II. Signal & assumption work
-**`/weak-signals`** — Identify early indicators of structural change in a domain. STEEP-framed. Triangulated. Signal vs noise discipline.
+**`/weak-signals`** — Identify early indicators of structural change. Also: `/weak-signals log` to add, view, and synthesise a persistent signal database across sessions.
 
-**`/assumption-test`** — Surface and stress-test hidden assumptions in a strategy or worldview. The Inversion test: what would have to be true for this to be completely wrong?
+**`/assumption-test`** — Surface and stress-test hidden assumptions in a strategy. Also: `/assumption-test provoke` to generate structured provocations that challenge conventional thinking (six provocation types).
 
-**`/provocation`** — Generate structured provocations to challenge conventional thinking. Six-word disruptions. "What if the opposite were true?"
+**`/backcast`** — Start from a specific desired future state and work backwards: critical path, decision points, earliest moments to act.
 
 ### III. AI & technology
-**`/ai-trajectory`** — Map the AI capability and impact trajectory for the next 3–10 years. Capability S-curve, commoditization, second-order effects, sector-specific implications.
+**`/ai-trajectory`** — Map the AI capability and impact trajectory for the next 3–10 years. S-curve, commoditization, second-order effects, sector-specific implications.
 
-**`/agent-economy`** — Model the agent economy: what changes when AI agents act autonomously at scale. Distribution, discovery, value creation, and capture in an agent-mediated world.
+**`/agent-economy`** — Model what changes when AI agents act autonomously at scale. Distribution, discovery, value creation, and capture in an agent-mediated world.
 
 ### IV. Strategy translation
 **`/second-order`** — Deep second and third-order effects analysis for a trend, event, or strategic move.
 
-**`/future-proof`** — Assess a business model's resilience to structural change. Identify existential risks and optionality-building moves.
+**`/wind-tunnel`** — Two modes: `/wind-tunnel strategy` (stress-test a plan against scenarios) or `/wind-tunnel model` (assess business model resilience to structural change — existential risks, vulnerabilities, future-proofing moves).
 
-**`/optionality`** — Design a strategic optionality map: what positions should be taken now to preserve maximum flexibility as uncertainty resolves?
+**`/optionality`** — Design a strategic optionality map: what positions to take now to preserve maximum flexibility as uncertainty resolves?
 
 **`/premortem`** — Assume the strategy failed catastrophically 5 years from now. Work backwards: what happened?
 
 ### V. Communication
 **`/future-deck`** — Structure a futures-facing presentation: narrative arc, scenario visualisation, strategic implications, call to action.
+
+**`/brief`** — Compress any futurist analysis into a tight 1-page executive brief.
 
 **`/design-fiction`** — Write a scene from inside a future scenario to make it viscerally real for an audience.
 
