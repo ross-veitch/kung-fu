@@ -434,3 +434,64 @@ kung-fu-config/
 ├── spawn-with-expert.sh           ← spawns sub-agents with full stack injected
 └── staying-current.mjs            ← weekly learning loop runner
 ```
+
+---
+
+## Context window budget
+
+Every expert plugin injects tokens into the session context when loaded. This is the most important practical tradeoff to understand: deeper expertise costs more context, which means less space for conversation history, tool outputs, and reasoning.
+
+### Token costs by expert (EXPERT.md + skills, commands excluded)
+
+Commands are loaded on-demand via the command files and don't contribute to the baseline context cost shown here.
+
+| Expert | ~Tokens | Size |
+|--------|---------|------|
+| Executive Assistant | 2,200 | 🟢 S |
+| Financial Analyst | 2,300 | 🟢 S |
+| Research Analyst | 2,300 | 🟢 S |
+| Travel Concierge | 2,500 | 🟢 S |
+| Mandarin Teacher | 2,600 | 🟢 S |
+| News Editor | 2,600 | 🟢 S |
+| Longevity Physician | 3,100 | 🟢 S |
+| Lawyer | 4,100 | 🟢 S |
+| Data Analyst | 4,400 | 🟢 S |
+| Executive Coach | 4,600 | 🟢 S |
+| Pricing & Revenue Manager | 4,600 | 🟢 S |
+| Software Engineer | 4,800 | 🟢 S |
+| Travel Industry Analyst | 5,200 | 🟡 M |
+| Growth Marketer | 5,500 | 🟡 M |
+| MENA Market Specialist | 6,200 | 🟡 M |
+| Investment Banker | 8,800 | 🟡 M |
+| Fitness & Performance Coach | 9,000 | 🟡 M |
+| Product Manager | 9,100 | 🟡 M |
+| People Partner | 9,200 | 🟡 M |
+| Management Consultant | 13,400 | 🟠 L |
+| Futurist | 22,100 | 🔴 XL |
+
+**Size tiers:**
+- 🟢 **S** (< 5k): Negligible overhead — use freely in any session length
+- 🟡 **M** (5k–10k): Moderate — comfortable for most sessions
+- 🟠 **L** (10k–20k): Noticeable — be mindful in very long multi-turn sessions with heavy tool use
+- 🔴 **XL** (> 20k): Heavy — excellent depth, but front-loads significant context
+
+### Recommended upper limit
+
+**10,000 tokens** is a reasonable soft limit for a single expert. Below this, the context overhead is unlikely to be the constraint in most sessions. Above it, start asking: is every skill file earning its place? Could some skills be moved to on-demand loading via `load-plugin.sh`?
+
+The futurist (~22k) and management consultant (~13k) both exceed this. The futurist was recently reduced from ~33k through command and skill consolidation. Both are justified by the depth of their domain — but if you're running very long sessions, prefer short focused sessions over marathon multi-turn ones.
+
+### Multi-expert loading
+
+Loading multiple experts multiplies the cost. Two 🟡 M experts = ~15–18k tokens of expert context before the conversation starts. Three experts can easily exceed 25k. Use multi-expert loading for genuinely cross-domain tasks; for single-domain tasks, load one expert and unload (start a new session) when the topic changes.
+
+### Practical guidance
+
+- **Short tasks**: any expert size is fine. The session won't accumulate enough conversation to hit practical limits.
+- **Long multi-turn sessions**: prefer 🟢 S or 🟡 M experts. More context headroom means the model sees more of the conversation history.
+- **Cron jobs and sub-agents**: these are isolated sessions — context budget resets. Expert size doesn't compound across runs.
+- **The Futurist in long sessions**: the XL cost is justified by domain depth. Run focused sessions (one scenario, one strategy question) rather than open-ended conversations. The depth pays off when you need it.
+
+### Keeping experts lean
+
+The authoring guide targets EXPERT.md under 2,000 words and each SKILL.md under 3,000 words. These are not arbitrary limits — they're calibrated to keep individual experts under the 10k soft limit while providing genuine domain depth. See [Authoring Experts](../howto/authoring-experts.md).

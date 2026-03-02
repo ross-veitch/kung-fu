@@ -151,29 +151,31 @@ Or just ask your agent:
 
 ## Built-in Expert Plugins
 
-| Expert Plugin | Domain | Anthropic plugin |
-|---|---|---|
-| [Data Analyst](experts/data-analyst/) | SQL, Python, BI, A/B testing, causal inference | [data](https://github.com/anthropics/knowledge-work-plugins/tree/main/data) |
-| [Executive Assistant](experts/executive-assistant/) | Calendar, comms, time management, stakeholder ops | [productivity](https://github.com/anthropics/knowledge-work-plugins/tree/main/productivity) |
-| [Executive Coach](experts/executive-coach/) | Leadership coaching, decision-making, high-stakes conversations, post-meeting debrief | — |
-| [Financial Analyst](experts/financial-analyst/) | Modelling, valuation, unit economics, deal analysis | [finance](https://github.com/anthropics/knowledge-work-plugins/tree/main/finance) |
-| [Fitness & Performance Coach](experts/fitness-performance-coach/) | Training, recovery, biometrics, periodisation | — |
-| [Futurist](experts/futurist/) | Structural foresight, scenario planning, exponential tech, AI trajectory, systems thinking | — |
-| [Growth Marketer](experts/growth-marketer/) | Paid acquisition, SEO, CRO, lifecycle marketing, experimentation, attribution | — |
-| [Investment Banker](experts/investment-banker/) | M&A, capital raises, valuation, pitchbooks, due diligence, term sheets | — |
-| [Lawyer](experts/lawyer/) | Corporate law, contracts, data privacy, IP, M&A, governance | [legal](https://github.com/anthropics/knowledge-work-plugins/tree/main/legal) |
-| [Longevity & Human Optimization Physician](experts/longevity-human-optimization-physician/) | Biomarkers, prevention protocols, emerging interventions | — |
-| [Management Consultant](experts/management-consultant/) | Strategy, unit economics, growth diagnostics, travel/aviation/AI sector intelligence, capital allocation | — |
-| [Mandarin Chinese Language Teacher](experts/mandarin-chinese-language-teacher/) | Adult acquisition, tones, characters, HSK | — |
-| [MENA Market Specialist](experts/mena-market-specialist/) | Saudi, UAE, Egypt, GCC market entry, Vision 2030, regulatory, business culture | — |
-| [News Editor](experts/news-editor/) | Editorial judgment, curation, verification, multi-beat coverage | — |
-| [People Partner](experts/people-partner/) | Org design, talent, performance management, compensation, multi-jurisdiction HR | — |
-| [Pricing & Revenue Manager](experts/pricing-revenue-manager/) | Dynamic pricing, yield management, take rate strategy, OTA/hotel/airline economics | — |
-| [Product Manager](experts/product-manager/) | Product strategy, discovery, prioritisation, metrics, roadmap, PRDs | — |
-| [Research Analyst](experts/research-analyst/) | Deep research, synthesis, competitive intelligence, due diligence | — |
-| [Software Engineer](experts/software-engineer/) | Full-stack architecture, health data platforms, SDLC, code review, production readiness | — |
-| [Travel Concierge](experts/travel-concierge/) | Points/miles, routing, hotels, logistics | — |
-| [Travel Industry Analyst](experts/travel-industry-analyst/) | OTA economics, airline distribution, hotel distribution, competitive analysis, market sizing | — |
+The **Size** column shows the context cost when the expert loads (EXPERT.md + skills). Commands are on-demand and don't add to this. See [context budget guidance](docs/architecture.md#context-window-budget) for the full breakdown.
+
+| Expert Plugin | Domain | Size | Anthropic plugin |
+|---|---|---|---|
+| [Data Analyst](experts/data-analyst/) | SQL, Python, BI, A/B testing, causal inference | 🟢 S | [data](https://github.com/anthropics/knowledge-work-plugins/tree/main/data) |
+| [Executive Assistant](experts/executive-assistant/) | Calendar, comms, time management, stakeholder ops | 🟢 S | [productivity](https://github.com/anthropics/knowledge-work-plugins/tree/main/productivity) |
+| [Executive Coach](experts/executive-coach/) | Leadership coaching, decision-making, high-stakes conversations, post-meeting debrief | 🟢 S | — |
+| [Financial Analyst](experts/financial-analyst/) | Modelling, valuation, unit economics, deal analysis | 🟢 S | [finance](https://github.com/anthropics/knowledge-work-plugins/tree/main/finance) |
+| [Fitness & Performance Coach](experts/fitness-performance-coach/) | Training, recovery, biometrics, periodisation | 🟡 M | — |
+| [Futurist](experts/futurist/) | Structural foresight, scenario planning, exponential tech, AI trajectory, systems thinking | 🔴 XL | — |
+| [Growth Marketer](experts/growth-marketer/) | Paid acquisition, SEO, CRO, lifecycle marketing, experimentation, attribution | 🟡 M | — |
+| [Investment Banker](experts/investment-banker/) | M&A, capital raises, valuation, pitchbooks, due diligence, term sheets | 🟡 M | — |
+| [Lawyer](experts/lawyer/) | Corporate law, contracts, data privacy, IP, M&A, governance | 🟢 S | [legal](https://github.com/anthropics/knowledge-work-plugins/tree/main/legal) |
+| [Longevity & Human Optimization Physician](experts/longevity-human-optimization-physician/) | Biomarkers, prevention protocols, emerging interventions | 🟢 S | — |
+| [Management Consultant](experts/management-consultant/) | Strategy, unit economics, growth diagnostics, travel/aviation/AI sector intelligence, capital allocation | 🟠 L | — |
+| [Mandarin Chinese Language Teacher](experts/mandarin-chinese-language-teacher/) | Adult acquisition, tones, characters, HSK | 🟢 S | — |
+| [MENA Market Specialist](experts/mena-market-specialist/) | Saudi, UAE, Egypt, GCC market entry, Vision 2030, regulatory, business culture | 🟡 M | — |
+| [News Editor](experts/news-editor/) | Editorial judgment, curation, verification, multi-beat coverage | 🟢 S | — |
+| [People Partner](experts/people-partner/) | Org design, talent, performance management, compensation, multi-jurisdiction HR | 🟡 M | — |
+| [Pricing & Revenue Manager](experts/pricing-revenue-manager/) | Dynamic pricing, yield management, take rate strategy, OTA/hotel/airline economics | 🟢 S | — |
+| [Product Manager](experts/product-manager/) | Product strategy, discovery, prioritisation, metrics, roadmap, PRDs | 🟡 M | — |
+| [Research Analyst](experts/research-analyst/) | Deep research, synthesis, competitive intelligence, due diligence | 🟢 S | — |
+| [Software Engineer](experts/software-engineer/) | Full-stack architecture, SDLC, code review, production readiness | 🟢 S | — |
+| [Travel Concierge](experts/travel-concierge/) | Points/miles, routing, hotels, logistics | 🟢 S | — |
+| [Travel Industry Analyst](experts/travel-industry-analyst/) | OTA economics, airline distribution, hotel distribution, competitive analysis, market sizing | 🟡 M | — |
 
 ---
 
