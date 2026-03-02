@@ -94,10 +94,10 @@ Think of it as briefing a new consultant before they start work: "here's our com
 - **Key markets:** Saudi Arabia, UAE, Egypt + broader MENA
 
 ## Tools
-- **Calendar/email:** Google Workspace (ross@wego.com)
+- **Calendar/email:** Google Workspace (your-email@company.com)
 - **Project management:** JIRA (wegomushi.atlassian.net)
 - **CRM:** [tbc]
-- **Docs:** Google Drive (share with ross@wego.com)
+- **Docs:** Google Drive (share with your-email@company.com)
 - **Comms:** Slack
 
 ## Communication style

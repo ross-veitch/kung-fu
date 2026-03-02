@@ -91,3 +91,21 @@ Add distinction between *AI as workflow tool* (Gmail summaries, drafting) vs. *A
 **5. The CJR/WSJ criticism on climate coverage — is this a one-off or a new editorial posture from CJR?** If CJR is moving toward naming specific outlets for coverage failures under the current administration, that changes how to read CJR as a source — it becomes more of an accountability actor and less of a neutral trade observer. Worth watching the next 4–6 weeks of CJR output for pattern.
 
 ---
+
+## [2026-03-02] — Manual fetch (Perplexity key unavailable)
+
+**Sources read:** Nieman Lab, Poynter, Columbia Journalism Review (partial), Press Gazette (partial)
+**Depth:** standard (5 sources attempted, 3 yielded content)
+**Cost:** ~$0.00 (no API calls, web_fetch only)
+
+### Key insights
+
+- **CNN's future uncertain** — Paramount's bid for Warner Bros. Discovery raises editorial independence questions. CEO Mark Thompson urging staff not to "jump to conclusions." Big consolidation play with major implications for cable news. *(Poynter, Feb 27)*
+- **WaPo scored a legal win** — Judge blocked DOJ from searching a Post reporter's devices, but government still holds them. Press freedom fight ongoing. *(Poynter, Feb 26)*
+- **AI reshaping freelance journalism** — Nieman Lab piece on how AI tools are transforming how freelancers work: faster research, but new pressures on originality and sourcing standards. *(Nieman Lab, Feb)*
+- **Passkey/magic link logins gaining traction** — News organizations moving away from passwords; magic links and passcodes improving subscription conversion and reducing churn. *(Nieman Lab, Feb)*
+- **Houston Chronicle x creator partnerships** — Publishers experimenting with creator collabs while maintaining editorial standards ("same values, same mission, same ethics"). Template for how legacy outlets can expand reach without compromising brand. *(Nieman Lab, Feb)*
+- **Trump's State of the Union coverage** — Media reaction piece noting familiar dynamic: red meat for allies, little persuasion of skeptics. Tariff fact-checking: families paying ~$1,700/year. *(Poynter, Feb 25-26)*
+
+### Improvement notes
+- Perplexity API key (`PERPLEXITY_API_KEY`) not set in OpenClaw env — `staying-current.mjs` script will fail until resolved. Add key to `~/.openclaw/openclaw.json` env.vars or system environment.

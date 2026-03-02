@@ -89,7 +89,7 @@ See: `commands/create-expert.md` for the full playbook.
 
 **Decision:** A strict two-tier split:
 
-**Published (shared repo, `github.com/rossveitch/kung-fu`):**
+**Published (shared repo, `github.com/ross-veitch/kung-fu`):**
 - `EXPERT.md` — generic domain expertise, publishable
 - `skills/` — domain knowledge, publishable
 - `commands/` — SOPs, publishable
@@ -109,7 +109,7 @@ See: `commands/create-expert.md` for the full playbook.
 
 **Decision:** `PLAYBOOK.md` and `USER.md` are stored in a separate directory (`~/clawd/kung-fu-config/`) rather than inside the kung-fu repo directory.
 
-**Rationale:** The kung-fu repo is now a standalone public repo (`github.com/rossveitch/kung-fu`). Storing personal/org files inside a cloned repo means either (a) those files get committed and exposed, or (b) you need `.gitignore` rules that can be accidentally circumvented. A physically separate overlay directory is simpler and more robust: the line between "shared" and "private" is a directory boundary, not a gitignore rule.
+**Rationale:** The kung-fu repo is now a standalone public repo (`github.com/ross-veitch/kung-fu`). Storing personal/org files inside a cloned repo means either (a) those files get committed and exposed, or (b) you need `.gitignore` rules that can be accidentally circumvented. A physically separate overlay directory is simpler and more robust: the line between "shared" and "private" is a directory boundary, not a gitignore rule.
 
 `load-expert.sh` checks `KUNG_FU_CONFIG_DIR` (default: `~/clawd/kung-fu-config`) for `PLAYBOOK.md` and `USER.md`, falling back to the expert directory for backwards compatibility.
 

@@ -196,7 +196,7 @@ After onboarding, `USER.md` provides the resolved values:
 
 ```markdown
 ## Resolved configuration
-- ~~calendar-tool: Google Calendar (ross@wego.com)
+- ~~calendar-tool: Google Calendar (your-email@company.com)
 - ~~reporting-currency: USD
 - ~~home-airport: SIN (Singapore Changi)
 ```
@@ -386,7 +386,7 @@ Main session              Sub-agent A                   Sub-agent B
 
 ## Full file structure
 
-**Shared repo** (`clawd-prj/kung-fu/` → `https://github.com/rossveitch/kung-fu`):
+**Shared repo** (`clawd-prj/kung-fu/` → `https://github.com/ross-veitch/kung-fu`):
 ```
 clawd-prj/kung-fu/
 ├── docs/                          ← documentation

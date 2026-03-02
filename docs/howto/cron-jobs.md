@@ -44,7 +44,7 @@ With both SOUL.md + fitness-performance-coach role injected:
 
 Check today's Oura readiness data (~/clawd/data/oura-<date>.json).
 Follow the readiness check-in SOP from the loaded role.
-Post to #clawd-prj-training (C0AGAUJL9L2).
+Post to #your-training-channel.
 ```
 
 The expert plugin contains the readiness interpretation framework, the exact output format, and the contextual knowledge (training week position, zone targets, Ross's baseline metrics). The task prompt can be short — the expert plugin handles the "how".

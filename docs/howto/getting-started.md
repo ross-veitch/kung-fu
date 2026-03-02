@@ -17,7 +17,7 @@ From zero to your first working expert in 15 minutes.
 
 ```bash
 cd ~/clawd
-git clone --recurse-submodules https://github.com/rossveitch/kung-fu clawd-prj/kung-fu
+git clone --recurse-submodules https://github.com/ross-veitch/kung-fu clawd-prj/kung-fu
 ```
 
 The `--recurse-submodules` flag pulls the Anthropic vendor plugins alongside the repo.

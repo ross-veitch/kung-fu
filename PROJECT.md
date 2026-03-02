@@ -3,7 +3,7 @@
 **Channel:** #clawd-prj-kung-fu (C0AGC1WLX7Y)
 **Started:** 2026-02-22
 **Last Updated:** 2026-02-27 (10:00 SGT)
-**Repo:** https://github.com/rossveitch/kung-fu
+**Repo:** https://github.com/ross-veitch/kung-fu
 **Config overlay:** `~/clawd/kung-fu-config/` (private, stays in clawd repo)
 
 ## Goal

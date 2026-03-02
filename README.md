@@ -116,7 +116,7 @@ This is what keeps plugins generic and shareable while making the injected exper
 ```bash
 # Clone into your clawd workspace
 cd ~/clawd
-git clone --recurse-submodules https://github.com/rossveitch/kung-fu clawd-prj/kung-fu
+git clone --recurse-submodules https://github.com/ross-veitch/kung-fu clawd-prj/kung-fu
 
 # Run the installer (creates symlinks, config overlay, sets up channel routing)
 bash clawd-prj/kung-fu/install.sh

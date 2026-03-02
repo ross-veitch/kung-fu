@@ -18,7 +18,7 @@ Contributions welcome — especially new expert plugins, real-world usage exampl
 ### For new expert plugins
 
 A good expert plugin PR includes:
-- [ ] The role directory at `experts/[role-name]/` with `EXPERT.md` (and optionally `scripts/`)
+- [ ] The expert directory at `experts/[expert-name]/` with `EXPERT.md`, `skills/`, `commands/` (including `commands/onboard.md`), and `.plugin/plugin.json`
 - [ ] An entry in `docs/experts/index.md`
 - [ ] A worked example: same task, output without expert vs with expert plugin loaded, and the delta
 - [ ] No personality content in `EXPERT.md` — that belongs in `SOUL.md`
@@ -49,22 +49,21 @@ Expert authoring guide: [docs/howto/authoring-experts.md](docs/howto/authoring-e
 ## Development setup
 
 ```bash
-# Fork and clone
-git clone https://github.com/your-fork/kung-fu
-cd kung-fu
+# Fork the repo on GitHub, then clone your fork into the clawd workspace
+cd ~/clawd
+git clone --recurse-submodules https://github.com/YOUR-USERNAME/kung-fu clawd-prj/kung-fu
 
-# Install expert plugins to your workspace
-cp -r experts/* ~/clawd/clawd-prj/kung-fu/experts/
+# Run the installer (creates symlinks, config overlay, channel routing example)
+bash clawd-prj/kung-fu/install.sh
 
-# Install scripts
-cp scripts/load-expert.sh ~/clawd/scripts/
-chmod +x ~/clawd/scripts/load-expert.sh
-
-# Test a role
-~/clawd/scripts/load-expert.sh --list
-~/clawd/scripts/load-expert.sh --preview fitness-performance-coach
-~/clawd/scripts/load-expert.sh fitness-performance-coach
-~/clawd/scripts/load-expert.sh --unload
+# To pull upstream improvements into your fork later:
+cd clawd-prj/kung-fu
+git remote add upstream https://github.com/ross-veitch/kung-fu
+git fetch upstream && git merge upstream/main
+# Test your expert
+bash ~/clawd/scripts/load-expert.sh list
+bash ~/clawd/scripts/load-expert.sh fitness-performance-coach
+bash ~/clawd/scripts/load-expert.sh off
 ```
 
 ---

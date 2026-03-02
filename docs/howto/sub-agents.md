@@ -31,9 +31,9 @@ This is different from the soul-switching pattern (where sub-agents get a differ
 
 Ask the agent:
 
-> *"Spawn a health coach sub-agent to analyse my Oura readiness data from this week"*  
+> *"Spawn a fitness-performance-coach sub-agent to analyse my Oura readiness data from this week"*  
 > *"Use a research analyst sub-agent to summarise the last 30 days of MENA travel news"*  
-> *"Get the travel planner to find the best SIN→DXB routing next Tuesday"*
+> *"Get the travel concierge to find the best SIN→DXB routing next Tuesday"*
 
 The agent will:
 1. Load `SOUL.md` and the appropriate `EXPERT.md` from `~/clawd/clawd-prj/kung-fu/experts/`
@@ -125,7 +125,7 @@ Set `runTimeoutSeconds` on long research tasks to bound worst-case cost.
 
 **Always include SOUL.md.** If you inject only the expert plugin, the sub-agent has no identity context and may behave inconsistently with the main agent.
 
-**Keep tasks bounded.** "Analyse this week's training data and recommend today's session" is good. "Be my health coach" is not.
+**Keep tasks bounded.** "Analyse this week's training data and recommend today's session" is good. "Be my fitness and performance coach" is not.
 
 **Pass data explicitly.** Sub-agents don't have the main session's context. Reference files by full path or include data directly in the task.
 

@@ -24,7 +24,7 @@ That's it. New experts, updated skills, bug fixes, and new commands are all avai
 
 ## What happens when new experts are added to the main repo
 
-When a new expert is added to `https://github.com/rossveitch/kung-fu`:
+When a new expert is added to `https://github.com/ross-veitch/kung-fu`:
 
 1. **After `git pull`**: The new expert directory appears at `experts/[new-expert]/`
 2. **Immediately available**: `bash ~/clawd/scripts/load-expert.sh list` shows the new expert
@@ -65,7 +65,7 @@ If you've forked `kung-fu` to create your own experts, you can pull upstream imp
 
 ```bash
 # Add the upstream remote (one time)
-git remote add upstream https://github.com/rossveitch/kung-fu
+git remote add upstream https://github.com/ross-veitch/kung-fu
 
 # Pull upstream changes into your fork
 git fetch upstream
@@ -88,6 +88,6 @@ Re-run it if you see warnings about broken symlinks, or after a fresh machine se
 ## Notification: new experts available
 
 There's no automatic notification when new experts are added. To stay informed:
-- **Watch the GitHub repo**: Go to `https://github.com/rossveitch/kung-fu` → Watch → Custom → check "Releases" and "Commits"
+- **Watch the GitHub repo**: Go to `https://github.com/ross-veitch/kung-fu` → Watch → Custom → check "Releases" and "Commits"
 - **Periodic check**: `cd ~/clawd/clawd-prj/kung-fu && git fetch origin && git log HEAD..origin/main --oneline`
 - Or ask your agent: *"Check for kung-fu updates"* — the agent will run the above and report what's new
