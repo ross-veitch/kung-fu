@@ -321,7 +321,7 @@ Key differences from Anthropic's structure:
 
 ---
 
-## Role creation process
+## Expert creation process
 
 New expert plugins are created through a 5-phase process (see `commands/create-expert.md`):
 
@@ -393,7 +393,7 @@ clawd-prj/kung-fu/
 │   ├── architecture.md            ← you are here
 │   ├── howto/                     ← how-to guides
 │   └── reference/
-├── experts/                       ← expert plugin library (14 experts)
+├── experts/                       ← expert plugin library (21 experts)
 │   └── [expert-name]/
 │       ├── .plugin/
 │       │   └── plugin.json        ← manifest: name, version, dependencies

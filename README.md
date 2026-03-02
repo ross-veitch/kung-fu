@@ -10,6 +10,8 @@ That exchange is ten seconds of film. One moment Neo doesn't know kung fu. The n
 
 **Kung Fu** is a pattern and toolset for [OpenClaw](https://github.com/openclaw/openclaw) that works exactly like this — letting you inject specialist domain expertise into your agent on demand, without ever changing who it is.
 
+> **What is OpenClaw?** [OpenClaw](https://github.com/openclaw/openclaw) is an open-source AI agent framework that gives you a persistent, personality-rich assistant running in your terminal and connected to your tools. Kung Fu is a plugin layer that sits on top of it.
+
 ---
 
 ## The idea
@@ -70,7 +72,7 @@ experts/[expert-name]/
 
 The core of every plugin. Defines who this expert is: their professional bio, the specific depth of their domain knowledge, their cognitive approach (how they think, not just what they know), the tools a world-class practitioner in this field actually uses, and how they stay current with their domain.
 
-Written as if describing the best human in the world at that job. Generic — works for anyone, publishable to [ClawHub](https://clawhub.com).
+Written as if describing the best human in the world at that job. Generic — works for anyone, publishable to [ClawHub](https://clawhub.com) *(coming soon — OpenClaw's planned package registry)*.
 
 ### skills/ — the knowledge library
 
@@ -79,6 +81,17 @@ Deep domain knowledge, organised by sub-discipline. Each `SKILL.md` is a synthes
 ### commands/ — the playbooks
 
 Step-by-step SOPs for the scenarios this expert handles most. When you ask the expert to `/plan-trip`, `/interpret-labs`, or `/deep-research`, there's a structured playbook behind it.
+
+### Skills vs Commands — the most common point of confusion
+
+| | Skills | Commands |
+|---|---|---|
+| **What it is** | Background knowledge, always present | Step-by-step playbook, run on request |
+| **When it loads** | Automatically, with the expert | When you ask for it |
+| **Analogy** | A doctor's pharmacology knowledge — present in every consultation | A clinical assessment protocol — followed when seeing a patient |
+| **Example** | HRV interpretation frameworks | `/interpret-biometrics` — walks through a specific biometric check-in |
+
+Skills inform every response. Commands are explicit SOPs you invoke for specific tasks.
 
 ### USER.md — your personal configuration
 
@@ -266,7 +279,7 @@ See [Staying current](docs/howto/staying-current.md) for the full guide.
 
 The published files in every Expert Plugin — `EXPERT.md`, `skills/`, `commands/`, `plugin.json` — contain no personal information. They are the generic, reusable layer. Anyone can download them and run the onboarding to get their own `USER.md`.
 
-Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), the same distribution mechanism used for OpenClaw skills.
+Expert Plugins are designed to be published on [ClawHub](https://clawhub.com) *(coming soon — OpenClaw's planned package registry)*, using the same distribution mechanism as OpenClaw skills.
 
 ---
 
@@ -297,6 +310,7 @@ Expert Plugins are designed to be published on [ClawHub](https://clawhub.com), t
 - [OpenClaw](https://github.com/openclaw/openclaw) v2026.2+ with `sessions_spawn` support
 - `~/clawd/SOUL.md` — your agent's permanent identity (never modified by Kung Fu)
 - `~/clawd/AGENTS.md` configured to read `SOUL.md` at startup
+- `python3` — used by `load-expert.sh` for JSON parsing (standard on macOS and most Linux distros)
 
 ---
 

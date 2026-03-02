@@ -27,6 +27,13 @@
 #        ./load-expert.sh list                               (show available experts)
 #        ./load-expert.sh off                                (signal unload)
 
+# Dependency check: python3 required for JSON parsing
+if ! command -v python3 &>/dev/null; then
+  echo "ERROR: python3 is required by load-expert.sh but was not found." >&2
+  echo "Install Python 3: https://www.python.org/downloads/" >&2
+  exit 1
+fi
+
 # Resolve the real script location — follow symlinks so this works whether the script
 # is run directly from the repo or via a symlink in ~/clawd/scripts/.
 _SCRIPT_SOURCE="$0"

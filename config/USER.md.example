@@ -1,0 +1,32 @@
+# USER.md — Personal Configuration (Example)
+# Generated during /onboard. Lives in your private config overlay (never committed).
+# Copy this file to ~/clawd/kung-fu-config/experts/[expert-name]/USER.md and fill in your values.
+
+## About me
+- Name: ~~your-name → Alex Chen
+- Role: ~~your-role → Head of Product
+- Company: ~~company-name → Acme Travel Co
+- Location: ~~location → Singapore (GMT+8)
+- Timezone: ~~timezone → Asia/Singapore
+
+## Resolved configuration
+# These ~~ values are resolved from the expert's EXPERT.md and skills/ files.
+# Each line maps a placeholder to your personal value.
+- ~~calendar-tool: Google Calendar (alex@acme.com)
+- ~~reporting-currency: USD
+- ~~home-airport: SIN
+- ~~primary-communication: Slack
+- ~~data-tool: Looker + BigQuery
+- ~~note-taking: Notion
+
+## Personal context
+# Additional context the expert should always have available.
+- I work across Singapore and Dubai (frequent travel)
+- My team is 8 people, fully remote across 4 timezones
+- Board reporting is quarterly; next board is 15 March
+- Current OKR focus: improving D7 retention from 34% → 45%
+
+## Preferences
+- Analysis: favour unit economics framing over top-line metrics
+- Communication: concise, data-backed, direct
+- Output format: bullet points for quick reads, structured doc for anything that needs sign-off

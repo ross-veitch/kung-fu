@@ -1,0 +1,37 @@
+# PLAYBOOK.md — Organisation Configuration (Example)
+# Org-level defaults for this expert. Lives in your private config overlay (never committed).
+# Copy to ~/clawd/kung-fu-config/experts/[expert-name]/PLAYBOOK.md and customise.
+# PLAYBOOK.md sets org-wide defaults. USER.md overrides for the individual.
+
+## Company context
+- Company: ~~company-name → Acme Travel Co
+- Industry: ~~industry → Online Travel (OTA + B2B)
+- Stage: ~~company-stage → Series C, 400 employees
+- Primary markets: ~~primary-markets → Southeast Asia, Middle East
+- Fiscal year: ~~fiscal-year → Jan–Dec
+
+## Tools & stack
+- Data warehouse: ~~data-warehouse → BigQuery
+- BI: ~~bi-tool → Looker
+- Project management: ~~project-tool → Jira
+- Docs: ~~docs-tool → Google Workspace + Notion
+- Communication: ~~comms-tool → Slack
+- Finance: ~~finance-tool → NetSuite
+- CRM: ~~crm-tool → Salesforce
+
+## Standards & defaults
+- Reporting currency: ~~reporting-currency → USD
+- Date format: ISO 8601 (YYYY-MM-DD)
+- Deck template: Google Slides (company template in Drive)
+- Default output language: English (EN-SG spelling)
+- Data sensitivity: treat all revenue and headcount data as confidential
+
+## Decision-making
+- Approval threshold for spend: ~~spend-threshold → >$50k requires VP approval; >$200k requires CEO
+- Escalation path: Team Lead → VP → CEO → Board
+- Strategy review cadence: quarterly (aligned to board)
+
+## Communication standards
+- Internal updates: weekly written update every Friday by 5pm local
+- Exec presentations: 1-page brief + appendix for data; no wall-of-text slides
+- Customer-facing: avoid internal jargon; lead with benefit, not feature

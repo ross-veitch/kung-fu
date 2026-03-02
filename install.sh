@@ -12,7 +12,7 @@
 #
 # Safe to re-run: existing symlinks and config files are not overwritten.
 
-set -e
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 CLAWD_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
